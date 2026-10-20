@@ -1,0 +1,1344 @@
+{
+  "description": "Synthetic learners for the coach suite: three groups of five, one of each archetype in every group, so one group's run reads every kind of learner once. Each profile is the learner's work as the app records it -- the marks of every attempt in order (out of the part's maximum in PART_SPECS), the tagged errors with the learner's own words as evidence, the marked Writing bands -- and the suite seeds it into an in-memory database, so the snapshot the coach writes about is computed by the app's own SQL. 'reference' is one good review of that learner: it states their figures without opinion, says what is rising or slipping (or that there is too little data) and names what comes first. The paid judge (evals/judge.py) marks each report against it; nothing else scores the report. 'expect' keeps the reference honest: 'figures' are the numbers it states and 'targets' its first priority, both checked against the reference by metrics.answer_correct; 'priority' lists every acceptable first priority (a part, an error category or a Writing subscale), 'trend' the parts whose direction it states and 'insufficient' whether there is too little data for any trend -- all checked against the snapshot computed from the profile by tests/test_evals_offline.py.",
+  "profiles": [
+    {
+      "id": "threshold-g1",
+      "group": 1,
+      "archetype": "threshold",
+      "attempts": {
+        "2": [
+          3
+        ],
+        "6": [
+          6
+        ]
+      },
+      "errors": [
+        {
+          "category": "GRAMMAR_WORDS",
+          "part": 2,
+          "count": 3,
+          "evidence": [
+            "despite of",
+            "whom",
+            "a few"
+          ]
+        },
+        {
+          "category": "WORD_PATTERNS",
+          "part": 2,
+          "count": 2,
+          "evidence": [
+            "interested for",
+            "depend of"
+          ]
+        },
+        {
+          "category": "COMPARING_VIEWS",
+          "part": 6,
+          "count": 1,
+          "evidence": [
+            "C"
+          ]
+        }
+      ],
+      "writing": [],
+      "reference": "56.2% across 2 Reading and Use of English exercises, about 176 on the Cambridge English Scale (Level B2), 4 points below the 180 pass mark; no Writing yet. Part 2, the open cloze, is the weaker of the two parts tried at 37.5% (Part 6 at 75%). The most frequent mistake is grammar words and agreement, 3 of 6 errors, for instance 'despite of' and 'whom'. With one attempt at each part there is not yet enough data for a trend. First priority: Part 2 and grammar words.",
+      "expect": {
+        "figures": [
+          56.2,
+          176,
+          37.5,
+          3
+        ],
+        "targets": [
+          {
+            "part": 2
+          }
+        ],
+        "priority": [
+          {
+            "part": 2
+          },
+          {
+            "category": "GRAMMAR_WORDS"
+          }
+        ],
+        "trend": {},
+        "insufficient": true
+      }
+    },
+    {
+      "id": "improving-g1",
+      "group": 1,
+      "archetype": "improving",
+      "attempts": {
+        "1": [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "3": [
+          3,
+          3,
+          4,
+          3
+        ],
+        "5": [
+          7,
+          8
+        ]
+      },
+      "errors": [
+        {
+          "category": "WORD_FORM",
+          "part": 3,
+          "count": 8,
+          "evidence": [
+            "unpredictible",
+            "succesful",
+            "commitee"
+          ]
+        },
+        {
+          "category": "WORD_CHOICE",
+          "part": 1,
+          "count": 5,
+          "evidence": [
+            "make",
+            "raise",
+            "lend"
+          ]
+        },
+        {
+          "category": "READING_FOR_MEANING",
+          "part": 5,
+          "count": 4,
+          "evidence": [
+            "B",
+            "D"
+          ]
+        },
+        {
+          "category": "FIXED_PHRASES",
+          "part": 1,
+          "count": 2,
+          "evidence": [
+            "take into account of"
+          ]
+        }
+      ],
+      "writing": [],
+      "reference": "55.2% across 11 exercises, about 175 (Level B2), 5 points below the 180 pass mark; no Writing yet. Part 1, the multiple-choice cloze, is improving fast: +12.5 points per attempt over 5 attempts, now 62.5%. Part 3, word formation, is the weakest at 40.6% and not improving. The most frequent mistake is word formation and spelling, 8 of 19 errors (42.1%), for instance 'succesful' and 'unpredictible'; word choice follows with 5. First priority: Part 3 and word formation.",
+      "expect": {
+        "figures": [
+          55.2,
+          175,
+          12.5,
+          40.6,
+          8
+        ],
+        "targets": [
+          {
+            "part": 3
+          }
+        ],
+        "priority": [
+          {
+            "part": 3
+          },
+          {
+            "category": "WORD_FORM"
+          }
+        ],
+        "trend": {
+          "1": "up"
+        },
+        "insufficient": false
+      }
+    },
+    {
+      "id": "slipping-g1",
+      "group": 1,
+      "archetype": "slipping",
+      "attempts": {
+        "4": [
+          9,
+          8,
+          7,
+          5.5,
+          4.5
+        ],
+        "2": [
+          5,
+          5,
+          6
+        ],
+        "7": [
+          10,
+          9
+        ]
+      },
+      "errors": [
+        {
+          "category": "VERB_FORMS",
+          "part": 4,
+          "count": 7,
+          "evidence": [
+            "had been knowing",
+            "would have went"
+          ]
+        },
+        {
+          "category": "SENTENCE_STRUCTURE",
+          "part": 4,
+          "count": 5,
+          "evidence": [
+            "no sooner I had",
+            "hardly he arrived"
+          ]
+        },
+        {
+          "category": "TEXT_STRUCTURE",
+          "part": 7,
+          "count": 3,
+          "evidence": [
+            "E",
+            "B"
+          ]
+        },
+        {
+          "category": "LINKING",
+          "part": 2,
+          "count": 2,
+          "evidence": [
+            "although",
+            "whereas"
+          ]
+        }
+      ],
+      "writing": [],
+      "reference": "63.9% across 10 exercises, about 183 (Grade C), just above the 180 pass mark; no Writing yet. Part 4, key word transformations, is slipping: down 9.6 points per attempt over 5 attempts, now 56.7%, the weakest part. Part 2 is at 66.7% and Part 7 at 79.2% from only 2 attempts. The most frequent mistakes are verb forms, 7 of 17 errors (41.2%), for instance 'would have went', and sentence structure, 5, for instance 'no sooner I had'. First priority: Part 4, with verb forms and inversion.",
+      "expect": {
+        "figures": [
+          63.9,
+          183,
+          9.6,
+          56.7,
+          7
+        ],
+        "targets": [
+          {
+            "part": 4
+          }
+        ],
+        "priority": [
+          {
+            "part": 4
+          },
+          {
+            "category": "VERB_FORMS"
+          },
+          {
+            "category": "SENTENCE_STRUCTURE"
+          }
+        ],
+        "trend": {
+          "4": "down"
+        },
+        "insufficient": false
+      }
+    },
+    {
+      "id": "writing_led-g1",
+      "group": 1,
+      "archetype": "writing_led",
+      "attempts": {
+        "1": [
+          6
+        ]
+      },
+      "errors": [
+        {
+          "category": "LINKING",
+          "part": null,
+          "count": 6,
+          "evidence": [
+            "Moreover, besides,",
+            "On the other hand",
+            "this"
+          ]
+        },
+        {
+          "category": "PUNCTUATION",
+          "part": null,
+          "count": 3,
+          "evidence": [
+            "however we",
+            "which, is"
+          ]
+        },
+        {
+          "category": "REGISTER",
+          "part": null,
+          "count": 2,
+          "evidence": [
+            "kids",
+            "a lot of stuff"
+          ]
+        },
+        {
+          "category": "WORD_CHOICE",
+          "part": 1,
+          "count": 1,
+          "evidence": [
+            "do"
+          ]
+        }
+      ],
+      "writing": [
+        {
+          "part": 1,
+          "genre": "essay",
+          "bands": {
+            "content": 4,
+            "communicative_achievement": 3,
+            "organisation": 2,
+            "language": 3
+          }
+        },
+        {
+          "part": 2,
+          "genre": "proposal",
+          "bands": {
+            "content": 4,
+            "communicative_achievement": 4,
+            "organisation": 2,
+            "language": 3
+          }
+        },
+        {
+          "part": 2,
+          "genre": "review",
+          "bands": {
+            "content": 4,
+            "communicative_achievement": 3,
+            "organisation": 3,
+            "language": 3
+          }
+        }
+      ],
+      "reference": "One Reading and Use of English exercise, Part 1 at 75%, and 3 pieces of Writing. Writing averages: Content 4.0, Communicative Achievement 3.33, Organisation 2.33, Language 3.0, so Organisation is the weakest subscale. The most frequent mistake is linking and reference, 6 of 12 errors, for instance 'Moreover, besides,' and 'On the other hand'; punctuation follows with 3. There is too little data for a trend. First priority: Organisation, through linking.",
+      "expect": {
+        "figures": [
+          75,
+          3,
+          2.33,
+          6
+        ],
+        "targets": [
+          {
+            "subscale": "organisation"
+          }
+        ],
+        "priority": [
+          {
+            "subscale": "organisation"
+          },
+          {
+            "category": "LINKING"
+          }
+        ],
+        "trend": {},
+        "insufficient": true
+      }
+    },
+    {
+      "id": "strong-g1",
+      "group": 1,
+      "archetype": "strong",
+      "attempts": {
+        "1": [
+          7,
+          7,
+          7
+        ],
+        "2": [
+          7,
+          6,
+          7
+        ],
+        "5": [
+          10,
+          10,
+          9
+        ],
+        "7": [
+          9,
+          10,
+          9
+        ],
+        "3": [
+          5,
+          5,
+          4
+        ]
+      },
+      "errors": [
+        {
+          "category": "WORD_FORM",
+          "part": 3,
+          "count": 7,
+          "evidence": [
+            "irresponsable",
+            "independance"
+          ]
+        },
+        {
+          "category": "TEXT_STRUCTURE",
+          "part": 7,
+          "count": 4,
+          "evidence": [
+            "F",
+            "A"
+          ]
+        },
+        {
+          "category": "READING_FOR_MEANING",
+          "part": 5,
+          "count": 3,
+          "evidence": [
+            "C"
+          ]
+        },
+        {
+          "category": "GRAMMAR_WORDS",
+          "part": 2,
+          "count": 2,
+          "evidence": [
+            "what"
+          ]
+        }
+      ],
+      "writing": [],
+      "reference": "77.8% across 15 exercises, about 197 (Grade B), 3 points below Grade A at 200; no Writing yet. Parts 1 (87.5%), 2 (83.3%) and 5 (80.6%) are strong. Part 3, word formation, is the weakest at 58.3% and dipping, -6.2 points per attempt over 3 attempts. The most frequent mistake is word formation and spelling, 7 of 16 errors (43.8%), for instance 'irresponsable' and 'independance'. First priority: Part 3 and word formation.",
+      "expect": {
+        "figures": [
+          77.8,
+          197,
+          87.5,
+          58.3,
+          7
+        ],
+        "targets": [
+          {
+            "part": 3
+          }
+        ],
+        "priority": [
+          {
+            "part": 3
+          },
+          {
+            "category": "WORD_FORM"
+          }
+        ],
+        "trend": {},
+        "insufficient": false
+      }
+    },
+    {
+      "id": "threshold-g2",
+      "group": 2,
+      "archetype": "threshold",
+      "attempts": {
+        "5": [
+          6
+        ]
+      },
+      "errors": [
+        {
+          "category": "READING_FOR_MEANING",
+          "part": 5,
+          "count": 6,
+          "evidence": [
+            "A",
+            "D",
+            "B"
+          ]
+        },
+        {
+          "category": "REGISTER",
+          "part": null,
+          "count": 3,
+          "evidence": [
+            "gonna",
+            "Hi guys"
+          ]
+        }
+      ],
+      "writing": [
+        {
+          "part": 1,
+          "genre": "essay",
+          "bands": {
+            "content": 3,
+            "communicative_achievement": 2,
+            "organisation": 3,
+            "language": 3
+          }
+        }
+      ],
+      "reference": "One Part 5 exercise at 50% and 1 essay: about 170 (Level B2), 10 points below the 180 pass mark. The essay's weakest subscale is Communicative Achievement at 2 (Content, Organisation and Language at 3). The most frequent mistake is detail, opinion and implication in Part 5, 6 of 9 errors; register follows with 3, for instance 'gonna' and 'Hi guys'. There is too little data for a trend. First priority: Part 5, reading for detail and opinion, and register in Writing.",
+      "expect": {
+        "figures": [
+          50,
+          170,
+          10,
+          6
+        ],
+        "targets": [
+          {
+            "part": 5
+          }
+        ],
+        "priority": [
+          {
+            "part": 5
+          },
+          {
+            "category": "READING_FOR_MEANING"
+          },
+          {
+            "subscale": "communicative_achievement"
+          }
+        ],
+        "trend": {},
+        "insufficient": true
+      }
+    },
+    {
+      "id": "improving-g2",
+      "group": 2,
+      "archetype": "improving",
+      "attempts": {
+        "7": [
+          5,
+          6,
+          8,
+          9,
+          10,
+          11
+        ],
+        "2": [
+          4,
+          3,
+          4,
+          4,
+          3
+        ],
+        "6": [
+          6
+        ]
+      },
+      "errors": [
+        {
+          "category": "GRAMMAR_WORDS",
+          "part": 2,
+          "count": 9,
+          "evidence": [
+            "which",
+            "the",
+            "as long"
+          ]
+        },
+        {
+          "category": "TEXT_STRUCTURE",
+          "part": 7,
+          "count": 5,
+          "evidence": [
+            "D",
+            "G"
+          ]
+        },
+        {
+          "category": "FIXED_PHRASES",
+          "part": 2,
+          "count": 3,
+          "evidence": [
+            "in the other hand"
+          ]
+        },
+        {
+          "category": "COMPARING_VIEWS",
+          "part": 6,
+          "count": 2,
+          "evidence": [
+            "B"
+          ]
+        }
+      ],
+      "writing": [],
+      "reference": "60.8% across 12 exercises, about 181 (Grade C), just above the 180 pass mark; no Writing yet. Part 7, the gapped text, is improving: +10.2 points per attempt over 6 attempts, 73.3% over the last five. Part 2, the open cloze, is the weakest at 45% and flat. The most frequent mistake is grammar words and agreement, 9 of 19 errors (47.4%), for instance 'which' and 'as long'; 'in the other hand' also comes back 3 times. First priority: Part 2 and grammar words.",
+      "expect": {
+        "figures": [
+          60.8,
+          181,
+          10.2,
+          45,
+          9
+        ],
+        "targets": [
+          {
+            "part": 2
+          }
+        ],
+        "priority": [
+          {
+            "part": 2
+          },
+          {
+            "category": "GRAMMAR_WORDS"
+          }
+        ],
+        "trend": {
+          "7": "up"
+        },
+        "insufficient": false
+      }
+    },
+    {
+      "id": "slipping-g2",
+      "group": 2,
+      "archetype": "slipping",
+      "attempts": {
+        "5": [
+          10,
+          9,
+          8,
+          7,
+          5
+        ],
+        "1": [
+          6,
+          6,
+          7,
+          6
+        ],
+        "3": [
+          6
+        ]
+      },
+      "errors": [
+        {
+          "category": "READING_FOR_MEANING",
+          "part": 5,
+          "count": 11,
+          "evidence": [
+            "C",
+            "A",
+            "D"
+          ]
+        },
+        {
+          "category": "WORD_CHOICE",
+          "part": 1,
+          "count": 4,
+          "evidence": [
+            "reach",
+            "carry"
+          ]
+        },
+        {
+          "category": "WORD_FORM",
+          "part": 3,
+          "count": 2,
+          "evidence": [
+            "unemploy"
+          ]
+        }
+      ],
+      "writing": [],
+      "reference": "70% across 10 exercises, about 189 (Grade C); no Writing yet. Part 5, multiple choice, is slipping: down 10 points per attempt over 5 attempts, now 65%, the weakest part. Part 1 is at 78.1% and steady; Part 3 at 75% from one attempt. The most frequent mistake is detail, opinion and implication, 11 of 17 errors (64.7%); word choice follows with 4, for instance 'carry' and 'reach'. First priority: Part 5.",
+      "expect": {
+        "figures": [
+          70,
+          189,
+          10,
+          65,
+          11
+        ],
+        "targets": [
+          {
+            "part": 5
+          }
+        ],
+        "priority": [
+          {
+            "part": 5
+          },
+          {
+            "category": "READING_FOR_MEANING"
+          }
+        ],
+        "trend": {
+          "5": "down"
+        },
+        "insufficient": false
+      }
+    },
+    {
+      "id": "writing_led-g2",
+      "group": 2,
+      "archetype": "writing_led",
+      "attempts": {
+        "8": [
+          8
+        ]
+      },
+      "errors": [
+        {
+          "category": "REGISTER",
+          "part": null,
+          "count": 6,
+          "evidence": [
+            "Hey!",
+            "loads of",
+            "Cheers"
+          ]
+        },
+        {
+          "category": "WORD_CHOICE",
+          "part": null,
+          "count": 3,
+          "evidence": [
+            "do a mistake"
+          ]
+        },
+        {
+          "category": "SCANNING",
+          "part": 8,
+          "count": 2,
+          "evidence": [
+            "C"
+          ]
+        }
+      ],
+      "writing": [
+        {
+          "part": 1,
+          "genre": "essay",
+          "bands": {
+            "content": 4,
+            "communicative_achievement": 2,
+            "organisation": 3,
+            "language": 3
+          }
+        },
+        {
+          "part": 2,
+          "genre": "report",
+          "bands": {
+            "content": 4,
+            "communicative_achievement": 2,
+            "organisation": 3,
+            "language": 3
+          }
+        },
+        {
+          "part": 2,
+          "genre": "letter_email",
+          "bands": {
+            "content": 4,
+            "communicative_achievement": 3,
+            "organisation": 3,
+            "language": 3
+          }
+        },
+        {
+          "part": 2,
+          "genre": "review",
+          "bands": {
+            "content": 4,
+            "communicative_achievement": 2,
+            "organisation": 3,
+            "language": 4
+          }
+        }
+      ],
+      "reference": "One Part 8 exercise at 80% and 4 pieces of Writing. Writing averages: Content 4.0, Communicative Achievement 2.25, Organisation 3.0, Language 3.25, so Communicative Achievement is the weakest subscale. The most frequent mistake is register and tone, 6 of 11 errors, for instance 'Hey!', 'Cheers' and 'loads of'; word choice follows with 3 ('do a mistake'). There is too little data for a trend. First priority: Communicative Achievement, through register.",
+      "expect": {
+        "figures": [
+          80,
+          4,
+          2.25,
+          6
+        ],
+        "targets": [
+          {
+            "subscale": "communicative_achievement"
+          }
+        ],
+        "priority": [
+          {
+            "subscale": "communicative_achievement"
+          },
+          {
+            "category": "REGISTER"
+          }
+        ],
+        "trend": {},
+        "insufficient": true
+      }
+    },
+    {
+      "id": "strong-g2",
+      "group": 2,
+      "archetype": "strong",
+      "attempts": {
+        "4": [
+          9,
+          10,
+          10.5
+        ],
+        "5": [
+          10,
+          10,
+          11
+        ],
+        "6": [
+          7,
+          7,
+          6
+        ],
+        "8": [
+          9,
+          9,
+          8
+        ],
+        "2": [
+          5,
+          5,
+          6
+        ]
+      },
+      "errors": [
+        {
+          "category": "GRAMMAR_WORDS",
+          "part": 2,
+          "count": 8,
+          "evidence": [
+            "whose",
+            "neither",
+            "that"
+          ]
+        },
+        {
+          "category": "SENTENCE_STRUCTURE",
+          "part": 4,
+          "count": 3,
+          "evidence": [
+            "were I to knew"
+          ]
+        },
+        {
+          "category": "SCANNING",
+          "part": 8,
+          "count": 2,
+          "evidence": [
+            "E"
+          ]
+        }
+      ],
+      "writing": [
+        {
+          "part": 1,
+          "genre": "essay",
+          "bands": {
+            "content": 4,
+            "communicative_achievement": 4,
+            "organisation": 4,
+            "language": 3
+          }
+        },
+        {
+          "part": 2,
+          "genre": "proposal",
+          "bands": {
+            "content": 5,
+            "communicative_achievement": 4,
+            "organisation": 4,
+            "language": 4
+          }
+        }
+      ],
+      "reference": "81.7% across 15 exercises, about 201 (Grade A), and 2 pieces of Writing (Content 4.5, Communicative Achievement 4.0, Organisation 4.0, Language 3.5). Parts 8 (86.7%), 5 (86.1%), 6 (83.3%) and 4 (81.9%) are strong; Part 2, the open cloze, is the weakest at 66.7%. The most frequent mistake is grammar words and agreement, 8 of 13 errors (61.5%), for instance 'whose' and 'neither'. First priority: Part 2 and grammar words.",
+      "expect": {
+        "figures": [
+          81.7,
+          201,
+          66.7,
+          8
+        ],
+        "targets": [
+          {
+            "part": 2
+          }
+        ],
+        "priority": [
+          {
+            "part": 2
+          },
+          {
+            "category": "GRAMMAR_WORDS"
+          }
+        ],
+        "trend": {},
+        "insufficient": false
+      }
+    },
+    {
+      "id": "threshold-g3",
+      "group": 3,
+      "archetype": "threshold",
+      "attempts": {
+        "3": [
+          4,
+          5
+        ],
+        "8": [
+          7
+        ]
+      },
+      "errors": [
+        {
+          "category": "WORD_FORM",
+          "part": 3,
+          "count": 7,
+          "evidence": [
+            "comfortible",
+            "dissappointed",
+            "knowledgable"
+          ]
+        },
+        {
+          "category": "SCANNING",
+          "part": 8,
+          "count": 3,
+          "evidence": [
+            "A",
+            "D"
+          ]
+        }
+      ],
+      "writing": [],
+      "reference": "61.5% across 3 exercises, about 181 (Grade C), just above the 180 pass mark; no Writing yet. Part 3, word formation, is at 56.2% over 2 attempts and Part 8 at 70% from one. The most frequent mistake is word formation and spelling, 7 of 10 errors, for instance 'comfortible', 'knowledgable' and 'dissappointed'. There is too little data for a trend. First priority: Part 3 and word formation.",
+      "expect": {
+        "figures": [
+          61.5,
+          181,
+          56.2,
+          7
+        ],
+        "targets": [
+          {
+            "part": 3
+          }
+        ],
+        "priority": [
+          {
+            "part": 3
+          },
+          {
+            "category": "WORD_FORM"
+          }
+        ],
+        "trend": {},
+        "insufficient": true
+      }
+    },
+    {
+      "id": "improving-g3",
+      "group": 3,
+      "archetype": "improving",
+      "attempts": {
+        "4": [
+          4,
+          5,
+          6.5,
+          8,
+          9.5,
+          10
+        ],
+        "8": [
+          5,
+          6,
+          5
+        ],
+        "1": [
+          6,
+          7
+        ]
+      },
+      "errors": [
+        {
+          "category": "SCANNING",
+          "part": 8,
+          "count": 9,
+          "evidence": [
+            "B",
+            "E",
+            "A"
+          ]
+        },
+        {
+          "category": "WORD_PATTERNS",
+          "part": 4,
+          "count": 6,
+          "evidence": [
+            "object to do",
+            "insisted to pay"
+          ]
+        },
+        {
+          "category": "FIXED_PHRASES",
+          "part": 4,
+          "count": 4,
+          "evidence": [
+            "came up to an idea"
+          ]
+        },
+        {
+          "category": "WORD_CHOICE",
+          "part": 1,
+          "count": 2,
+          "evidence": [
+            "strong rain"
+          ]
+        }
+      ],
+      "writing": [
+        {
+          "part": 1,
+          "genre": "essay",
+          "bands": {
+            "content": 3,
+            "communicative_achievement": 3,
+            "organisation": 3,
+            "language": 3
+          }
+        }
+      ],
+      "reference": "61% across 11 exercises, about 181 (Grade C), and 1 essay with every subscale at 3. Part 4, key word transformations, is improving: +10.7 points per attempt over 6 attempts, 65% over the last five. Part 8, multiple matching, is the weakest at 53.3%. The most frequent mistake is finding paraphrased information, 9 of 21 errors (42.9%); word patterns follow with 6, for instance 'insisted to pay'. First priority: Part 8 and finding paraphrased information.",
+      "expect": {
+        "figures": [
+          61,
+          181,
+          10.7,
+          53.3,
+          9
+        ],
+        "targets": [
+          {
+            "part": 8
+          }
+        ],
+        "priority": [
+          {
+            "part": 8
+          },
+          {
+            "category": "SCANNING"
+          }
+        ],
+        "trend": {
+          "4": "up"
+        },
+        "insufficient": false
+      }
+    },
+    {
+      "id": "slipping-g3",
+      "group": 3,
+      "archetype": "slipping",
+      "attempts": {
+        "6": [
+          7,
+          6,
+          6,
+          4,
+          3
+        ],
+        "2": [
+          5,
+          6,
+          5,
+          6
+        ]
+      },
+      "errors": [
+        {
+          "category": "COMPARING_VIEWS",
+          "part": 6,
+          "count": 10,
+          "evidence": [
+            "A",
+            "C",
+            "D"
+          ]
+        },
+        {
+          "category": "VERB_FORMS",
+          "part": 2,
+          "count": 5,
+          "evidence": [
+            "has",
+            "been"
+          ]
+        },
+        {
+          "category": "PUNCTUATION",
+          "part": null,
+          "count": 3,
+          "evidence": [
+            "its' own"
+          ]
+        }
+      ],
+      "writing": [
+        {
+          "part": 1,
+          "genre": "essay",
+          "bands": {
+            "content": 3,
+            "communicative_achievement": 3,
+            "organisation": 4,
+            "language": 2
+          }
+        },
+        {
+          "part": 2,
+          "genre": "report",
+          "bands": {
+            "content": 3,
+            "communicative_achievement": 3,
+            "organisation": 4,
+            "language": 3
+          }
+        }
+      ],
+      "reference": "66.7% across 9 exercises, about 186 (Grade C), and 2 pieces of Writing (Content 3.0, Communicative Achievement 3.0, Organisation 4.0, Language 2.5). Part 6, the cross-text multiple matching, is slipping: down 12.5 points per attempt over 5 attempts, now 65%, the weakest part; Part 2 is at 68.8%. The most frequent mistake is comparing writers' opinions, 10 of 18 errors (55.6%); verb forms follow with 5. First priority: Part 6.",
+      "expect": {
+        "figures": [
+          66.7,
+          186,
+          12.5,
+          65,
+          10
+        ],
+        "targets": [
+          {
+            "part": 6
+          }
+        ],
+        "priority": [
+          {
+            "part": 6
+          },
+          {
+            "category": "COMPARING_VIEWS"
+          }
+        ],
+        "trend": {
+          "6": "down"
+        },
+        "insufficient": false
+      }
+    },
+    {
+      "id": "writing_led-g3",
+      "group": 3,
+      "archetype": "writing_led",
+      "attempts": {
+        "1": [
+          5
+        ],
+        "2": [
+          6
+        ]
+      },
+      "errors": [
+        {
+          "category": "VERB_FORMS",
+          "part": null,
+          "count": 6,
+          "evidence": [
+            "I am living here since",
+            "if I would have"
+          ]
+        },
+        {
+          "category": "PUNCTUATION",
+          "part": null,
+          "count": 4,
+          "evidence": [
+            "Firstly I",
+            "it's colour"
+          ]
+        },
+        {
+          "category": "WORD_PATTERNS",
+          "part": 1,
+          "count": 3,
+          "evidence": [
+            "suggest to go"
+          ]
+        }
+      ],
+      "writing": [
+        {
+          "part": 1,
+          "genre": "essay",
+          "bands": {
+            "content": 3,
+            "communicative_achievement": 3,
+            "organisation": 3,
+            "language": 2
+          }
+        },
+        {
+          "part": 2,
+          "genre": "letter_email",
+          "bands": {
+            "content": 4,
+            "communicative_achievement": 3,
+            "organisation": 3,
+            "language": 2
+          }
+        },
+        {
+          "part": 2,
+          "genre": "proposal",
+          "bands": {
+            "content": 3,
+            "communicative_achievement": 3,
+            "organisation": 3,
+            "language": 2
+          }
+        }
+      ],
+      "reference": "Two Reading and Use of English exercises (Part 1 at 62.5%, Part 2 at 75%) and 3 pieces of Writing. Writing averages: Content 3.33, Communicative Achievement 3.0, Organisation 3.0, Language 2.0, so Language is the weakest subscale. The most frequent mistake is verb forms, 6 of 13 errors, for instance 'if I would have' and 'I am living here since'; punctuation follows with 4. There is too little data for a trend. First priority: Language in Writing, above all verb forms.",
+      "expect": {
+        "figures": [
+          62.5,
+          75,
+          3,
+          2,
+          6
+        ],
+        "targets": [
+          {
+            "subscale": "language"
+          }
+        ],
+        "priority": [
+          {
+            "subscale": "language"
+          },
+          {
+            "category": "VERB_FORMS"
+          }
+        ],
+        "trend": {},
+        "insufficient": true
+      }
+    },
+    {
+      "id": "strong-g3",
+      "group": 3,
+      "archetype": "strong",
+      "attempts": {
+        "1": [
+          7,
+          7,
+          6
+        ],
+        "3": [
+          6,
+          7,
+          7
+        ],
+        "6": [
+          6,
+          7,
+          7
+        ],
+        "7": [
+          8,
+          8,
+          7
+        ],
+        "8": [
+          9,
+          8,
+          9
+        ]
+      },
+      "errors": [
+        {
+          "category": "TEXT_STRUCTURE",
+          "part": 7,
+          "count": 6,
+          "evidence": [
+            "G",
+            "C"
+          ]
+        },
+        {
+          "category": "WORD_CHOICE",
+          "part": 1,
+          "count": 3,
+          "evidence": [
+            "severe"
+          ]
+        },
+        {
+          "category": "WORD_FORM",
+          "part": 3,
+          "count": 2,
+          "evidence": [
+            "reliabile"
+          ]
+        }
+      ],
+      "writing": [],
+      "reference": "79% across 15 exercises, about 199 (Grade B), 1 point below Grade A at 200; no Writing yet. Parts 8 (86.7%), 1, 3 and 6 (83.3% each) are strong; Part 7, the gapped text, is the weakest at 63.9%. The most frequent mistake is text structure and cohesion, 6 of 11 errors (54.5%); word choice follows with 3 ('severe'). First priority: Part 7 and text structure.",
+      "expect": {
+        "figures": [
+          79,
+          199,
+          86.7,
+          63.9,
+          6
+        ],
+        "targets": [
+          {
+            "part": 7
+          }
+        ],
+        "priority": [
+          {
+            "part": 7
+          },
+          {
+            "category": "TEXT_STRUCTURE"
+          }
+        ],
+        "trend": {},
+        "insufficient": false
+      }
+    }
+  ]
+}

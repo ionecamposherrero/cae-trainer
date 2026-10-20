@@ -1,0 +1,64 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+env/
+.python-version
+.streamlit/secrets.toml
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+.ipynb_checkpoints/
+
+# Local data
+data/*.db
+data/*.db-journal
+data/*.db-shm
+data/*.db-wal
+data/chroma/
+*.db
+*.sqlite
+*.sqlite3
+
+# Reference corpus: third-party material is not redistributed
+data/reference/*
+!data/reference/README.md
+!data/reference/c1_advanced_structure.md
+
+# Evaluation reports and results
+evals/reports/*
+!evals/reports/.gitkeep
+results/
+outputs/
+*.log
+
+# Internal documentation
+docs/
+AGENTS.md
+ARQUITECTURA.md
+EVALUACION.md
+SEGURIDAD.md
+*.docx
+*.pdf
+*.pptx
+
+# Editors and OS
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+.cursor/
+*.swp

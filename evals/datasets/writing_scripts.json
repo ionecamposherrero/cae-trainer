@@ -1,0 +1,875 @@
+{
+  "description": "Writing scripts with reference bands and labelled errors, in three groups of five: one script per genre (essay, letter or email, proposal, report, review) in every group. The scripts vary in level and in what they get wrong; no group is built around a level or a weakness. Every metric is reported per genre: band accuracy on each subscale and on the total, and the annotate node's recall, precision and category accuracy against the labelled errors.",
+  "tasks": {
+    "museums-essay": {
+      "part": 1,
+      "genre": "essay",
+      "topic": "how museums and galleries should be funded",
+      "spec": {
+        "title": "Museum funding essay",
+        "scenario": "Your class has attended a panel discussion on how museums and galleries should be funded. You have made the notes below.",
+        "instruction": "Write an essay for your tutor discussing two of the methods of funding in your notes. You should explain which method is more important for museums and galleries, giving reasons in support of your answer. You may, if you wish, make use of the opinions expressed in the discussion, but you should use your own words as far as possible. Write 220-260 words.",
+        "notes": [
+          "entrance charges",
+          "corporate sponsorship",
+          "government funding"
+        ],
+        "opinions": [
+          "\"If people pay to get in, they value what they see.\"",
+          "\"Sooner or later the sponsors decide what goes on the walls.\"",
+          "\"Museums are a public good, like libraries, and taxes should pay for them.\""
+        ],
+        "reader": "your tutor"
+      }
+    },
+    "library-letter": {
+      "part": 2,
+      "genre": "letter_email",
+      "topic": "cuts to a public library's opening hours",
+      "spec": {
+        "title": "Library opening hours letter",
+        "scenario": "Your town's public library has announced that it will reduce its opening hours and close its study room from next month. You have decided to write to the library director.",
+        "instruction": "Write a letter to the library director. In your letter, explain how the changes will affect you and other users, suggest another way the library could save money, and say what you would like the library to do next. Write your letter in 220-260 words in an appropriate style.",
+        "notes": [
+          "how the changes affect you and other users",
+          "another way the library could save money",
+          "what you want the library to do next"
+        ],
+        "opinions": [],
+        "reader": "the library director"
+      }
+    },
+    "facilities-proposal": {
+      "part": 2,
+      "genre": "proposal",
+      "topic": "spending money on college facilities",
+      "spec": {
+        "title": "College facilities proposal",
+        "scenario": "The principal of your college has some money to improve the facilities students use outside class, and has asked students to send in proposals.",
+        "instruction": "Write a proposal for the principal. Your proposal should describe the facilities students currently lack, explain how the money should be spent, and say how students would benefit. Write your proposal in 220-260 words in an appropriate style.",
+        "notes": [
+          "facilities students currently lack",
+          "how the money should be spent",
+          "how students would benefit"
+        ],
+        "opinions": [],
+        "reader": "the college principal"
+      }
+    },
+    "exchange-report": {
+      "part": 2,
+      "genre": "report",
+      "topic": "a school language exchange",
+      "spec": {
+        "title": "Language exchange report",
+        "scenario": "Last month your college ran a two-week language exchange with a partner school abroad. The head of languages has asked you to write a report on it.",
+        "instruction": "Write a report for the head of languages. Your report should describe what the participants did, evaluate how useful the exchange was, and recommend whether it should be repeated and with what changes. Write your report in 220-260 words in an appropriate style.",
+        "notes": [
+          "what the participants did",
+          "how useful the exchange was",
+          "whether to repeat it, and with what changes"
+        ],
+        "opinions": [],
+        "reader": "the head of languages"
+      }
+    },
+    "restaurant-review": {
+      "part": 2,
+      "genre": "review",
+      "topic": "a restaurant chosen for a special occasion",
+      "spec": {
+        "title": "Restaurant review",
+        "scenario": "An international magazine has asked its readers to send in reviews of a restaurant where they celebrated a special occasion.",
+        "instruction": "Write a review for the magazine. Describe the restaurant and the occasion, evaluate the food and the service, and say whether you would recommend the restaurant to other readers. Write your review in 220-260 words in an appropriate style.",
+        "notes": [
+          "the restaurant and the occasion",
+          "the food and the service",
+          "whether you recommend it"
+        ],
+        "opinions": [],
+        "reader": "readers of an international magazine"
+      }
+    },
+    "friend-email": {
+      "part": 2,
+      "genre": "letter_email",
+      "topic": "advice for a friend's month-long stay",
+      "spec": {
+        "title": "Advice email to a friend",
+        "scenario": "An English-speaking friend of yours is going to spend a month in your town this summer to improve their language skills, and has emailed you asking for advice.",
+        "instruction": "Write an email to your friend. In your email, suggest where they could stay, explain how they could meet local people and practise the language, and warn them about anything they should be prepared for. Write your email in 220-260 words in an appropriate style.",
+        "notes": [
+          "where to stay",
+          "how to meet local people and practise",
+          "anything to be prepared for"
+        ],
+        "opinions": [],
+        "reader": "your friend"
+      }
+    },
+    "course-letter": {
+      "part": 2,
+      "genre": "letter_email",
+      "topic": "a language course that broke its promises",
+      "spec": {
+        "title": "Language course complaint letter",
+        "scenario": "You recently attended a two-week evening course at a private language school, but the course was very different from what the school's website had promised.",
+        "instruction": "Write a letter to the director of the language school. In your letter, explain what the website promised, describe the problems you experienced, and say what you would like the school to do. Write your letter in 220-260 words in an appropriate style.",
+        "notes": [
+          "what the website promised",
+          "the problems you experienced",
+          "what you want the school to do"
+        ],
+        "opinions": [],
+        "reader": "the director of the language school"
+      }
+    },
+    "park-proposal": {
+      "part": 2,
+      "genre": "proposal",
+      "topic": "improving a neglected town park",
+      "spec": {
+        "title": "Town park improvement proposal",
+        "scenario": "Your town council plans to improve a small, neglected park in the town centre and has invited residents to send in proposals.",
+        "instruction": "Write a proposal for the town council. Your proposal should describe the current state of the park, suggest how it could be improved, and explain how local people would benefit. Write your proposal in 220-260 words in an appropriate style.",
+        "notes": [
+          "the current state of the park",
+          "how it could be improved",
+          "how local people would benefit"
+        ],
+        "opinions": [],
+        "reader": "the town council"
+      }
+    },
+    "mentoring-proposal": {
+      "part": 2,
+      "genre": "proposal",
+      "topic": "a mentoring scheme for new students",
+      "spec": {
+        "title": "Student mentoring scheme proposal",
+        "scenario": "Your college director wants to help new students settle in more quickly and has asked current students to send in proposals for a mentoring scheme.",
+        "instruction": "Write a proposal for the college director. Your proposal should explain the difficulties new students face, describe how a mentoring scheme could work, and say what would be needed to set it up. Write your proposal in 220-260 words in an appropriate style.",
+        "notes": [
+          "the difficulties new students face",
+          "how a mentoring scheme could work",
+          "what is needed to set it up"
+        ],
+        "opinions": [],
+        "reader": "the college director"
+      }
+    },
+    "sports-centre-report": {
+      "part": 2,
+      "genre": "report",
+      "topic": "a sports centre members' survey",
+      "spec": {
+        "title": "Sports centre survey report",
+        "scenario": "You are a member of a local sports centre. The manager asked members to complete a survey about the centre and has asked you to write a report on the results.",
+        "instruction": "Write a report for the manager. Your report should summarise what members like about the centre, identify the main complaints, and recommend changes that would encourage more people to use it. Write your report in 220-260 words in an appropriate style.",
+        "notes": [
+          "what members like",
+          "the main complaints",
+          "recommended changes"
+        ],
+        "opinions": [],
+        "reader": "the manager of the sports centre"
+      }
+    },
+    "careers-fair-report": {
+      "part": 2,
+      "genre": "report",
+      "topic": "a college's first careers fair",
+      "spec": {
+        "title": "Careers fair report",
+        "scenario": "Your college recently held its first careers fair, where companies and universities came to talk to students. The principal has asked you to write a report on the event.",
+        "instruction": "Write a report for the principal. Your report should describe the event, explain which parts students found most useful, and suggest how the fair could be improved next year. Write your report in 220-260 words in an appropriate style.",
+        "notes": [
+          "the event",
+          "the most useful parts for students",
+          "how to improve it next year"
+        ],
+        "opinions": [],
+        "reader": "the principal"
+      }
+    },
+    "series-review": {
+      "part": 2,
+      "genre": "review",
+      "topic": "a TV series worth watching twice",
+      "spec": {
+        "title": "TV series review",
+        "scenario": "A website for young people is publishing reviews of TV series that are worth watching more than once, and has invited readers to send in their reviews.",
+        "instruction": "Write a review for the website. Describe the series and what it is about, explain what makes it worth watching more than once, and say who you would recommend it to. Write your review in 220-260 words in an appropriate style.",
+        "notes": [
+          "what the series is about",
+          "why it is worth watching again",
+          "who you would recommend it to"
+        ],
+        "opinions": [],
+        "reader": "young readers of the website"
+      }
+    },
+    "app-review": {
+      "part": 2,
+      "genre": "review",
+      "topic": "a language learning app",
+      "spec": {
+        "title": "Language learning app review",
+        "scenario": "A technology magazine is asking readers to review an app that has helped them learn something new, and to say whether it is worth paying for the full version.",
+        "instruction": "Write a review for the magazine. Describe the app and how you used it, evaluate its strengths and weaknesses, and say whether the full version is worth paying for. Write your review in 220-260 words in an appropriate style.",
+        "notes": [
+          "the app and how you used it",
+          "its strengths and weaknesses",
+          "whether the full version is worth paying for"
+        ],
+        "opinions": [],
+        "reader": "readers of a technology magazine"
+      }
+    }
+  },
+  "tasks_note": "Fixed here rather than generated before each run: the groups are run on different days, and their figures only compare if every script is marked against the same question. It also keeps the writing_task tier out of the suite, whose calls are then the evaluator's alone.",
+  "groups": "Three groups, one run at a time with --group. Each script costs six writing_evaluator calls (four subscales, annotation, rewrite), so a group is 30. Each genre's three scripts sit in different groups, so a model run on one group has still marked every genre once.",
+  "labelling": "expected_bands of the reference marking run are marked so in source; the rest are the author's target and want an examiner's review.",
+  "length": "Every script is within the 220-260 words the app accepts: the evaluator does not tell the examiners the length, and marks anything outside the range as not handed in.",
+  "cases": [
+    {
+      "id": "museums-strong",
+      "group": 1,
+      "task": "museums-essay",
+      "script": "In recent years the question of how museums should be funded has provoked considerable debate. Of the various considerations, I would argue that public access and long-term financial stability matter most.\n\nCharging an entrance fee undoubtedly generates revenue, and it is tempting to assume that visitors who pay will value what they see more highly. However, the evidence points the other way. Where charges have been introduced, attendance among younger and less affluent visitors has fallen sharply, and once that habit of visiting is lost it proves remarkably difficult to recover. A charge also sends an implicit message about whom a museum is for, and that message is heard most clearly by precisely those it discourages. A museum that is financially secure but socially narrow has arguably failed in its purpose.\n\nCorporate sponsorship, by contrast, offers a more promising route, provided it is properly regulated. Sponsors bring not only money but also expertise and publicity, and exhibitions that would otherwise never be mounted become possible. The obvious risk is that commercial interests begin to shape curatorial decisions, which is why transparent agreements setting out editorial independence are essential.\n\nOn balance, while sponsorship raises legitimate concerns, these can be managed through regulation, whereas the damage done by entrance charges to public access is far harder to undo. For that reason I believe funding models should prioritise free admission, supported where necessary by carefully governed private partnerships.\n",
+      "expected_bands": {
+        "content": 5,
+        "communicative_achievement": 5,
+        "organisation": 5,
+        "language": 5
+      },
+      "stresses": "perfect: a genuinely strong C1 answer, band 5 throughout",
+      "source": "reference marking run: 20/20, estimated scale 210, against a task on the same topic",
+      "expected_annotations": [],
+      "tolerated_annotations": []
+    },
+    {
+      "id": "course-letter",
+      "group": 1,
+      "task": "course-letter",
+      "script": "Dear Director,\n\nI am writing to complain about the evening course of Business English that I did in your school last month. I am very disappointed because the course was not like your website said.\n\nIn your website you promise that the groups have maximum eight students and that all the teachers are native speakers with a lot of experience. Also it says that every student receive a book and access to online exercises. Because of this I decided to pay 350 euros, which is a lot of money for me.\n\nHowever, the reality was very different. In my group there was nineteen students, so it was impossible to speak in the class. The teacher changed three times in two weeks and the last one was a student of the university who didn't explain nothing, he only read from the book. Honestly, it was a disaster! Besides, I never received the book and the password for the exercises didn't work, although I sent two emails to the secretary.\n\nFor all these reasons, I would like that you give me back at least the half of the money. If it is not possible, I think the minimum is to let me do the next course for free, with a small group like you promise. I hope you will take my complaint serious, because I don't think other students deserve the same experience.\n\nI look forward to hearing from you soon.\n\nYours faithfully,\nMarta Ruiz\n",
+      "expected_bands": {
+        "content": 4,
+        "communicative_achievement": 2,
+        "organisation": 3,
+        "language": 2
+      },
+      "stresses": "low: a complaint letter that covers every point and is clearly paragraphed, but slips out of the formal register ('Honestly, it was a disaster!') and makes frequent agreement and verb-pattern errors.",
+      "expected_annotations": [
+        {
+          "span": "maximum eight students",
+          "category": "FIXED_PHRASES",
+          "also": [
+            "GRAMMAR_WORDS"
+          ]
+        },
+        {
+          "span": "every student receive",
+          "category": "GRAMMAR_WORDS",
+          "also": [
+            "VERB_FORMS"
+          ]
+        },
+        {
+          "span": "there was nineteen students",
+          "category": "GRAMMAR_WORDS",
+          "also": [
+            "VERB_FORMS"
+          ]
+        },
+        {
+          "span": "didn't explain nothing",
+          "category": "GRAMMAR_WORDS"
+        },
+        {
+          "span": "Honestly, it was a disaster!",
+          "category": "REGISTER"
+        },
+        {
+          "span": "I would like that you give me back",
+          "category": "WORD_PATTERNS"
+        },
+        {
+          "span": "the half of the money",
+          "category": "GRAMMAR_WORDS"
+        },
+        {
+          "span": "take my complaint serious",
+          "category": "WORD_FORM"
+        }
+      ],
+      "tolerated_annotations": [
+        "course of Business English",
+        "in your school",
+        "not like your website said",
+        "In your website",
+        "to speak in the class",
+        "a student of the university",
+        "he only read from the book",
+        "Besides",
+        "like you promise",
+        "I think the minimum is",
+        "although I sent two emails"
+      ],
+      "source": "written for this dataset; expected_bands are the author's target, not yet an examiner's marking"
+    },
+    {
+      "id": "facilities-proposal-register",
+      "group": 1,
+      "task": "facilities-proposal",
+      "script": "Proposal: How To Spend The Money\n\nIntro\nOK, so you asked us what to do with the cash, and honestly I've got loads of ideas! Here's the deal, boss.\n\nWhat's missing right now\nLet's be real: the common room is a total dump. The sofas are falling apart, there's nowhere to sit when it rains, and the so-called gym is basically one broken treadmill and a sad old bench. Students who don't play football have absolutely nothing to do at lunchtime, which is why half of them just hang around the car park staring at their phones.\n\nWhere the money should go\nFirst, sort out the common room. Chuck out the old furniture, get some decent sofas and a couple of big tables where people can actually work together. Second, turn the empty storeroom next to the library into a proper fitness room with a few bikes, some weights and a mat area for yoga. It wouldn't cost a fortune, trust me. Finally, stick some covered benches in the courtyard, because getting soaked every lunchtime is no fun at all.\n\nWhy we'd all be better off\nIf you do this, people will actually want to hang around on campus. Students who aren't into team sports will finally get some exercise, and the ones who just want to chill or study together will have somewhere half-decent to do it. Happier students, better grades, everybody wins, right?\n\nAnyway, that's my two cents. Hope you go for it - you won't regret it, I promise!\n",
+      "expected_bands": {
+        "content": 4,
+        "communicative_achievement": 2,
+        "organisation": 4,
+        "language": 4
+      },
+      "stresses": "communicative achievement: every point covered, headed sections and accurate, idiomatic English, but written to the principal like a message to a friend -- 'boss', 'total dump', 'my two cents'. Wrong register for a proposal to a decision-maker.",
+      "source": "written for this dataset; expected_bands are the author's target, not yet an examiner's marking",
+      "expected_annotations": [
+        {
+          "span": "Here's the deal, boss",
+          "category": "REGISTER"
+        },
+        {
+          "span": "a total dump",
+          "category": "REGISTER"
+        },
+        {
+          "span": "Chuck out the old furniture",
+          "category": "REGISTER"
+        },
+        {
+          "span": "that's my two cents",
+          "category": "REGISTER"
+        }
+      ],
+      "tolerated_annotations": [
+        "Intro",
+        "OK, so you asked us what to do with the cash",
+        "honestly I've got loads of ideas",
+        "Let's be real",
+        "the so-called gym is basically one broken treadmill and a sad old bench",
+        "just hang around the car park",
+        "sort out the common room",
+        "decent sofas",
+        "where people can actually work together",
+        "It wouldn't cost a fortune, trust me",
+        "stick some covered benches",
+        "is no fun at all",
+        "want to hang around on campus",
+        "aren't into team sports",
+        "chill",
+        "half-decent",
+        "everybody wins, right?",
+        "Anyway",
+        "Hope you go for it",
+        "you won't regret it, I promise",
+        "a couple of big tables",
+        "getting soaked",
+        "Happier students, better grades",
+        "What's missing right now",
+        "there's nowhere to sit",
+        "Students who don't play football",
+        "absolutely nothing to do",
+        "a proper fitness room",
+        "Why we'd all be better off"
+      ]
+    },
+    {
+      "id": "careers-fair-report",
+      "group": 1,
+      "task": "careers-fair-report",
+      "script": "Report on the careers fair\n\nIntroduction\nThe purpose of this report is to describe the careers fair that took place in the sports hall on 12 March, and to suggest some improvements for next year.\n\nThe event\nAround thirty organisations took part, including local companies, two universities and the army. Each one had a stand where students could ask questions and take leaflets. There were also four talks in the main hall, for example about how to write a CV and how to prepare a job interview. More than 400 students attended during the day.\n\nMost useful parts\nAccording to the students I spoke to, the most useful part were the talks, especially the one about CVs, because many of them had never wrote one before. Students also liked the possibility to speak directly with people who work in jobs they are interested in. However, some stands were quite boring, as the representatives just gave out leaflets and didn't really talk to anyone.\n\nSuggestions for next year\nFirstly, the fair should be longer, because the talks were at the same time and students had to choose between them. Secondly, it would be a good idea to invite more companies from areas like technology and design, which are very popular between students. Finally, the college could organise short practice interviews with real employers, which would be really cool.\n\nConclusion\nTo sum up, the fair was a great success and I think it should definitely be repeated next year with these changes.\n",
+      "expected_bands": {
+        "content": 4,
+        "communicative_achievement": 3,
+        "organisation": 4,
+        "language": 3
+      },
+      "stresses": "middle: a well-organised report that covers every point, with a few verb and preposition errors and some informal slips ('really cool') that weaken the impersonal register.",
+      "expected_annotations": [
+        {
+          "span": "prepare a job interview",
+          "category": "WORD_PATTERNS"
+        },
+        {
+          "span": "the most useful part were",
+          "category": "GRAMMAR_WORDS",
+          "also": [
+            "VERB_FORMS"
+          ]
+        },
+        {
+          "span": "had never wrote one",
+          "category": "VERB_FORMS"
+        },
+        {
+          "span": "the possibility to speak",
+          "category": "WORD_CHOICE",
+          "also": [
+            "WORD_PATTERNS"
+          ]
+        },
+        {
+          "span": "very popular between students",
+          "category": "WORD_PATTERNS",
+          "also": [
+            "GRAMMAR_WORDS"
+          ]
+        },
+        {
+          "span": "which would be really cool",
+          "category": "REGISTER"
+        }
+      ],
+      "tolerated_annotations": [
+        "for example about how to write",
+        "quite boring",
+        "didn't really talk",
+        "areas like technology",
+        "because the talks were at the same time",
+        "I think it should definitely",
+        "take leaflets"
+      ],
+      "source": "written for this dataset; expected_bands are the author's target, not yet an examiner's marking"
+    },
+    {
+      "id": "series-review",
+      "group": 1,
+      "task": "series-review",
+      "script": "The Lighthouse Keepers: a mystery that rewards a second visit\n\nFew series manage to be gripping the first time round and even better the second, but The Lighthouse Keepers pulls it off with apparent ease.\n\nSet on a remote Scottish island, the six-part drama follows Isla, a young marine biologist who arrives to study seabirds and finds herself drawn into the disappearance of the island's last lighthouse keeper. What begins as a slow-burning puzzle gradually becomes a moving portrait of a tiny community bound together by secrets it would rather forget.\n\nSo why watch it twice? On a first viewing you are swept along by the plot, desperate to discover what happened on that stormy night in 1987. Only on a second viewing do you notice how carefully the writers have planted clues in plain sight: a half-finished letter on a kitchen table, a character who never quite answers a question. Scenes that seemed like quiet filler turn out to be crucial, and the final episode takes on an entirely new meaning.\n\nThe performances are superb throughout, and the windswept cinematography makes the island almost a character in its own right.\n\nIf you are looking for explosions and car chases, this is not the series for you. However, anyone who enjoys intelligent storytelling, atmospheric settings and endings that make you rethink everything you have seen should add it to their list without delay. Just make sure you have time to watch it all over again.\n",
+      "expected_bands": {
+        "content": 5,
+        "communicative_achievement": 5,
+        "organisation": 5,
+        "language": 5
+      },
+      "stresses": "high: an engaging review that describes, evaluates and recommends, with a wide range of structures (inversion, participle clauses) and no errors.",
+      "expected_annotations": [],
+      "tolerated_annotations": [],
+      "source": "written for this dataset; expected_bands are the author's target, not yet an examiner's marking"
+    },
+    {
+      "id": "museums-borderline",
+      "group": 2,
+      "task": "museums-essay",
+      "script": "Museums are an important part of our culture, but they need a lot of money to work. There are different ways to get this money. In this essay I will talk about entrance charges and government funding.\n\nOn the one hand, many museums ask visitors to pay a ticket. This is a good way to get money because the people who visit the museum pay for it. Also, people sometimes value more the things that they pay for. However, tickets can be quite expensive, and some people, for example students or old people, cannot pay them. This is a problem because museums should be for everybody, not only for people with money.\n\nOn the other hand, the government can give money to museums. In this way the entrance can be free and more people can visit. I think this is very positive, especially for children, because they can learn a lot of things about history and art. The problem is that the government has to pay for many other things like hospitals and schools, so sometimes there is not enough money for museums.\n\nIn conclusion, I think that government funding is more important than entrance charges, because it helps more people to visit museums. But maybe museums can also ask for a small price for special exhibitions. In my opinion, it is important that everybody can enjoy museums and learn from them, and the government should help to make this possible.\n",
+      "expected_bands": {
+        "content": 4,
+        "communicative_achievement": 3,
+        "organisation": 3,
+        "language": 3
+      },
+      "stresses": "fair: answers the task fully -- two methods, and which matters more -- but with simple lexis, formulaic linkers and thin development. Calibrates the middle of the scale.",
+      "source": "written for this dataset; expected_bands are the author's target, not yet an examiner's marking",
+      "expected_annotations": [
+        {
+          "span": "pay a ticket",
+          "category": "WORD_PATTERNS",
+          "also": [
+            "FIXED_PHRASES"
+          ]
+        },
+        {
+          "span": "value more the things",
+          "category": "SENTENCE_STRUCTURE"
+        },
+        {
+          "span": "the entrance can be free",
+          "category": "WORD_CHOICE"
+        },
+        {
+          "span": "ask for a small price",
+          "category": "FIXED_PHRASES",
+          "also": [
+            "WORD_CHOICE"
+          ]
+        }
+      ],
+      "tolerated_annotations": [
+        "need a lot of money to work",
+        "old people",
+        "cannot pay them",
+        "a lot of things",
+        "the people who visit",
+        "But maybe museums",
+        "I will talk about",
+        "like hospitals",
+        "very positive"
+      ]
+    },
+    {
+      "id": "friend-email",
+      "group": 2,
+      "task": "friend-email",
+      "script": "Hi Sam,\n\nIt was great to hear from you, and I'm thrilled you've finally decided to come over! A whole month here will do wonders for your Spanish, I promise.\n\nFirst things first: accommodation. Rather than booking a hotel, I'd strongly recommend staying with a host family. My aunt's neighbours, the Morales, take in a student every summer, and they're the kind of people who'll drag you into every conversation whether you like it or not -- which is exactly what you need. If you'd prefer more independence, there are plenty of shared flats near the university that are surprisingly cheap in July.\n\nAs for meeting people, the best thing you could do is sign up for one of the language exchanges held in the cafés around the main square. They're relaxed, free and full of locals desperate to practise their English, so you'll end up swapping languages over coffee most evenings. I'd also suggest joining the hiking club; nobody can avoid chatting on a five-hour walk!\n\nA couple of warnings, though. Don't underestimate the heat -- by mid-afternoon the streets are deserted, and you'll soon understand why everyone disappears for a siesta. And be prepared for people to talk at lightning speed. Don't be discouraged if you can't follow at first; by the second week it'll feel completely different.\n\nLet me know your dates as soon as you've booked your flight, and I'll come and pick you up from the airport.\n\nCan't wait to see you!\n\nLucía\n",
+      "expected_bands": {
+        "content": 5,
+        "communicative_achievement": 5,
+        "organisation": 5,
+        "language": 5
+      },
+      "stresses": "high: an informal email to a friend that covers all three points with precise, idiomatic language and a register exactly right for the reader. A marker that equates C1 with formality will under-mark it.",
+      "expected_annotations": [],
+      "tolerated_annotations": [],
+      "source": "written for this dataset; expected_bands are the author's target, not yet an examiner's marking"
+    },
+    {
+      "id": "mentoring-proposal",
+      "group": 2,
+      "task": "mentoring-proposal",
+      "script": "Proposal: a mentoring scheme for new students\n\nIntroduction\nThe purpose of this proposal is explain how a mentoring scheme can help to the new students of our college during their first months.\n\nProblems of the new students\nWhen I arrived to this college last year, I felt very lost. Many new students don't know where are the classrooms or how to use the online platform, and some of them are living far from their families for first time. Also, it is difficult to make friends, specially for the international students, because the groups are already formed.\n\nHow the scheme would work\nMy idea is that every new student have a mentor, who is a student of second or third year. The mentor would meet with him once a week during the first two months and would answer to his questions. They could also go together to the activities of the student association, so the new student knows more people. I think is better if the mentor studies the same subject, because he can give advices about the teachers and the exams.\n\nWhat we need\nTo start the scheme, we need around thirty volunteers and a small room where the meetings can take place. Also, the college should give to the mentors a short training and maybe a certificate, so more students are interested to participate.\n\nRecommendation\nIn my opinion, this scheme would be very useful and not very expensive. I recommend to start it in September, with the new course.\n",
+      "expected_bands": {
+        "content": 4,
+        "communicative_achievement": 3,
+        "organisation": 3,
+        "language": 2
+      },
+      "stresses": "low: a proposal with the right headings and every point covered, but with frequent verb-pattern, word-order and agreement errors and plain linking.",
+      "expected_annotations": [
+        {
+          "span": "is explain how",
+          "category": "WORD_PATTERNS",
+          "also": [
+            "VERB_FORMS"
+          ]
+        },
+        {
+          "span": "help to the new students",
+          "category": "WORD_PATTERNS"
+        },
+        {
+          "span": "arrived to this college",
+          "category": "WORD_PATTERNS",
+          "also": [
+            "GRAMMAR_WORDS"
+          ]
+        },
+        {
+          "span": "where are the classrooms",
+          "category": "SENTENCE_STRUCTURE"
+        },
+        {
+          "span": "every new student have",
+          "category": "GRAMMAR_WORDS",
+          "also": [
+            "VERB_FORMS"
+          ]
+        },
+        {
+          "span": "I think is better",
+          "category": "GRAMMAR_WORDS",
+          "also": [
+            "SENTENCE_STRUCTURE"
+          ]
+        },
+        {
+          "span": "give advices",
+          "category": "GRAMMAR_WORDS",
+          "also": [
+            "WORD_FORM"
+          ]
+        },
+        {
+          "span": "I recommend to start it",
+          "category": "WORD_PATTERNS"
+        }
+      ],
+      "tolerated_annotations": [
+        "can help",
+        "for first time",
+        "specially",
+        "meet with him",
+        "answer to his questions",
+        "a student of second or third year",
+        "go together to the activities",
+        "give to the mentors",
+        "interested to participate",
+        "with the new course",
+        "Problems of the new students",
+        "Also, it is difficult",
+        "Also, the college",
+        "maybe a certificate"
+      ],
+      "source": "written for this dataset; expected_bands are the author's target, not yet an examiner's marking"
+    },
+    {
+      "id": "exchange-report-organisation",
+      "group": 2,
+      "task": "exchange-report",
+      "script": "Report on the Language Exchange\n\nIntroduction\nThe exchange should be repeated. Twenty-four students took part. The partner school is in Lyon. Host families were found for all participants.\n\nActivities\nMost participants reported that their spoken French improved noticeably. Some found the host families' pace of speech difficult at first. A recommendation is that preparation sessions be held beforehand. Lessons took place every morning at the partner school. Visits were organised in the afternoons. The cost was considered reasonable by most families.\n\nUsefulness\nA trip to the Roman amphitheatre at Vienne was arranged. Several students would have preferred a longer stay. Students attended lessons in mathematics and history taught in French. Confidence in speaking was the area of greatest improvement. The weekends were spent with host families. A questionnaire was completed by all participants at the end of the fortnight.\n\nRecommendations\nTwelve students said it was the most valuable experience of their school career. Written skills improved less than oral skills. Lessons at the partner school were judged demanding but rewarding. The exchange lasted two weeks. Pairing students with similar interests would help. Two students experienced difficulties with their host families, which were resolved by the organising teacher. The partner school has expressed interest in a return visit next year. Funding for the coach journey was provided by the parents' association. It is suggested that the exchange be extended to three weeks.\n",
+      "expected_bands": {
+        "content": 4,
+        "communicative_achievement": 3,
+        "organisation": 1,
+        "language": 3
+      },
+      "stresses": "organisation: formal, impersonal and accurate, and every point is there, but the sentences are a list with no linking, and the findings sit under the wrong headings -- the recommendation opens the introduction, findings fill the recommendations section.",
+      "source": "written for this dataset; expected_bands are the author's target, not yet an examiner's marking",
+      "expected_annotations": [],
+      "tolerated_annotations": []
+    },
+    {
+      "id": "app-review",
+      "group": 2,
+      "task": "app-review",
+      "script": "Wordly: learning Italian on the bus\n\nLast year I decided to learn Italian before a trip to Rome, but I didn't have time for classes. A friend recommended me Wordly, an app that promises you can learn a language in only ten minutes a day, so I downloaded it and started immediately.\n\nThe app is very easy to use. Every day you do a short lesson with games, listening exercises and little tests. I used it mainly on the bus to work, and I must admit that it became a little addiction for me! The best thing is the voice recognition, which tells you if your pronunciation is correct. Thanks to this, when I arrived to Rome I could order food and ask directions without problems.\n\nHowever, the app has also some weaknesses. The grammar explanations are very short, so sometimes I didn't understand why a sentence was wrong. Also, after a few months the exercises become a bit repetitive, and the conversations are not very realistic.\n\nIs it worth to pay for the full version? The free version has adverts every few minutes, and the premium version costs eight euros per month. If you want to learn the basics for a holiday, the free version is enough. But if you are serious about learning, you should combine the app with a good grammar book.\n\nAll in all, Wordly is fun and practical, and I would recommend it to anyone who wants to start learning a language in their free time.\n",
+      "expected_bands": {
+        "content": 4,
+        "communicative_achievement": 4,
+        "organisation": 3,
+        "language": 3
+      },
+      "stresses": "middle: a lively review in the right register that answers every point, with a few verb-pattern and word-order errors, everyday lexis and simple linking.",
+      "expected_annotations": [
+        {
+          "span": "recommended me Wordly",
+          "category": "WORD_PATTERNS"
+        },
+        {
+          "span": "arrived to Rome",
+          "category": "WORD_PATTERNS",
+          "also": [
+            "GRAMMAR_WORDS"
+          ]
+        },
+        {
+          "span": "the app has also some weaknesses",
+          "category": "SENTENCE_STRUCTURE"
+        },
+        {
+          "span": "Is it worth to pay",
+          "category": "WORD_PATTERNS"
+        }
+      ],
+      "tolerated_annotations": [
+        "little tests",
+        "a little addiction for me",
+        "ask directions without problems",
+        "Also, after a few months"
+      ],
+      "source": "written for this dataset; expected_bands are the author's target, not yet an examiner's marking"
+    },
+    {
+      "id": "museums-weak",
+      "group": 3,
+      "task": "museums-essay",
+      "script": "Nowadays the museums have a big problem with the money. In this essay I will talk about two ways of funding and I will say which one is the best in my opinion.\n\nFirst of all, the entrance fees. A lot of museums decide to charge the visitors because they need money for pay the staff and the building. This is good because they get money directly. Also it is bad because many people cannot to pay and then they don't come. For example, in my city the museum of the art costs ten euros and my family never goes there because for us it is too much money. In my country the goverment gives some money but it is not enough, so the museums depend of the tickets.\n\nAlso, there is the sponsorship of the companies. Big companies give money and in exchange they put their logo everywhere. I think this is a good idea because the museum can do a lot of exhibitions with this money. But some people beleive that the companies will decide what the museum shows, and this is a risk for the independence.\n\nIn conclusion, I think the sponsorship is better than the entrance fees, because the people can enter for free and the museum still has money. The governments should also help more. Anyway, museums are very important for the society and we must protect them.\n",
+      "expected_bands": {
+        "content": 3,
+        "communicative_achievement": 2,
+        "organisation": 2,
+        "language": 2
+      },
+      "stresses": "poor: article and preposition slips, flat lexis, two misspellings. Content stays at 3 because the answer is on topic and only omits things.",
+      "source": "reference marking run: 9/20, estimated scale 165 (B2), against a task on the same topic",
+      "expected_annotations": [
+        {
+          "span": "for pay",
+          "category": "WORD_PATTERNS",
+          "also": [
+            "GRAMMAR_WORDS",
+            "VERB_FORMS"
+          ]
+        },
+        {
+          "span": "Also it is bad",
+          "category": "LINKING"
+        },
+        {
+          "span": "cannot to pay",
+          "category": "VERB_FORMS"
+        },
+        {
+          "span": "the museum of the art",
+          "category": "GRAMMAR_WORDS"
+        },
+        {
+          "span": "goverment",
+          "category": "WORD_FORM"
+        },
+        {
+          "span": "depend of",
+          "category": "WORD_PATTERNS"
+        },
+        {
+          "span": "beleive",
+          "category": "WORD_FORM"
+        },
+        {
+          "span": "a risk for the independence",
+          "category": "GRAMMAR_WORDS",
+          "also": [
+            "WORD_PATTERNS"
+          ]
+        }
+      ],
+      "tolerated_annotations": [
+        "Nowadays the museums",
+        "with the money",
+        "for the society",
+        "which one is the best",
+        "charge the visitors",
+        "First of all, the entrance fees.",
+        "for us it is too much money",
+        "the sponsorship of the companies",
+        "do a lot of exhibitions",
+        "the sponsorship is better",
+        "the people can enter",
+        "The governments should",
+        "the tickets",
+        "the companies will decide",
+        "Anyway",
+        "I will talk about",
+        "A lot of museums"
+      ]
+    },
+    {
+      "id": "library-letter-content",
+      "group": 3,
+      "task": "library-letter",
+      "script": "Dear Ms Harper,\n\nI am writing in connection with your recent announcement about the library on Station Road, a building which has played a central part in my life since I was a child.\n\nI first walked through its doors at the age of six, holding my grandmother's hand, and I can still remember the smell of polished wood and the enormous windows that flood the reading room with light. The building itself, designed in 1904 by the architect Thomas Whitcombe, is one of the finest examples of Edwardian civic architecture in the region. Its carved stone entrance and the stained-glass panels above the main staircase deserve to be far better known than they are.\n\nOver the years I have borrowed hundreds of books there, from adventure stories to the history texts that eventually led me to study archaeology. Several of the librarians have become friends, and I have attended many of the excellent evening talks organised by the local history society, which I would encourage anyone to join.\n\nNaturally, I was disappointed to read about the reduced opening hours, as I sometimes visit in the evenings.\n\nI would also like to take this opportunity to suggest that the library should publish a short illustrated guide to the building, so that visitors can appreciate its architectural heritage. Many residents walk past it every day without realising its significance.\n\nThank you for taking the time to read my letter. I look forward to hearing from you.\n\nYours sincerely,\nDaniel Reyes\n",
+      "expected_bands": {
+        "content": 2,
+        "communicative_achievement": 4,
+        "organisation": 4,
+        "language": 4
+      },
+      "stresses": "content: a well-written, well-organised formal letter that spends itself on the library's architecture and the writer's memories. It mentions the effect on the writer in one sentence, suggests no saving, and its only request is irrelevant. The reader is minimally informed.",
+      "source": "written for this dataset; expected_bands are the author's target, not yet an examiner's marking",
+      "expected_annotations": [],
+      "tolerated_annotations": []
+    },
+    {
+      "id": "park-proposal",
+      "group": 3,
+      "task": "park-proposal",
+      "script": "Proposal for the redevelopment of Victoria Gardens\n\nIntroduction\nThe aim of this proposal is to outline how Victoria Gardens, currently one of the most neglected spaces in the town centre, could be transformed into a park that residents genuinely want to use.\n\nCurrent situation\nAt present, the gardens are rarely visited except as a shortcut to the station. The flowerbeds have been left to grow wild, several benches are broken, and the poor lighting means that many people, particularly older residents, avoid the area after dark. The children's play area was closed two years ago and has never been replaced.\n\nSuggested improvements\nFirstly, the lighting along the main paths should be upgraded, which would make the park feel considerably safer in the evenings. Secondly, I would recommend replacing the old play area with a modern one designed for a wider age range. Finally, part of the lawn could be set aside for a community garden, where local volunteers and schools could grow vegetables and flowers.\n\nBenefits\nThese changes would bring the park back into everyday use. Families would have somewhere safe for children to play within walking distance of their homes, while the community garden would give people of different generations a reason to meet. In addition, a well-maintained park would make the surrounding shops and cafés more attractive to visitors.\n\nRecommendation\nI strongly recommend that the council prioritise the lighting and the play area, as these would have the most immediate impact, and consult residents before finalising the design of the garden.\n",
+      "expected_bands": {
+        "content": 5,
+        "communicative_achievement": 5,
+        "organisation": 5,
+        "language": 5
+      },
+      "stresses": "high: a proposal with headings, a formal persuasive register and a closing recommendation, covering the three points with precise, accurate language.",
+      "expected_annotations": [],
+      "tolerated_annotations": [],
+      "source": "written for this dataset; expected_bands are the author's target, not yet an examiner's marking"
+    },
+    {
+      "id": "sports-centre-report",
+      "group": 3,
+      "task": "sports-centre-report",
+      "script": "Report on the members' survey\n\nIntroduction\nThis report summarises the responses to last month's survey, which was completed by 142 members, and makes recommendations for attracting new users to the centre.\n\nStrengths\nMembers were overwhelmingly positive about the staff, with almost nine in ten describing instructors as knowledgeable and approachable. The swimming pool was also singled out for praise, particularly since the changing rooms were refurbished last spring. A number of respondents mentioned that the centre's membership fees compare favourably with those of private gyms in the area.\n\nMain complaints\nBy far the most common complaint concerned overcrowding in the gym between six and eight in the evening, when several machines are often out of order. Many members also expressed frustration at the online booking system, which frequently crashes and does not allow classes to be cancelled. Finally, parents noted that there are very few activities for teenagers, who tend to drift away from sport at that age.\n\nRecommendations\nIn light of these findings, it is recommended that the centre:\n- introduce off-peak discounts to spread demand more evenly across the day;\n- replace or repair faulty equipment as a matter of priority;\n- upgrade the booking system so that members can manage their own bookings;\n- launch a programme of activities aimed specifically at teenagers, such as climbing and dance.\n\nConclusion\nOverall, members value the centre highly. If the issues above are addressed, it should be well placed to retain its current members and attract new ones.\n",
+      "expected_bands": {
+        "content": 5,
+        "communicative_achievement": 5,
+        "organisation": 5,
+        "language": 5
+      },
+      "stresses": "high: an impersonal report with headings, findings drawn from the survey and recommendations that follow from them, in accurate, varied language.",
+      "expected_annotations": [],
+      "tolerated_annotations": [],
+      "source": "written for this dataset; expected_bands are the author's target, not yet an examiner's marking"
+    },
+    {
+      "id": "restaurant-review-language",
+      "group": 3,
+      "task": "restaurant-review",
+      "script": "La Terraza: a perfect place for celebrate\n\nLast month my parents was celebrating their twenty-five years of marriage, so all the family we went to La Terraza, a small restaurant near of the old harbour. I had read many good comments in internet and I wanted that the night was special for them.\n\nThe restaurant is not very big but it is very nice. It have a terrace with views to the sea and in the inside there are old photos of fishermans in the walls. When we arrived, the waiter explained us the menu with a lot of patience, and even my grandmother, who don't speak English, could to understand everything.\n\nAbout the food, I must to say it was the better fish I have ever eaten. We ordered a grilled sea bass for share and some vegetables, and every plates were delicious. The only problem was the dessert, it was too much sweet for my taste and very little. Also the prices is a bit high, but I think it worth it for a special occasion.\n\nThe service was the best part of the night. The staff were very kind with us and when they knew that it was my parents anniversary, they bringed a small cake with candles without we asked. My mother was crying of happiness!\n\nIn conclusion, I recommend La Terraza for everyone who want to celebrate something important. It is not cheap, but the food and the atmosphere makes you feel like at home. Sure we will come back.\n",
+      "expected_bands": {
+        "content": 4,
+        "communicative_achievement": 3,
+        "organisation": 3,
+        "language": 1
+      },
+      "stresses": "language: describes, evaluates and recommends to the magazine's readers in clear paragraphs, but with frequent basic errors -- 'my parents was', 'could to understand', 'I must to say', 'bringed' -- and everyday lexis.",
+      "source": "written for this dataset; expected_bands are the author's target, not yet an examiner's marking",
+      "expected_annotations": [
+        {
+          "span": "my parents was",
+          "category": "GRAMMAR_WORDS",
+          "also": [
+            "VERB_FORMS"
+          ]
+        },
+        {
+          "span": "I wanted that the night was",
+          "category": "WORD_PATTERNS",
+          "also": [
+            "VERB_FORMS"
+          ]
+        },
+        {
+          "span": "It have",
+          "category": "GRAMMAR_WORDS",
+          "also": [
+            "VERB_FORMS"
+          ]
+        },
+        {
+          "span": "explained us the menu",
+          "category": "WORD_PATTERNS"
+        },
+        {
+          "span": "could to understand",
+          "category": "VERB_FORMS"
+        },
+        {
+          "span": "I must to say",
+          "category": "VERB_FORMS"
+        },
+        {
+          "span": "the better fish",
+          "category": "SENTENCE_STRUCTURE",
+          "also": [
+            "WORD_FORM"
+          ]
+        },
+        {
+          "span": "bringed",
+          "category": "VERB_FORMS",
+          "also": [
+            "WORD_FORM"
+          ]
+        }
+      ],
+      "tolerated_annotations": [
+        "all the family we went",
+        "every plates were",
+        "the prices is",
+        "without we asked",
+        "for celebrate",
+        "near of the old harbour",
+        "in internet",
+        "views to the sea",
+        "in the inside",
+        "fishermans",
+        "in the walls",
+        "who don't speak",
+        "for share",
+        "the dessert, it was",
+        "too much sweet",
+        "very little",
+        "I think it worth it",
+        "kind with us",
+        "when they knew",
+        "my parents anniversary",
+        "crying of happiness",
+        "everyone who want",
+        "makes you feel like at home",
+        "Sure we will come back",
+        "many good comments",
+        "About the food",
+        "very nice"
+      ]
+    }
+  ],
+  "annotations": "expected_annotations are the errors the annotate node must find: a span of the script, its category, and 'also' for the other categories a defensible reading allows. At most eight per script, the clearest and most costly: the node reports at most twelve and chooses which, so a script with more real errors leaves it room to pick others without losing recall. tolerated_annotations are spans it may annotate or not, which count neither way: the remaining real slips, and debatable ones. Every real error must be in one list or the other, or annotating it would count as a false positive. A script with no expected error is clean for the annotator, whatever its bands. Organisation and content problems are not located errors, so the report and the letter have none."
+}

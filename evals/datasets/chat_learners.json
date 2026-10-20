@@ -1,0 +1,2391 @@
+{
+  "description": "Synthetic learners for the chat suite: three groups, one learner each, and the same kinds of question put to every one of them, so one group's run asks every kind once. A learner is their work as the app records it -- Reading attempts with the slips that lost marks (every other item answered with its key), mocks, marked Writing with the examiner's advice -- and the suite records it into a scratch database through the app's own writers, then puts the questions to the real chat graph. Dates are days before the run, so 'the last seven days' means the same thing whenever it runs. Parts 1-4 are the papers of reading_cases.json, by id; Parts 5-8 are frozen below, each an exercise the generator wrote and the validator passed. Writing is a script of writing_scripts.json, by id, with its expected bands and annotations.",
+  "labelling": "Every question says what a correct reply must contain ('expect'): 'figures' (each a number, or a list of ways to say it, e.g. [16, 960] for minutes or seconds, matched within 0.5), 'targets' (a part, a category or a subscale), 'spans' (said word for word), 'any_spans' (at least one said), 'absent' (in the record, but excluded by the question: never said), or 'none' (the record has nothing on it, and the reply must say so). 'sections' are the headings of c1_advanced_structure.md a lookup should come back from. 'tools' must be called, 'allowed_tools' may be; any other call is a round wasted. 'reference' is the answer in words, for the judge and for a person reading the row. 'gold_sql' is never run by the suite: tests run it against the seeded record to prove every label holds.",
+  "learners": [
+    {
+      "id": "chat-g1",
+      "group": 1,
+      "profile": "Use of English heavy: ten practice exercises, a recurring weakness with grammatical words that shows up in three Part 2 papers, two Part 4s and an essay; Part 7 the weakest and slowest; two pieces of Writing, the second an accurate report with no organisation; no mock exams.",
+      "attempts": [
+        {
+          "exercise": "part1-urban-beekeeping",
+          "days_ago": 24,
+          "seconds": 540,
+          "wrong": {
+            "1": {
+              "answer": "C",
+              "category": "WORD_PATTERNS"
+            },
+            "2": {
+              "answer": "A",
+              "category": "FIXED_PHRASES"
+            }
+          }
+        },
+        {
+          "exercise": "part2-night-train",
+          "days_ago": 21,
+          "seconds": 600,
+          "wrong": {
+            "3": {
+              "answer": "their",
+              "category": "GRAMMAR_WORDS"
+            },
+            "6": {
+              "answer": "for",
+              "category": "GRAMMAR_WORDS"
+            },
+            "8": {
+              "answer": "Besides",
+              "category": "LINKING"
+            }
+          }
+        },
+        {
+          "exercise": "part3-amateur-astronomy",
+          "days_ago": 18,
+          "seconds": 660,
+          "wrong": {
+            "1": {
+              "answer": "transformative",
+              "category": "WORD_FORM"
+            },
+            "7": {
+              "answer": "trained",
+              "category": "WORD_FORM"
+            }
+          }
+        },
+        {
+          "exercise": "part4-transformations",
+          "days_ago": 15,
+          "seconds": 900,
+          "wrong": {
+            "3": {
+              "answer": "wish I applied",
+              "category": "VERB_FORMS"
+            },
+            "5": {
+              "answer": "any responsibility of",
+              "category": "WORD_PATTERNS"
+            }
+          }
+        },
+        {
+          "exercise": "part2-g2-language-apps",
+          "days_ago": 12,
+          "seconds": 540,
+          "wrong": {
+            "5": {
+              "answer": "an",
+              "category": "GRAMMAR_WORDS"
+            },
+            "8": {
+              "answer": "are",
+              "category": "GRAMMAR_WORDS"
+            },
+            "6": {
+              "answer": "Although",
+              "category": "LINKING"
+            }
+          }
+        },
+        {
+          "exercise": "part7-urban-tram",
+          "days_ago": 6,
+          "seconds": 900,
+          "wrong": {
+            "2": {
+              "answer": "A"
+            },
+            "5": {
+              "answer": "B"
+            }
+          }
+        },
+        {
+          "exercise": "part7-island-energy",
+          "days_ago": 4,
+          "seconds": 1020,
+          "wrong": {
+            "1": {
+              "answer": "F"
+            },
+            "4": {
+              "answer": "A"
+            },
+            "6": {
+              "answer": "C"
+            }
+          }
+        },
+        {
+          "exercise": "part2-g3-remote-island",
+          "days_ago": 3,
+          "seconds": 480,
+          "wrong": {
+            "1": {
+              "answer": "during",
+              "category": "GRAMMAR_WORDS"
+            },
+            "3": {
+              "answer": "are",
+              "category": "VERB_FORMS"
+            },
+            "4": {
+              "answer": "of",
+              "category": "WORD_PATTERNS"
+            }
+          }
+        },
+        {
+          "exercise": "part4-g2-far-from-the-key",
+          "days_ago": 2,
+          "seconds": 840,
+          "wrong": {
+            "3": {
+              "answer": "warned us from touching",
+              "category": "WORD_PATTERNS"
+            },
+            "6": {
+              "answer": "Neither the brothers live",
+              "category": "GRAMMAR_WORDS"
+            }
+          }
+        },
+        {
+          "exercise": "part5-ocean-floor",
+          "days_ago": 1,
+          "seconds": 1080,
+          "wrong": {
+            "4": {
+              "answer": "B"
+            }
+          }
+        }
+      ],
+      "mocks": [],
+      "writing": [
+        {
+          "script": "museums-weak",
+          "days_ago": 14,
+          "seconds": 2700,
+          "to_improve": {
+            "organisation": "Give each method of funding a paragraph of its own and open it with a topic sentence."
+          }
+        },
+        {
+          "script": "exchange-report-organisation",
+          "days_ago": 5,
+          "seconds": 2400,
+          "to_improve": {
+            "organisation": "Your 'Usefulness' section lists activities and your 'Recommendations' section holds findings: move each sentence under the heading it belongs to, and join the sentences with linkers such as 'as a result' and 'however' instead of listing them.",
+            "communicative_achievement": "Address the reader's question about whether to repeat the exchange directly."
+          }
+        }
+      ],
+      "questions": [
+        {
+          "id": "g1-snapshot",
+          "kind": "snapshot",
+          "question": "How am I doing overall? Give me the numbers.",
+          "tools": [],
+          "reference": "67% across 10 Reading and Use of English exercises, about 186 on the Cambridge English Scale (Grade C); 2 pieces of Writing as well.",
+          "expect": {
+            "figures": [
+              67,
+              186
+            ]
+          }
+        },
+        {
+          "id": "g1-weakest",
+          "kind": "weakest",
+          "question": "Which part of Reading and Use of English is my weakest, and what is my accuracy there?",
+          "tools": [],
+          "reference": "Part 7, the gapped text, at 58.3%.",
+          "expect": {
+            "targets": [
+              {
+                "part": 7
+              }
+            ],
+            "figures": [
+              58.3
+            ]
+          }
+        },
+        {
+          "id": "g1-item",
+          "kind": "item",
+          "question": "In my most recent Part 4, which items did I get wrong, and what did I write?",
+          "tools": [
+            "query_record"
+          ],
+          "reference": "Items 3 and 6: 'warned us from touching' (the key is 'warned us not to touch') and 'Neither the brothers live' (the key is 'Neither of my brothers lives').",
+          "expect": {
+            "figures": [
+              3,
+              6
+            ],
+            "spans": [
+              "warned us from touching",
+              "Neither the brothers live"
+            ],
+            "absent": [
+              "wish I applied",
+              "any responsibility of"
+            ]
+          },
+          "gold_sql": "SELECT i.item_number, i.user_answer, i.correct_answer FROM item_results i WHERE i.is_correct = 0 AND i.attempt_id = (SELECT id FROM attempts WHERE part = 4 ORDER BY submitted_at DESC LIMIT 1)"
+        },
+        {
+          "id": "g1-error-example",
+          "kind": "error_example",
+          "question": "Which kind of mistake do I make most often? Show me one example of me making it.",
+          "tools": [],
+          "allowed_tools": [
+            "query_record"
+          ],
+          "reference": "Grammar words and agreement: 8 times, 25.8% of their tagged mistakes; for instance 'Neither the brothers live' for 'Neither of my brothers lives', or 'during' where Part 2 wanted 'for'.",
+          "expect": {
+            "targets": [
+              {
+                "category": "GRAMMAR_WORDS"
+              }
+            ],
+            "any_spans": [
+              "Neither the brothers live",
+              "during",
+              "the museum of the art",
+              "a risk for the independence"
+            ],
+            "terms": {
+              "GRAMMAR_WORDS": [
+                "grammatical words",
+                "articles",
+                "pronouns",
+                "prepositions",
+                "relative"
+              ]
+            }
+          },
+          "gold_sql": [
+            "SELECT category, COUNT(*) AS n FROM error_events GROUP BY category ORDER BY n DESC LIMIT 1",
+            "SELECT evidence FROM error_events WHERE category = 'GRAMMAR_WORDS'"
+          ]
+        },
+        {
+          "id": "g1-time",
+          "kind": "time",
+          "question": "On average, how long do I take over a Part 7 exercise?",
+          "tools": [
+            "query_record"
+          ],
+          "reference": "16 minutes (960 seconds) on average, over their 2 Part 7 exercises.",
+          "expect": {
+            "figures": [
+              [
+                16,
+                960
+              ]
+            ]
+          },
+          "gold_sql": "SELECT AVG(duration_seconds) FROM attempts WHERE part = 7"
+        },
+        {
+          "id": "g1-recent",
+          "kind": "recent",
+          "question": "How many Reading and Use of English exercises have I done in the last seven days?",
+          "tools": [
+            "query_record"
+          ],
+          "reference": "5 in the last seven days.",
+          "expect": {
+            "figures": [
+              5
+            ]
+          },
+          "gold_sql": "SELECT COUNT(*) FROM attempts WHERE submitted_at >= datetime('now', '-7 days')"
+        },
+        {
+          "id": "g1-writing-best",
+          "kind": "writing_best",
+          "question": "Which of my pieces of writing got the highest mark, and what was it out of 20?",
+          "tools": [
+            "query_record"
+          ],
+          "reference": "Their report, with 11 out of 20.",
+          "expect": {
+            "figures": [
+              11
+            ],
+            "spans": [
+              "report"
+            ]
+          },
+          "gold_sql": "SELECT s.genre, w.total FROM writing_scores w JOIN writing_submissions s ON s.id = w.submission_id ORDER BY w.total DESC LIMIT 1"
+        },
+        {
+          "id": "g1-empty",
+          "kind": "empty",
+          "question": "How did my mock exams go?",
+          "tools": [
+            "query_record"
+          ],
+          "reference": "They have not sat a mock exam yet.",
+          "expect": {
+            "none": true
+          },
+          "gold_sql": "SELECT id FROM mock_exams"
+        },
+        {
+          "id": "g1-exam-part6",
+          "kind": "exam",
+          "question": "How many marks is Part 6 of Reading and Use of English worth altogether?",
+          "tools": [
+            "reference_lookup"
+          ],
+          "reference": "8 marks: 4 questions at 2 marks each.",
+          "expect": {
+            "figures": [
+              8
+            ],
+            "sections": [
+              "Part 6: Cross-text multiple matching"
+            ]
+          }
+        },
+        {
+          "id": "g1-exam-part4",
+          "kind": "exam",
+          "question": "In the key word transformations, how many words can my answer be?",
+          "tools": [
+            "reference_lookup"
+          ],
+          "reference": "Between three and six words, the key word included; a contraction counts as two.",
+          "expect": {
+            "figures": [
+              3,
+              6
+            ],
+            "sections": [
+              "Part 4: Key word transformations"
+            ]
+          }
+        },
+        {
+          "id": "g1-exam-writing",
+          "kind": "exam",
+          "question": "How many words should I write for each Writing task?",
+          "tools": [
+            "reference_lookup"
+          ],
+          "reference": "220 to 260 words for each task.",
+          "expect": {
+            "figures": [
+              220,
+              260
+            ],
+            "sections": [
+              "Writing > Overview of the paper",
+              "Part 2: Choice of three tasks"
+            ]
+          }
+        },
+        {
+          "id": "g1-dialogue",
+          "kind": "dialogue",
+          "turns": [
+            {
+              "id": "g1-dialogue-1",
+              "question": "What was my weakest subscale in my most recent piece of writing?",
+              "tools": [
+                "query_record"
+              ],
+              "reference": "Organisation, band 1 out of 5, in their report.",
+              "expect": {
+                "targets": [
+                  {
+                    "subscale": "organisation"
+                  }
+                ],
+                "figures": [
+                  1
+                ]
+              },
+              "gold_sql": "SELECT s.genre, w.content, w.communicative_achievement, w.organisation, w.language FROM writing_scores w JOIN writing_submissions s ON s.id = w.submission_id ORDER BY s.submitted_at DESC LIMIT 1"
+            },
+            {
+              "id": "g1-dialogue-2",
+              "question": "What did the examiner tell me to do about it?",
+              "tools": [
+                "query_record"
+              ],
+              "reference": "To move each sentence under the heading it belongs to -- the 'Usefulness' section lists activities and 'Recommendations' holds findings -- and to join the sentences with linkers such as 'as a result' and 'however'.",
+              "expect": {
+                "any_spans": [
+                  "Usefulness",
+                  "as a result",
+                  "under the heading"
+                ]
+              },
+              "gold_sql": "SELECT json_extract(w.feedback, '$.organisation.to_improve') FROM writing_scores w JOIN writing_submissions s ON s.id = w.submission_id ORDER BY s.submitted_at DESC LIMIT 1"
+            },
+            {
+              "id": "g1-dialogue-3",
+              "question": "Has that always been my weak spot? Give me my band for it on each piece.",
+              "tools": [
+                "query_record"
+              ],
+              "reference": "Organisation was 2 in their essay, joint lowest with Communicative Achievement and Language, and 1 in the report, where it was the lowest on its own.",
+              "expect": {
+                "figures": [
+                  2,
+                  1
+                ]
+              },
+              "gold_sql": "SELECT s.submitted_at, w.organisation FROM writing_scores w JOIN writing_submissions s ON s.id = w.submission_id ORDER BY s.submitted_at"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chat-g2",
+      "group": 2,
+      "profile": "Writing-led: four pieces of Writing, letter, proposal and two reviews, with word patterns the commonest mistake across them; one full Reading and Use of English mock ten days ago and four practice exercises; Part 6 the weakest; no essay.",
+      "attempts": [
+        {
+          "exercise": "part1-g2-night-sky",
+          "days_ago": 27,
+          "seconds": 600,
+          "wrong": {
+            "2": {
+              "answer": "A",
+              "category": "FIXED_PHRASES"
+            },
+            "4": {
+              "answer": "A",
+              "category": "WORD_PATTERNS"
+            },
+            "6": {
+              "answer": "C",
+              "category": "LINKING"
+            }
+          }
+        },
+        {
+          "exercise": "part4-transformations",
+          "days_ago": 20,
+          "seconds": 900,
+          "wrong": {
+            "3": {
+              "answer": "wish I applied",
+              "category": "VERB_FORMS"
+            }
+          }
+        },
+        {
+          "exercise": "part6-ancient-monuments",
+          "days_ago": 6,
+          "seconds": 900,
+          "wrong": {
+            "2": {
+              "answer": "B"
+            },
+            "4": {
+              "answer": "A"
+            }
+          }
+        },
+        {
+          "exercise": "part8-career-changes",
+          "days_ago": 1,
+          "seconds": 720,
+          "wrong": {
+            "3": {
+              "answer": "A"
+            }
+          }
+        }
+      ],
+      "mocks": [
+        {
+          "days_ago": 10,
+          "attempts": [
+            {
+              "exercise": "part1-g3-food-waste",
+              "days_ago": 10,
+              "seconds": 420,
+              "wrong": {
+                "3": {
+                  "answer": "A",
+                  "category": "FIXED_PHRASES"
+                }
+              }
+            },
+            {
+              "exercise": "part2-night-train",
+              "days_ago": 10,
+              "seconds": 480,
+              "wrong": {
+                "4": {
+                  "answer": "gave",
+                  "category": "FIXED_PHRASES"
+                },
+                "7": {
+                  "answer": "as",
+                  "category": "SENTENCE_STRUCTURE"
+                }
+              }
+            },
+            {
+              "exercise": "part3-g2-sleep-science",
+              "days_ago": 10,
+              "seconds": 480,
+              "wrong": {
+                "2": {
+                  "answer": "importancy",
+                  "category": "WORD_FORM"
+                },
+                "7": {
+                  "answer": "unaccurate",
+                  "category": "WORD_FORM"
+                }
+              }
+            },
+            {
+              "exercise": "part4-g3-close-to-the-key",
+              "days_ago": 10,
+              "seconds": 840,
+              "wrong": {
+                "4": {
+                  "answer": "must have forgot",
+                  "category": "VERB_FORMS"
+                }
+              }
+            },
+            {
+              "exercise": "part5-ice-cores",
+              "days_ago": 10,
+              "seconds": 960,
+              "wrong": {
+                "2": {
+                  "answer": "B"
+                },
+                "5": {
+                  "answer": "C"
+                }
+              }
+            },
+            {
+              "exercise": "part6-zoos",
+              "days_ago": 10,
+              "seconds": 780,
+              "wrong": {
+                "1": {
+                  "answer": "A"
+                }
+              }
+            },
+            {
+              "exercise": "part7-canal",
+              "days_ago": 10,
+              "seconds": 960,
+              "wrong": {
+                "3": {
+                  "answer": "A"
+                }
+              }
+            },
+            {
+              "exercise": "part8-musicians",
+              "days_ago": 10,
+              "seconds": 840,
+              "wrong": {
+                "2": {
+                  "answer": "A"
+                },
+                "9": {
+                  "answer": "B"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "writing": [
+        {
+          "script": "course-letter",
+          "days_ago": 25,
+          "seconds": 2700,
+          "to_improve": {
+            "language": "Revise the grammar of quantity: 'every student receives', 'there were nineteen students'."
+          }
+        },
+        {
+          "script": "mentoring-proposal",
+          "days_ago": 16,
+          "seconds": 2700,
+          "to_improve": {
+            "language": "Learn which verbs take an infinitive and which a gerund: 'I recommend starting it'."
+          }
+        },
+        {
+          "script": "app-review",
+          "days_ago": 8,
+          "seconds": 2400,
+          "to_improve": {
+            "language": "Check prepositions after verbs of movement: 'arrived in Rome'."
+          }
+        },
+        {
+          "script": "restaurant-review-language",
+          "days_ago": 3,
+          "seconds": 2400,
+          "to_improve": {
+            "language": "Make every verb agree with its subject ('my parents were', 'the prices are') and learn the irregular past forms you got wrong, such as 'brought' for 'bringed'."
+          }
+        }
+      ],
+      "questions": [
+        {
+          "id": "g2-snapshot",
+          "kind": "snapshot",
+          "question": "How am I doing overall? Give me the numbers.",
+          "tools": [],
+          "reference": "76.7% across 12 Reading and Use of English exercises, about 195 on the Cambridge English Scale (Grade B); 4 pieces of Writing as well.",
+          "expect": {
+            "figures": [
+              76.7,
+              195
+            ]
+          }
+        },
+        {
+          "id": "g2-weakest",
+          "kind": "weakest",
+          "question": "Which part of Reading and Use of English is my weakest, and what is my accuracy there?",
+          "tools": [],
+          "reference": "Part 6, cross-text multiple matching, at 62.5%.",
+          "expect": {
+            "targets": [
+              {
+                "part": 6
+              }
+            ],
+            "figures": [
+              62.5
+            ]
+          }
+        },
+        {
+          "id": "g2-item",
+          "kind": "item",
+          "question": "In my most recent Part 4, which items did I get wrong, and what did I write?",
+          "tools": [
+            "query_record"
+          ],
+          "reference": "Only item 4, in the mock exam: 'must have forgot' where the key is 'must have forgotten'. (The earlier practice Part 4 is not the most recent.)",
+          "expect": {
+            "figures": [
+              4
+            ],
+            "spans": [
+              "must have forgot"
+            ],
+            "absent": [
+              "wish I applied"
+            ]
+          },
+          "gold_sql": "SELECT i.item_number, i.user_answer, i.correct_answer FROM item_results i WHERE i.is_correct = 0 AND i.attempt_id = (SELECT id FROM attempts WHERE part = 4 ORDER BY submitted_at DESC LIMIT 1)"
+        },
+        {
+          "id": "g2-error-example",
+          "kind": "error_example",
+          "question": "Which kind of mistake do I make most often? Show me one example of me making it.",
+          "tools": [],
+          "allowed_tools": [
+            "query_record"
+          ],
+          "reference": "Word patterns: 11 times, 23.4% of their tagged mistakes, mostly in their Writing: 'explained us the menu', 'I wanted that the night was'.",
+          "expect": {
+            "targets": [
+              {
+                "category": "WORD_PATTERNS"
+              }
+            ],
+            "any_spans": [
+              "explained us the menu",
+              "I wanted that the night was",
+              "Is it worth to pay",
+              "recommended me Wordly",
+              "arrived to Rome",
+              "help to the new students",
+              "arrived to this college",
+              "I recommend to start it",
+              "is explain how",
+              "I would like that you give me back"
+            ],
+            "terms": {
+              "WORD_PATTERNS": [
+                "verb patterns",
+                "dependent prepositions",
+                "complementation"
+              ]
+            }
+          },
+          "gold_sql": [
+            "SELECT category, COUNT(*) AS n FROM error_events GROUP BY category ORDER BY n DESC LIMIT 1",
+            "SELECT evidence FROM error_events WHERE category = 'WORD_PATTERNS'"
+          ]
+        },
+        {
+          "id": "g2-time",
+          "kind": "time",
+          "question": "On average, how long do I take over a Part 6 exercise?",
+          "tools": [
+            "query_record"
+          ],
+          "reference": "14 minutes (840 seconds) on average, over 2 Part 6 exercises, one of them in the mock.",
+          "expect": {
+            "figures": [
+              [
+                14,
+                840
+              ]
+            ]
+          },
+          "gold_sql": "SELECT AVG(duration_seconds) FROM attempts WHERE part = 6"
+        },
+        {
+          "id": "g2-recent",
+          "kind": "recent",
+          "question": "How many Reading and Use of English exercises have I done in the last seven days?",
+          "tools": [
+            "query_record"
+          ],
+          "reference": "2 in the last seven days: a Part 6 and a Part 8.",
+          "expect": {
+            "figures": [
+              2
+            ]
+          },
+          "gold_sql": "SELECT COUNT(*) FROM attempts WHERE submitted_at >= datetime('now', '-7 days')"
+        },
+        {
+          "id": "g2-writing-best",
+          "kind": "writing_best",
+          "question": "Which of my pieces of writing got the highest mark, and what was it out of 20?",
+          "tools": [
+            "query_record"
+          ],
+          "reference": "A review, with 14 out of 20.",
+          "expect": {
+            "figures": [
+              14
+            ],
+            "spans": [
+              "review"
+            ]
+          },
+          "gold_sql": "SELECT s.genre, w.total FROM writing_scores w JOIN writing_submissions s ON s.id = w.submission_id ORDER BY w.total DESC LIMIT 1"
+        },
+        {
+          "id": "g2-empty",
+          "kind": "empty",
+          "question": "What did the examiner say about my essays?",
+          "tools": [
+            "query_record"
+          ],
+          "reference": "They have not written an essay yet: their four pieces are a letter, a proposal and two reviews.",
+          "expect": {
+            "none": true
+          },
+          "gold_sql": "SELECT id FROM writing_submissions WHERE genre = 'essay'"
+        },
+        {
+          "id": "g2-exam-part7",
+          "kind": "exam",
+          "question": "How many marks is Part 7, the gapped text, worth?",
+          "tools": [
+            "reference_lookup"
+          ],
+          "reference": "12 marks: 6 questions at 2 marks each.",
+          "expect": {
+            "figures": [
+              12
+            ],
+            "sections": [
+              "Part 7: Gapped text"
+            ]
+          }
+        },
+        {
+          "id": "g2-exam-paper",
+          "kind": "exam",
+          "question": "How many questions are there in the whole Reading and Use of English paper?",
+          "tools": [
+            "reference_lookup"
+          ],
+          "reference": "56 questions over 8 parts, for 78 marks, in 1 hour 30 minutes.",
+          "expect": {
+            "figures": [
+              56
+            ],
+            "sections": [
+              "Reading and Use of English > Overview of the paper",
+              "Papers, timings and weighting"
+            ]
+          }
+        },
+        {
+          "id": "g2-exam-pass",
+          "kind": "exam",
+          "question": "What score on the Cambridge English Scale do I need to pass C1 Advanced?",
+          "tools": [
+            "reference_lookup"
+          ],
+          "reference": "180, which is a grade C.",
+          "expect": {
+            "figures": [
+              180
+            ],
+            "sections": [
+              "How results are reported"
+            ]
+          }
+        },
+        {
+          "id": "g2-dialogue",
+          "kind": "dialogue",
+          "turns": [
+            {
+              "id": "g2-dialogue-1",
+              "question": "What was my weakest subscale in my most recent piece of writing?",
+              "tools": [
+                "query_record"
+              ],
+              "reference": "Language, band 1 out of 5, in their restaurant review.",
+              "expect": {
+                "targets": [
+                  {
+                    "subscale": "language"
+                  }
+                ],
+                "figures": [
+                  1
+                ]
+              },
+              "gold_sql": "SELECT s.genre, w.content, w.communicative_achievement, w.organisation, w.language FROM writing_scores w JOIN writing_submissions s ON s.id = w.submission_id ORDER BY s.submitted_at DESC LIMIT 1"
+            },
+            {
+              "id": "g2-dialogue-2",
+              "question": "What did the examiner tell me to do about it?",
+              "tools": [
+                "query_record"
+              ],
+              "reference": "To make every verb agree with its subject ('my parents were', 'the prices are') and to learn the irregular past forms they got wrong, such as 'brought' for 'bringed'.",
+              "expect": {
+                "any_spans": [
+                  "bringed",
+                  "brought",
+                  "my parents were",
+                  "irregular"
+                ]
+              },
+              "gold_sql": "SELECT json_extract(w.feedback, '$.language.to_improve') FROM writing_scores w JOIN writing_submissions s ON s.id = w.submission_id ORDER BY s.submitted_at DESC LIMIT 1"
+            },
+            {
+              "id": "g2-dialogue-3",
+              "question": "Has that always been my weak spot? Give me my band for it on each piece.",
+              "tools": [
+                "query_record"
+              ],
+              "reference": "It has been their lowest or joint lowest throughout: Language was 2, 2, 3 and then 1.",
+              "expect": {
+                "figures": [
+                  2,
+                  2,
+                  3,
+                  1
+                ]
+              },
+              "gold_sql": "SELECT s.submitted_at, w.language FROM writing_scores w JOIN writing_submissions s ON s.id = w.submission_id ORDER BY s.submitted_at"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chat-g3",
+      "group": 3,
+      "profile": "A recent burst: seven exercises in the last week after four earlier ones; Part 3 slipping from 7 to 4 out of 8, word formation the commonest mistake; Part 5 the weakest; never tried Part 6; three pieces of Writing, the last a proposal in the wrong register.",
+      "attempts": [
+        {
+          "exercise": "part3-amateur-astronomy",
+          "days_ago": 26,
+          "seconds": 600,
+          "wrong": {
+            "1": {
+              "answer": "transformative",
+              "category": "WORD_FORM"
+            }
+          }
+        },
+        {
+          "exercise": "part3-g2-sleep-science",
+          "days_ago": 19,
+          "seconds": 660,
+          "wrong": {
+            "2": {
+              "answer": "importancy",
+              "category": "WORD_FORM"
+            },
+            "3": {
+              "answer": "depriving",
+              "category": "WORD_FORM"
+            }
+          }
+        },
+        {
+          "exercise": "part1-g2-night-sky",
+          "days_ago": 15,
+          "seconds": 480,
+          "wrong": {
+            "1": {
+              "answer": "A",
+              "category": "WORD_CHOICE"
+            }
+          }
+        },
+        {
+          "exercise": "part4-transformations",
+          "days_ago": 12,
+          "seconds": 840,
+          "wrong": {
+            "6": {
+              "answer": "should be informed",
+              "category": "VERB_FORMS"
+            }
+          }
+        },
+        {
+          "exercise": "part1-g3-food-waste",
+          "days_ago": 6,
+          "seconds": 540,
+          "wrong": {
+            "1": {
+              "answer": "B",
+              "category": "WORD_PATTERNS"
+            },
+            "7": {
+              "answer": "B",
+              "category": "WORD_CHOICE"
+            }
+          }
+        },
+        {
+          "exercise": "part2-g3-remote-island",
+          "days_ago": 5,
+          "seconds": 600,
+          "wrong": {
+            "2": {
+              "answer": "If",
+              "category": "SENTENCE_STRUCTURE"
+            }
+          }
+        },
+        {
+          "exercise": "part3-g3-gig-economy",
+          "days_ago": 5,
+          "seconds": 720,
+          "wrong": {
+            "1": {
+              "answer": "flexibilty",
+              "category": "WORD_FORM"
+            },
+            "2": {
+              "answer": "anxiously",
+              "category": "WORD_FORM"
+            },
+            "6": {
+              "answer": "contradiction",
+              "category": "WORD_FORM"
+            },
+            "8": {
+              "answer": "strongen",
+              "category": "WORD_FORM"
+            }
+          }
+        },
+        {
+          "exercise": "part5-writing-endings",
+          "days_ago": 4,
+          "seconds": 1140,
+          "wrong": {
+            "1": {
+              "answer": "A"
+            },
+            "3": {
+              "answer": "A"
+            },
+            "5": {
+              "answer": "A"
+            }
+          }
+        },
+        {
+          "exercise": "part7-canal",
+          "days_ago": 3,
+          "seconds": 960,
+          "wrong": {
+            "2": {
+              "answer": "B"
+            }
+          }
+        },
+        {
+          "exercise": "part8-failed-research",
+          "days_ago": 2,
+          "seconds": 780,
+          "wrong": {
+            "4": {
+              "answer": "A"
+            },
+            "9": {
+              "answer": "A"
+            }
+          }
+        },
+        {
+          "exercise": "part4-g3-close-to-the-key",
+          "days_ago": 1,
+          "seconds": 900,
+          "wrong": {
+            "3": {
+              "answer": "happen to know where is",
+              "category": "SENTENCE_STRUCTURE"
+            },
+            "6": {
+              "answer": "more intelligent as anyone",
+              "category": "SENTENCE_STRUCTURE"
+            }
+          }
+        }
+      ],
+      "mocks": [],
+      "writing": [
+        {
+          "script": "library-letter-content",
+          "days_ago": 20,
+          "seconds": 2700,
+          "to_improve": {
+            "content": "Answer both of the reader's questions, not only the first."
+          }
+        },
+        {
+          "script": "sports-centre-report",
+          "days_ago": 11,
+          "seconds": 2400,
+          "to_improve": {}
+        },
+        {
+          "script": "facilities-proposal-register",
+          "days_ago": 2,
+          "seconds": 2400,
+          "to_improve": {
+            "communicative_achievement": "Write to the principal as a decision-maker: drop 'boss', 'total dump' and 'my two cents', and hold a formal, persuasive register to the end."
+          }
+        }
+      ],
+      "questions": [
+        {
+          "id": "g3-snapshot",
+          "kind": "snapshot",
+          "question": "How am I doing overall? Give me the numbers.",
+          "tools": [],
+          "reference": "74.5% across 11 Reading and Use of English exercises, about 193 on the Cambridge English Scale (Grade B); 3 pieces of Writing as well.",
+          "expect": {
+            "figures": [
+              74.5,
+              193
+            ]
+          }
+        },
+        {
+          "id": "g3-weakest",
+          "kind": "weakest",
+          "question": "Which part of Reading and Use of English is my weakest, and what is my accuracy there?",
+          "tools": [],
+          "reference": "Part 5, multiple choice, at 50%.",
+          "expect": {
+            "targets": [
+              {
+                "part": 5
+              }
+            ],
+            "figures": [
+              50
+            ]
+          }
+        },
+        {
+          "id": "g3-item",
+          "kind": "item",
+          "question": "In my most recent Part 4, which items did I get wrong, and what did I write?",
+          "tools": [
+            "query_record"
+          ],
+          "reference": "Items 3 and 6: 'happen to know where is' (the key is 'happen to know where') and 'more intelligent as anyone' (the key is 'more intelligent than anyone').",
+          "expect": {
+            "figures": [
+              3,
+              6
+            ],
+            "spans": [
+              "happen to know where is",
+              "more intelligent as anyone"
+            ],
+            "absent": [
+              "should be informed"
+            ]
+          },
+          "gold_sql": "SELECT i.item_number, i.user_answer, i.correct_answer FROM item_results i WHERE i.is_correct = 0 AND i.attempt_id = (SELECT id FROM attempts WHERE part = 4 ORDER BY submitted_at DESC LIMIT 1)"
+        },
+        {
+          "id": "g3-error-example",
+          "kind": "error_example",
+          "question": "Which kind of mistake do I make most often? Show me one example of me making it.",
+          "tools": [],
+          "allowed_tools": [
+            "query_record"
+          ],
+          "reference": "Word formation and spelling: 7 times, 29.2% of their tagged mistakes, all in Part 3: 'strongen' for 'strengthen', 'flexibilty' for 'flexibility'.",
+          "expect": {
+            "targets": [
+              {
+                "category": "WORD_FORM"
+              }
+            ],
+            "any_spans": [
+              "strongen",
+              "contradiction",
+              "anxiously",
+              "flexibilty",
+              "importancy",
+              "depriving",
+              "transformative"
+            ],
+            "terms": {
+              "WORD_FORM": [
+                "word formation",
+                "spelling",
+                "prefix",
+                "suffix"
+              ]
+            }
+          },
+          "gold_sql": [
+            "SELECT category, COUNT(*) AS n FROM error_events GROUP BY category ORDER BY n DESC LIMIT 1",
+            "SELECT evidence FROM error_events WHERE category = 'WORD_FORM'"
+          ]
+        },
+        {
+          "id": "g3-time",
+          "kind": "time",
+          "question": "On average, how long do I take over a Part 3 exercise?",
+          "tools": [
+            "query_record"
+          ],
+          "reference": "11 minutes (660 seconds) on average, over their 3 Part 3 exercises.",
+          "expect": {
+            "figures": [
+              [
+                11,
+                660
+              ]
+            ]
+          },
+          "gold_sql": "SELECT AVG(duration_seconds) FROM attempts WHERE part = 3"
+        },
+        {
+          "id": "g3-recent",
+          "kind": "recent",
+          "question": "How many Reading and Use of English exercises have I done in the last seven days?",
+          "tools": [
+            "query_record"
+          ],
+          "reference": "7 in the last seven days.",
+          "expect": {
+            "figures": [
+              7
+            ]
+          },
+          "gold_sql": "SELECT COUNT(*) FROM attempts WHERE submitted_at >= datetime('now', '-7 days')"
+        },
+        {
+          "id": "g3-writing-best",
+          "kind": "writing_best",
+          "question": "Which of my pieces of writing got the highest mark, and what was it out of 20?",
+          "tools": [
+            "query_record"
+          ],
+          "reference": "Their report, with full marks: 20 out of 20.",
+          "expect": {
+            "figures": [
+              20
+            ],
+            "spans": [
+              "report"
+            ]
+          },
+          "gold_sql": "SELECT s.genre, w.total FROM writing_scores w JOIN writing_submissions s ON s.id = w.submission_id ORDER BY w.total DESC LIMIT 1"
+        },
+        {
+          "id": "g3-empty",
+          "kind": "empty",
+          "question": "How am I getting on with Part 6?",
+          "tools": [],
+          "allowed_tools": [
+            "query_record"
+          ],
+          "reference": "They have not tried Part 6 yet.",
+          "expect": {
+            "none": true
+          },
+          "gold_sql": "SELECT id FROM attempts WHERE part = 6"
+        },
+        {
+          "id": "g3-exam-part8",
+          "kind": "exam",
+          "question": "How many questions are there in Part 8, and how many marks is each one worth?",
+          "tools": [
+            "reference_lookup"
+          ],
+          "reference": "10 questions, 1 mark each.",
+          "expect": {
+            "figures": [
+              10,
+              1
+            ],
+            "sections": [
+              "Part 8: Multiple matching"
+            ]
+          }
+        },
+        {
+          "id": "g3-exam-writing-marks",
+          "kind": "exam",
+          "question": "What is each Writing task marked out of, and on which subscales?",
+          "tools": [
+            "reference_lookup"
+          ],
+          "reference": "20 marks: Content, Communicative Achievement, Organisation and Language, each from 0 to 5.",
+          "expect": {
+            "figures": [
+              20
+            ],
+            "sections": [
+              "How Writing is marked",
+              "Writing > Overview of the paper"
+            ],
+            "targets": [
+              {
+                "subscale": "content"
+              },
+              {
+                "subscale": "communicative_achievement"
+              },
+              {
+                "subscale": "organisation"
+              },
+              {
+                "subscale": "language"
+              }
+            ]
+          }
+        },
+        {
+          "id": "g3-exam-part5",
+          "kind": "exam",
+          "question": "How long is the text in Part 5?",
+          "tools": [
+            "reference_lookup"
+          ],
+          "reference": "Roughly 700 to 800 words.",
+          "expect": {
+            "figures": [
+              700,
+              800
+            ],
+            "sections": [
+              "Part 5: Multiple choice"
+            ]
+          }
+        },
+        {
+          "id": "g3-dialogue",
+          "kind": "dialogue",
+          "turns": [
+            {
+              "id": "g3-dialogue-1",
+              "question": "What was my weakest subscale in my most recent piece of writing?",
+              "tools": [
+                "query_record"
+              ],
+              "reference": "Communicative Achievement, band 2 out of 5, in their proposal.",
+              "expect": {
+                "targets": [
+                  {
+                    "subscale": "communicative_achievement"
+                  }
+                ],
+                "figures": [
+                  2
+                ]
+              },
+              "gold_sql": "SELECT s.genre, w.content, w.communicative_achievement, w.organisation, w.language FROM writing_scores w JOIN writing_submissions s ON s.id = w.submission_id ORDER BY s.submitted_at DESC LIMIT 1"
+            },
+            {
+              "id": "g3-dialogue-2",
+              "question": "What did the examiner tell me to do about it?",
+              "tools": [
+                "query_record"
+              ],
+              "reference": "To write to the principal as a decision-maker: drop 'boss', 'total dump' and 'my two cents' and keep a formal, persuasive register to the end.",
+              "expect": {
+                "any_spans": [
+                  "boss",
+                  "total dump",
+                  "two cents",
+                  "decision-maker",
+                  "principal"
+                ]
+              },
+              "gold_sql": "SELECT json_extract(w.feedback, '$.communicative_achievement.to_improve') FROM writing_scores w JOIN writing_submissions s ON s.id = w.submission_id ORDER BY s.submitted_at DESC LIMIT 1"
+            },
+            {
+              "id": "g3-dialogue-3",
+              "question": "Has that always been my weak spot? Give me my band for it on each piece.",
+              "tools": [
+                "query_record"
+              ],
+              "reference": "No: Communicative Achievement was 4 in their letter and 5 in their report, then 2 in the proposal.",
+              "expect": {
+                "figures": [
+                  4,
+                  5,
+                  2
+                ]
+              },
+              "gold_sql": "SELECT s.submitted_at, w.communicative_achievement FROM writing_scores w JOIN writing_submissions s ON s.id = w.submission_id ORDER BY s.submitted_at"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "exercises": {
+    "part5-ice-cores": {
+      "part": 5,
+      "source": "generated by google:gemini-3.6-flash from seed part5-g2 and passed by the validator",
+      "exercise": {
+        "title": "Reading the Frozen Past",
+        "topic": "ice core glaciology",
+        "text": "Standing on the wind-blasted expanse of the Antarctic ice sheet, surrounded by a blinding white horizon, it is easy to feel entirely detached from human history. Yet beneath my thermal boots lies an archive that records our planet's atmospheric autobiography with staggering precision. As a glaciologist, my work revolves around extracting long cylinders of ice known as ice cores. Pulling one of these translucent shafts from a depth of two kilometres is a humbling experience. Encased within the dense ice are tiny, pressurised bubbles of air, trapped centuries or millennia ago. Unlike other natural indicators of past environments, such as tree rings or ocean sediments, which only provide indirect hints about temperatures, these frozen bubbles are actual samples of ancient atmosphere. Looking at them, you are literally staring at the air breathed by early civilizations.\n\nWhen I first entered the field, the prevailing consensus among climate historians was that Earth's climate moved with agonizing slowness, shifting over vast epochs through gradual orbital wobbles. Ice core analysis completely dismantled that comfortable narrative. By examining the chemical isotopic signature of the ice alongside trapped gases, we discovered that global temperatures could shift dramatically within a human lifespan. In one remarkable Antarctic sequence, we observed evidence of a profound warming event that occurred over a mere handful of years. This revealed a terrifying truth: the climate is not a heavy pendulum that swings predictably, but an erratic mechanism capable of rapid flips. Recognising this volatility was a turning point for scientists, forcing us to abandon our complacency regarding modern warming trends.\n\nThe meticulous process of analysing these samples requires patience that borders on the ascetic. Once brought to the surface, an ice core must be transported in a continuous cold chain back to specialised laboratories, where researchers melt or slice the ice in cleanrooms to measure trace elements and greenhouse gases. Yet, the physical fragility of the ice poses a constant risk. As cores are brought up from extreme depths, the immense relaxation of pressure causes them to fracture if handled carelessly. We refer to this depth zone as the brittle ice zone, and navigating it requires an exquisite balance of technology and instinct. It is a nerve-wracking stage where months of preparation can be undone in a split second by a single microscopic fissure.\n\nIt is precisely in these treacherous details that the true brilliance of glaciology emerges. The ice does not merely record carbon dioxide concentrations; it documents volcanic eruptions through ash layers, solar activity through beryllium isotopes, and human industrial growth through lead deposition. In this sense, the core functions as a double-edged instrument. On one hand, it grants us unprecedented clarity about past conditions, offering a benchmark against which modern changes can be measured. On the other hand, it constantly reminds us of our own vulnerability by exposing how fragile climatic stability actually is. The data we retrieve does not offer comfort; it delivers a stark warning about the consequences of altering atmospheric chemistry.\n\nInterestingly, comparing data from Greenland with Antarctic cores revealed surprising regional contrasts. While major global trends align, the timing of temperature spikes often displays a curious delay between the two hemispheres. Climate scientists refer to this as the bipolar seesaw, where heat is redistributed between the poles via ocean currents over centuries. Unravelling this inter-hemispheric relationship was a major breakthrough because it demonstrated that local climate shifts are deeply intertwined through global ocean circulation. Without the paired evidence from both polar regions, this planetary mechanism would have remained invisible, leaving our climate models dangerously incomplete.\n\nLooking ahead, the hunt is now on for even older ice, searching deep into remote Antarctic basins for samples that could extend our climate record back two million years. Reaching such ancient layers will require deeper drilling and even more sophisticated techniques. Some critics question whether the enormous financial expense of these polar expeditions can still be justified in an era when satellite observation dominates earth science. To my mind, such scepticism overlooks the fundamental value of our discipline. Satellites can only document the present, capturing symptoms of a changing world as they unfold. Ice cores, by contrast, provide vital context by showing us baseline conditions prior to human intervention. They are our only reliable guide to understanding what a normal Earth looks like, and without that baseline, we are navigating the future blind.",
+        "items": [
+          {
+            "number": 1,
+            "question": "What makes ice cores unique compared to other climate indicators according to the first paragraph?",
+            "options": [
+              "They provide continuous data over millions of years.",
+              "They are unaffected by physical changes during extraction.",
+              "They allow scientists to measure atmospheric gases directly.",
+              "They show how human activity impacted ancient temperatures."
+            ],
+            "answer": "C",
+            "evidence": "these frozen bubbles are actual samples of ancient atmosphere",
+            "explanation": "The passage states that unlike tree rings or ocean sediments which only give 'indirect hints', ice core bubbles are 'actual samples of ancient atmosphere'. Distractor A refers to a future goal mentioned in paragraph 6, Distractor B is contradicted by paragraph 3, and Distractor D misinterprets the atmospheric sample detail."
+          },
+          {
+            "number": 2,
+            "question": "In the second paragraph, the writer expresses surprise at the realization that past climate change",
+            "options": [
+              "occurred far more rapidly than scientists had previously assumed.",
+              "followed predictable cycles determined by planetary movements.",
+              "was less severe than modern global warming trends.",
+              "had little impact on early human populations."
+            ],
+            "answer": "A",
+            "evidence": "discovered that global temperatures could shift dramatically within a human lifespan",
+            "explanation": "The writer explains how ice core analysis dismantled the idea of 'agonizing slowness' by proving climate shifts can happen 'within a human lifespan'. Distractor B describes the outdated consensus, while C and D are not asserted in the paragraph."
+          },
+          {
+            "number": 3,
+            "question": "What is the main purpose of the third paragraph?",
+            "options": [
+              "To outline the various chemical tests performed in polar laboratories.",
+              "To criticize the lack of advanced equipment in current extraction operations.",
+              "To explain why ice samples must be melted immediately after extraction.",
+              "To emphasize the technical vulnerabilities and care required when retrieving ice cores."
+            ],
+            "answer": "D",
+            "evidence": "It is a nerve-wracking stage where months of preparation can be undone in a split second by a single microscopic fissure.",
+            "explanation": "The entire paragraph focuses on the 'fragility of the ice' and the risks posed in the 'brittle ice zone'. Distractor A is a minor detail mentioned in passing, B is incorrect as equipment is praised, and C misrepresents the cold chain transport process."
+          },
+          {
+            "number": 4,
+            "question": "The writer describes the ice core as a \"double-edged instrument\" in the fourth paragraph to suggest that it",
+            "options": [
+              "cuts through complex historical data while creating technical measurement problems.",
+              "delivers valuable scientific insight while revealing sobering truths about climate fragility.",
+              "serves both commercial industrial interests and academic research goals.",
+              "provides evidence that can be interpreted in two completely opposing ways."
+            ],
+            "answer": "B",
+            "evidence": "On one hand, it grants us unprecedented clarity about past conditions... On the other hand, it constantly reminds us of our own vulnerability by exposing how fragile climatic stability actually is.",
+            "explanation": "The text directly defines the two sides of the metaphor: clarity on past conditions versus a stark warning about human vulnerability. Distractor A takes 'double-edged' too literally regarding cutting, C is irrelevant, and D misinterprets clarity as ambiguity."
+          },
+          {
+            "number": 5,
+            "question": "What does the phrase \"this planetary mechanism\" in the fifth paragraph refer to?",
+            "options": [
+              "The redistribution of heat between polar regions via ocean currents.",
+              "The simultaneous occurrence of temperature spikes across both hemispheres.",
+              "The alignment of major global temperature trends over long periods.",
+              "The technique of comparing Greenland and Antarctic core samples."
+            ],
+            "answer": "A",
+            "evidence": "Climate scientists refer to this as the bipolar seesaw, where heat is redistributed between the poles via ocean currents over centuries.",
+            "explanation": "The noun phrase 'this planetary mechanism' refers back to the 'bipolar seesaw', which is defined in the previous sentence as the process where heat is redistributed between poles via ocean currents. Distractor B contradicts the 'delay' mentioned, C is too broad, and D mistakes the scientific comparison method for the underlying planetary process."
+          },
+          {
+            "number": 6,
+            "question": "In the final paragraph, what does the writer imply about satellite technology?",
+            "options": [
+              "It has become too costly compared to traditional polar expeditions.",
+              "It is primarily responsible for inaccurate climate forecasting models.",
+              "While useful, it cannot replace ice cores because it lacks historical perspective.",
+              "Its data is less precise than the information gathered from ice cores."
+            ],
+            "answer": "C",
+            "evidence": "Satellites can only document the present, capturing symptoms of a changing world as they unfold.",
+            "explanation": "The writer contrasts satellites (which 'only document the present') with ice cores (which provide 'vital context' prior to human intervention), implying satellites alone cannot give long-term baseline data. Distractor A reverses the financial critique made by skeptics, B makes an unsupported negative claim, and D misidentifies temporal scope as precision."
+          }
+        ]
+      }
+    },
+    "part5-ocean-floor": {
+      "part": 5,
+      "source": "generated by google:gemini-3.6-flash from seed part5-g1 and passed by the validator",
+      "exercise": {
+        "title": "Uncharted Depths: Why the Ocean Floor Remains a Mystery",
+        "topic": "oceanography ocean mapping",
+        "text": "It is one of the most resilient myths of the digital age that every square metre of our planet has been thoroughly mapped. Point a smartphone at any remote mountain range or desert plain, and high-resolution satellite imagery appears instantly. Naturally, most people assume that the same level of clarity extends to the ocean floor. After all, maps of the seabed are readily available online, displaying sweeping underwater mountain ranges, abyssal plains, and dramatic trenches. Yet these striking visualisations are largely an illusion—a mathematical approximation constructed from satellite measurements of the ocean surface rather than direct observations of the bottom. In reality, we have far better maps of the surfaces of Mars and Venus than we do of our own ocean floor, a state of affairs that should startle anyone who considers the vital role the ocean plays in sustaining life on Earth. Satellites map the ocean floor indirectly by using radar to measure subtle variations in the height of the sea surface. Because massive seabed features like underwater mountains exert a tiny gravitational pull on the water above them, they cause the surface of the sea to bulge very slightly. By recording these tiny bumps, scientists can infer the presence of major geological structures below. However, this method has severe limitations. It can only detect massive features, often missing objects smaller than several kilometres across. Relying on satellite altimetry to understand the seabed is roughly equivalent to draping a heavy duvet over your living room furniture and trying to figure out what books are on the coffee table. It provides a general outline, but conceals almost all the meaningful detail. To obtain true, high-resolution maps, oceanographers must rely on acoustic technology—specifically, multibeam sonar systems mounted on the hulls of ships or attached to autonomous underwater vehicles. Sonar works by sending pulses of sound through the water and measuring the time it takes for the echoes to return from the seabed. Sound waves travel remarkably well through water, unlike light or radio signals, which are rapidly absorbed. However, mapping the ocean with sonar is an agonisingly slow and resource-intensive undertaking. Ships equipped with advanced multibeam systems must traverse the ocean at modest speeds, sweeping narrow strips of the seabed like a lawnmower cutting grass on an enormous estate. To map the entire global ocean floor at high resolution using current shipboard systems would require hundreds of ship-years of dedicated effort, costing billions of pounds. This brings us to the fundamental reason for our ignorance: a persistent lack of political and financial will. For decades, space exploration has captured the public imagination and secured lavish national budgets, while ocean science has been left to scramble for modest scraps of funding. Space travel is framed as a grand, heroic leap into the unknown, whereas deep-sea exploration is mistakenly perceived as mundane, dirty work in a cold, dark environment. This preference is puzzling, given that the immediate benefits of understanding our ocean far outweigh those of exploring distant planets. Detailed seabed maps are essential for predicting tsunami pathways, understanding ocean circulation patterns, managing fisheries sustainably, and modelling climate change with greater precision. Furthermore, the rush to map the deep ocean is not without serious ethical and ecological dilemmas. As technological advances make deep-sea mapping more feasible, commercial interests are taking a keen interest, particularly companies eyeing the vast reserves of rare metals found in polymetallic nodules on the seabed. There is a very real danger that mapping efforts will be driven primarily by the search for resource extraction rather than scientific understanding or environmental protection. Without robust international regulations, mapping could simply become the preamble to destructive industrial exploitation, threatening fragile ecosystems before we even fully understand them. Ultimately, filling the immense blanks on our ocean maps requires a fundamental shift in how we value the marine realm. We must cease regarding the seabed as a static backdrop to human activity and recognise it as a dynamic, living world that regulates the global climate system. High-resolution ocean mapping is not a luxury for curious academics; it is an imperative for the survival of human society. Until governments and international bodies accord the ocean floor the same strategic priority as space or defence, the vast depths of our own planet will remain shrouded in darkness, lost beneath a superficial blue mist.",
+        "items": [
+          {
+            "number": 1,
+            "question": "In the first paragraph, the writer points out that popular seabed maps are misleading because they",
+            "options": [
+              "rely on photographs taken from an excessive distance.",
+              "fail to show the true depth of underwater trenches.",
+              "are generated from indirect surface data rather than direct floor readings.",
+              "exaggerate the size of major geological formations."
+            ],
+            "answer": "C",
+            "evidence": "constructed from satellite measurements of the ocean surface rather than direct observations of the bottom",
+            "explanation": "The text explicitly states that existing maps are approximations based on surface measurements rather than direct observations of the ocean floor. Distractor A is wrong because radar, not photography, is used. Distractor B is incorrect as trench depth accuracy is not specified as the primary reason. Distractor D is incorrect because features are omitted rather than exaggerated in size."
+          },
+          {
+            "number": 2,
+            "question": "What point does the writer illustrate with the metaphor of 'draping a heavy duvet over your living room furniture' in the second paragraph?",
+            "options": [
+              "The difficulty of interpreting complex scientific data without advanced software.",
+              "The inability of satellite altimetry to reveal fine geological details.",
+              "The physical obstruction caused by thick layers of ocean sediment.",
+              "The tendency of scientists to make false assumptions about the ocean floor."
+            ],
+            "answer": "B",
+            "evidence": "It provides a general outline, but conceals almost all the meaningful detail.",
+            "explanation": "The metaphor shows that satellite measurements only capture a general outline while obscuring smaller, detailed structures underneath. Distractor A focuses on software interpretation, which is not mentioned. Distractor C takes the duvet metaphor literally as sediment. Distractor D misidentifies the metaphor as being about scientific assumptions rather than data resolution."
+          },
+          {
+            "number": 3,
+            "question": "According to the third paragraph, mapping the ocean floor using sonar is difficult primarily because",
+            "options": [
+              "acoustic signals degrade quickly in deep ocean water.",
+              "sound waves are easily deflected by unpredictable ocean currents.",
+              "vessels must travel slowly while covering relatively narrow areas.",
+              "underwater vehicles cannot withstand the extreme pressures of the deep sea."
+            ],
+            "answer": "C",
+            "evidence": "Ships equipped with advanced multibeam systems must traverse the ocean at modest speeds, sweeping narrow strips of the seabed like a lawnmower cutting grass on an enormous estate.",
+            "explanation": "The text explains that shipboard sonar mapping is slow because vessels must move at modest speeds across narrow strips of seabed. Distractor A is contradicted by the text, which states sound waves travel remarkably well in water. Distractor B is not mentioned in the text. Distractor D is incorrect as structural failure from water pressure is not cited as the main operational obstacle to sonar mapping."
+          },
+          {
+            "number": 4,
+            "question": "What is the writer’s attitude towards the lower funding allocated to ocean science compared to space exploration?",
+            "options": [
+              "Perplexed by the preference for space given the practical value of ocean research.",
+              "Encouraged by recent efforts to equalise research expenditure between the two fields.",
+              "Critical of space scientists for monopolising available research grants.",
+              "Resigned to the fact that space travel will always capture public interest more easily."
+            ],
+            "answer": "A",
+            "evidence": "This preference is puzzling, given that the immediate benefits of understanding our ocean far outweigh those of exploring distant planets.",
+            "explanation": "The writer uses the word 'puzzling' to express confusion at why space receives more funding despite the immediate practical benefits of ocean mapping. Distractor B is incorrect as no equalisation efforts are mentioned. Distractor C incorrectly blames space scientists instead of government priorities. Distractor D implies passive acceptance, which contradicts the writer's critical stance."
+          },
+          {
+            "number": 5,
+            "question": "What is the main purpose of the fifth paragraph?",
+            "options": [
+              "To highlight the technological breakthroughs that make deep-sea mining possible.",
+              "To warn of potential environmental risks associated with commercially motivated mapping.",
+              "To argue that international regulations are currently preventing effective seabed research.",
+              "To explain why rare metals on the ocean floor are essential for modern industry."
+            ],
+            "answer": "B",
+            "evidence": "There is a very real danger that mapping efforts will be driven primarily by the search for resource extraction rather than scientific understanding or environmental protection.",
+            "explanation": "The paragraph highlights the ethical and ecological dangers of seabed mapping becoming a tool for commercial exploitation. Distractor A focuses on technology, which is merely introductory context. Distractor C misinterprets the text; the writer calls for stronger regulations rather than blaming existing ones. Distractor D mentions rare metals as a commercial motivation, not as the primary argument."
+          },
+          {
+            "number": 6,
+            "question": "In the final paragraph, the writer implies that comprehensive ocean mapping will only happen if",
+            "options": [
+              "academic institutions take the main responsibility for funding expeditions.",
+              "society changes its perspective on the fundamental importance of the seabed.",
+              "underwater mapping technology becomes significantly cheaper to operate.",
+              "governments pass laws granting public access to high-resolution ocean data."
+            ],
+            "answer": "B",
+            "evidence": "We must cease regarding the seabed as a static backdrop to human activity and recognise it as a dynamic, living world that regulates the global climate system.",
+            "explanation": "The writer argues that progress requires a 'fundamental shift in how we value the marine realm'. Distractor A contradicts the passage, which calls for state and international priority. Distractor C focuses on cost reduction, which is not the condition set out in the conclusion. Distractor D mentions data access, which is not addressed in this paragraph."
+          }
+        ]
+      }
+    },
+    "part5-writing-endings": {
+      "part": 5,
+      "source": "generated by google:gemini-3.6-flash from seed part5-g3 and passed by the validator",
+      "exercise": {
+        "title": "Starting at the Finish Line",
+        "topic": "Creative writing process",
+        "text": "When non-writers imagine the process of crafting a novel, they usually picture a neat, linear progression. The author sits down, pens a captivating first sentence, and then follows the thread of narrative smoothly through to the final page. In reality, very few works of fiction come into being this way. Most authors begin with a vague impulse—a striking image, a fragment of dialogue overheard on a bus, or a lingering mood—and build outward in fits and starts. Yet, even among seasoned writers, there is one habit that consistently puzzles outsiders: the near-universal practice of returning to rewrite the opening chapter only after the rest of the manuscript has been completed. To the uninitiated, this seems illogical, if not completely back-to-front. Why dismantle the doorway when the rest of the house has already been built? The primary reason lies in the deceptive nature of beginnings. At the start of a project, a writer rarely possesses a full understanding of the story's deeper themes or the true motivations of its characters. You might think you are writing a light-hearted comedy about two rivals in a quiet provincial town, only to discover, three hundred pages later, that you have actually written a sombre meditation on memory and regret. Characters have a stubborn habit of evolving in ways their creators never anticipated, making choices that reshape the narrative architecture. Consequently, the opening chapter composed in those initial weeks of hopeful enthusiasm belongs to a completely different book. Leaving it untouched would be like inviting a reader into a gothic cathedral through the brightly painted front door of a suburban bungalow. Furthermore, the opening chapter carries a burden of expectation that no other section of the book must bear. It must establish the tone, introduce the central tension, and subtly signal the rules of the fictional world, all while seducing the reader into turning the page. In publishing parlance, this is often referred to as setting the contract with the reader. If that contract is flawed, the reader feels betrayed when the story pivots later on. Attempting to perfect this crucial threshold early on is a dangerous trap. Writers who fixate on polishing their first twenty pages before moving forward often find themselves caught in a loop of perpetual revision, polishing the brass on a ship that has not even left the harbour. I spent two whole years trapped in this state during my second novel, endlessly tweaking a prose opening that was ultimately discarded entirely. Only when the climax has been drafted and the final resolutions are in place can the writer look back at the beginning with any real clarity. By that stage, the retrospective glance is illuminated by complete knowledge of where every dramatic line leads. The opening can then be re-engineered not as a starting line, but as a deliberate prelude. Echoes of the ending can be planted quietly in the background; motif and metaphor can be woven into the scenery with precision. It is an exercise in artificial hindsight. What looks to the reader like effortless foresight on the part of the author is, in truth, a carefully constructed illusion built long after the main events were laid down. There is also a psychological shift that occurs over the course of writing a full manuscript. The writer who begins chapter one is necessarily an amateur regarding that specific story, lacking confidence and feeling out the terrain. By the time they reach the end, however, they have become the world's leading expert on that particular narrative universe. Returning to the start with this hard-won mastery allows the prose to be infused with an unmistakable authority. The rhythm of the sentences becomes more decisive, the sensory details more sharply focused. The reader senses this authority immediately, even if they cannot articulate why a particular opening feels so compelling and self-assured. Ultimately, accepting that the first chapter is provisional liberates the creative process. It frees the novelist from the paralysing demand for perfection at the outset. A draft opening is merely a scaffold, a temporary structure erected to allow the real work of construction to proceed. Once the building stands secure on its own, the scaffold can be dismantled without regret and replaced with something worthy of the structure it introduces. Far from being a sign of indecision, rewriting the opening last is a mark of professional maturity—a recognition that a true beginning can only be understood once you have arrived at the end.",
+        "items": [
+          {
+            "number": 1,
+            "question": "In the first paragraph, the writer suggests that people who do not write novels tend to assume that",
+            "options": [
+              "authors know precisely how their stories will end before starting.",
+              "the writing process follows a smooth, sequential order.",
+              "opening chapters require less effort than later sections.",
+              "initial ideas usually come from real-life conversations."
+            ],
+            "answer": "B",
+            "evidence": "When non-writers imagine the process of crafting a novel, they usually picture a neat, linear progression.",
+            "explanation": "The text states that non-writers envision a 'neat, linear progression' starting at sentence one and moving smoothly to the end. Option A is incorrect because knowing the ending is not explicitly attributed to non-writers' assumptions here. Option C is contradicted by the text. Option D mentions overheard dialogue, but that describes how authors actually work, not what non-writers assume."
+          },
+          {
+            "number": 2,
+            "question": "What is the writer's attitude towards the initial version of a first chapter?",
+            "options": [
+              "It is inevitably rendered obsolete by the organic growth of the story.",
+              "It suffers from an overly ambitious attempt to impress the reader.",
+              "It reflects an undesirable lack of commitment from the author.",
+              "It tends to be written in a style that is too formal for the genre."
+            ],
+            "answer": "A",
+            "evidence": "Characters have a stubborn habit of evolving in ways their creators never anticipated, making choices that reshape the narrative architecture.",
+            "explanation": "The author explains that as characters and plots evolve unpredictably, the initial opening chapter comes to belong to 'a completely different book' (making it obsolete). Option B is incorrect as the issue is not about trying to impress. Option C contradicts 'hopeful enthusiasm'. Option D is unsupported by the text."
+          },
+          {
+            "number": 3,
+            "question": "The phrase 'polishing the brass on a ship that has not even left the harbour' in the third paragraph is used to illustrate",
+            "options": [
+              "the frustration of writing without a clear outline.",
+              "the futility of refining text before the wider narrative exists.",
+              "the risk of losing focus on the main characters' journeys.",
+              "the necessity of checking minor details for accuracy early on."
+            ],
+            "answer": "B",
+            "evidence": "polishing the brass on a ship that has not even left the harbour",
+            "explanation": "The metaphor compares perfecting early prose ('polishing the brass') before the full novel is written ('ship that has not even left the harbour') to a wasteful, endless task (futility). Option A misidentifies the issue as lacking an outline. Option C focuses on characters rather than stage of writing. Option D presents the practice as necessary, which the writer opposes."
+          },
+          {
+            "number": 4,
+            "question": "In the fourth paragraph, what point does the writer make about a successfully revised opening chapter?",
+            "options": [
+              "It creates the false impression that the story was meticulously planned from the beginning.",
+              "It requires the author to explicitly hint at how the final climax will unfold.",
+              "It relies on readers noticing every subtle symbolic detail in the text.",
+              "It succeeds only if the reader remains unaware of the writer's underlying techniques."
+            ],
+            "answer": "A",
+            "evidence": "What looks to the reader like effortless foresight on the part of the author is, in truth, a carefully constructed illusion built long after the main events were laid down.",
+            "explanation": "The text explains that readers perceive 'effortless foresight'—the illusion that the author possessed advance planning from the outset—when in reality it is 'a carefully constructed illusion' created retroactively in hindsight. Option B is incorrect because echoes are planted 'quietly in the background', not explicitly revealing the ending. Option C is unsupported as the text does not state that readers must consciously notice every detail. Option D misinterprets the text, which discusses the illusion of advance planning rather than concealing literary technique."
+          },
+          {
+            "number": 5,
+            "question": "In the fifth paragraph, the writer states that an author returning to rewrite chapter one possesses",
+            "options": [
+              "a renewed passion for the original concept of the book.",
+              "a deeper technical skill gained from previous publications.",
+              "a clear advantage stemming from their complete familiarity with the story.",
+              "a heightened awareness of commercial expectations in publishing."
+            ],
+            "answer": "C",
+            "evidence": "By the time they reach the end, however, they have become the world's leading expert on that particular narrative universe.",
+            "explanation": "The text notes that by finishing the manuscript, the writer becomes the 'expert on that particular narrative universe', allowing them to rewrite with authority due to complete familiarity. Option A is wrong because the original concept changed. Option B incorrectly refers to 'previous publications' rather than the current text. Option D is not discussed in this paragraph."
+          },
+          {
+            "number": 6,
+            "question": "What is the main purpose of the final paragraph?",
+            "options": [
+              "To encourage writers to abandon structural planning altogether.",
+              "To reframe rewriting the first chapter as a positive sign of craftsmanship.",
+              "To warn novelists against spending too much time on later chapters.",
+              "To summarize the financial benefits of producing well-structured books."
+            ],
+            "answer": "B",
+            "evidence": "Far from being a sign of indecision, rewriting the opening last is a mark of professional maturity",
+            "explanation": "The final paragraph explains that saving the first chapter for last is not a flaw or sign of indecision, but 'a mark of professional maturity' and a liberating technique, reframing it positively. Option A exaggerates the idea of flexibility to abandoning planning completely. Option C is unsupported. Option D mentions financial benefits, which are never discussed."
+          }
+        ]
+      }
+    },
+    "part6-ancient-monuments": {
+      "part": 6,
+      "source": "generated by google:gemini-3.6-flash from seed part6-g1 and passed by the validator",
+      "exercise": {
+        "title": "Reconstructing the Past: The Ancient Monument Debate",
+        "topic": "Reconstructing Ancient Monuments",
+        "texts": [
+          {
+            "letter": "A",
+            "author": "Archaeologist A",
+            "content": "The physical restoration of ancient monuments is frequently justified on commercial grounds, and indeed, the financial returns generated by increased tourism can be immense, offering vital funding for broader regional development. However, from an archaeological perspective, rebuilding ruins inevitably distorts historical truth. Recreating missing elements relies heavily on conjecture, producing a sanitized version of the past that compromises true historical authenticity. Furthermore, far from enhancing public understanding, these artificial structures misinform visitors by presenting modern interpretations as genuine ancient heritage. Some suggest that modern digital technology could bridge this gap, but virtual models remain inadequate, disembodied substitutes that fail to engage audiences in a meaningful way. Ultimately, preserving ruins in their original state is the only ethical choice, safeguarding physical evidence without resorting to misleading fabrications."
+          },
+          {
+            "letter": "B",
+            "author": "Historian B",
+            "content": "Restoring ancient monuments offers profound educational advantages, providing the public with clear, accessible insights into past civilizations that fragmented ruins simply cannot deliver. Seeing a structure in its original grandeur allows visitors to grasp historical scale and purpose effortlessly. Far from compromising the past, thoughtful reconstruction maintains cultural continuity and honours original builders by keeping their vision alive. Additionally, the economic benefits of such projects are well documented; fully restored landmarks consistently attract high numbers of international visitors, generating crucial revenue that directly supports surrounding communities. While some advocate for virtual reality as a non-invasive alternative, digital screens can never replicate the tangible presence and emotional resonance of standing inside a physical building. Rebuilding remains a vital tool for keeping history vibrant and meaningful today."
+          },
+          {
+            "letter": "C",
+            "author": "Heritage Consultant C",
+            "content": "While proponents often claim that reconstructing ruined sites creates lucrative tourism opportunities, the long-term economic gains are frequently overstated, with high construction costs rarely matched by sustained financial returns. More critically, physical reconstruction fundamentally degrades historical authenticity, replacing genuine historic fabric with modern fabrications that mislead the public about the past. Such projects create false narratives, offering visitors a deceptive experience rather than genuine educational immersion. Although virtual technology is sometimes proposed as a solution, current digital tools are unfortunately flat and uninspiring, failing to convey the sensory reality and spatial presence of physical heritage. Consequently, heritage managers must resist the urge to rebuild, focusing instead on stabilizing authentic remains as they are, ensuring that future generations inherit unadulterated physical evidence."
+          },
+          {
+            "letter": "D",
+            "author": "Architectural Historian D",
+            "content": "Reconstructing ancient architecture provides an invaluable educational resource, offering visitors a clear sense of spatial reality and historical context that crumbling stones alone can never convey. Far from damaging historical authenticity, careful restoration carried out with traditional materials and rigorous research actually preserves original building techniques and respects historical truth. Unfortunately, the financial argument for reconstruction is weak; the vast public expenditure required rarely translates into meaningful economic returns for local populations, making such ventures financially risky. Nevertheless, physical rebuilding may soon become unnecessary thanks to rapid advances in technology. Virtual reality and augmented simulations now offer an ideal, non-invasive alternative, providing immersive educational experiences while leaving physical ruins intact. Embracing digital innovations allows us to appreciate past architecture without physically altering fragile heritage sites."
+          }
+        ],
+        "items": [
+          {
+            "number": 1,
+            "prompt": "Which writer shares Archaeologist A's opinion on the impact of reconstruction on historical authenticity?",
+            "answer": "C",
+            "evidence": "physical reconstruction fundamentally degrades historical authenticity, replacing genuine historic fabric with modern fabrications",
+            "explanation": "Both Archaeologist A and Heritage Consultant C argue that physical reconstruction distorts truth and damages authenticity (A states that rebuilding 'compromises true historical authenticity', while C writes that it 'fundamentally degrades historical authenticity'). In contrast, Historian B and Architectural Historian D argue that restoration maintains or respects historical truth."
+          },
+          {
+            "number": 2,
+            "prompt": "Which writer shares Historian B's view concerning the economic benefits of restoring ancient monuments?",
+            "answer": "A",
+            "evidence": "the financial returns generated by increased tourism can be immense, offering vital funding for broader regional development.",
+            "explanation": "Historian B highlights the positive financial impact of restoration ('generating crucial revenue that directly supports surrounding communities'). Archaeologist A shares this positive view, noting that 'the financial returns generated by increased tourism can be immense'. Conversely, writers C and D both argue that the economic benefits are exaggerated or insufficient to justify the high costs."
+          },
+          {
+            "number": 3,
+            "prompt": "Which writer has a different view from Heritage Consultant C on the suitability of digital tools as an alternative to reconstruction?",
+            "answer": "D",
+            "evidence": "Virtual reality and augmented simulations now offer an ideal, non-invasive alternative",
+            "explanation": "Heritage Consultant C dismisses digital technology as inadequate ('failing to convey the sensory reality and spatial presence'). Architectural Historian D holds the opposite view, calling virtual reality 'an ideal, non-invasive alternative'. Writers A and B agree with C that digital solutions are inadequate compared to physical ruins or structures."
+          },
+          {
+            "number": 4,
+            "prompt": "Which writer shares Historian B's view regarding the educational value of reconstructed monuments?",
+            "answer": "D",
+            "evidence": "Reconstructing ancient architecture provides an invaluable educational resource, offering visitors a clear sense of spatial reality and historical context",
+            "explanation": "Both Historian B and Architectural Historian D view physical reconstruction as a highly effective educational tool (B notes that it 'offers profound educational advantages', while D describes it as 'an invaluable educational resource'). Conversely, Archaeologist A and Heritage Consultant C contend that reconstructed sites misinform visitors or provide a deceptive experience rather than genuine educational value."
+          }
+        ]
+      }
+    },
+    "part6-homework": {
+      "part": 6,
+      "source": "generated by google:gemini-3.6-flash from seed part6-g3 and passed by the validator",
+      "exercise": {
+        "title": "Should Primary School Pupils Be Given Homework?",
+        "topic": "Primary school homework",
+        "texts": [
+          {
+            "letter": "A",
+            "author": "Educational Psychologist",
+            "content": "Assigning homework to primary school pupils is a well-meaning practice that yields surprisingly few cognitive dividends. Empirical data consistently indicates that extra assignments offer negligible academic benefits to children under eleven, whose capacity to absorb formal instruction after a full day in the classroom is sharply limited. Furthermore, evening tasks regularly provoke domestic friction, placing avoidable pressure on relationships between parents and children. While proponents contend that home study fosters independent learning habits, there is little evidence that children of this age possess the developmental maturity to cultivate self-regulation through worksheet completion. Instead of instilling discipline, excessive homework often breeds resentment towards schooling in general. Teachers would be far better advised to encourage unstructured play and shared reading, both of which support child development far more effectively than repetitive homework tasks."
+          },
+          {
+            "letter": "B",
+            "author": "Primary School Headteacher",
+            "content": "Far from being an empty exercise, thoughtfully designed homework plays a vital role in consolidating primary education. Regular, short tasks reinforce key literacy and numeracy concepts taught during the day, giving young learners the opportunity to solidify their understanding. Crucially, taking ownership of these small projects encourages children to develop vital time-management skills and autonomous study habits that serve them well into secondary education and beyond. Rather than damaging home life, homework provides parents with a valuable window into their child's academic progress, offering a natural focal point for supportive engagement. When schools ensure that tasks are manageable, home learning creates a bridge between school and family, reinforcing the idea that education is a collaborative effort rather than something confined solely to the classroom."
+          },
+          {
+            "letter": "C",
+            "author": "Academic Researcher",
+            "content": "Extensive educational studies suggest that primary school homework produces virtually no measurable gain in academic attainment. Younger children simply lack the cognitive stamina required for prolonged academic focus after school hours, making additional study largely counterproductive. The practice also regularly disrupts home life, creating unnecessary conflict as parents struggle to enforce completion schedules after a tiring workday. However, homework is not entirely without merit. Engaging with routine tasks at home can indeed help children establish valuable habits of independent study, training them to manage their own time and workload before they encounter the greater demands of secondary school. The challenge for educators is therefore to balance these habit-forming benefits against the clear risk of domestic strain and academic burnout in early childhood."
+          },
+          {
+            "letter": "D",
+            "author": "Education Columnist",
+            "content": "Arguments against primary school homework often overlook the significant academic gains achieved when tasks are tailored appropriately. Brief, focused exercises serve to deepen understanding and accelerate learning in foundational subjects. However, the notion that primary homework builds self-discipline is flawed; young pupils lack the maturity to organize their work independently, meaning that the burden of management falls entirely on parents. This constant parental supervision inevitably causes strain at home, turning evenings into a battlefield and generating tension that outweighs any educational advantage. Therefore, while targeted homework can undeniably enhance classroom learning, its volume must be strictly limited to prevent it from disrupting family harmony and overwhelming young learners."
+          }
+        ],
+        "items": [
+          {
+            "number": 1,
+            "prompt": "Which writer shares Writer A's opinion on whether homework enhances primary pupils' academic progress?",
+            "answer": "C",
+            "evidence": "primary school homework produces virtually no measurable gain in academic attainment",
+            "explanation": "Both Writer A and Writer C believe homework provides no meaningful educational benefit for young children. Writer A claims that extra assignments offer 'negligible academic benefits', which matches Writer C's view that homework produces 'virtually no measurable gain in academic attainment'. In contrast, Writers B and D both assert that homework leads to academic gains."
+          },
+          {
+            "number": 2,
+            "prompt": "Which writer expresses a different view from the others regarding the impact of homework on family life?",
+            "answer": "B",
+            "evidence": "Rather than damaging home life, homework provides parents with a valuable window into their child's academic progress",
+            "explanation": "Writer B views homework as a positive feature of family life that helps parents stay connected to their child's learning. Conversely, Writers A, C, and D all agree that homework harms family life, citing 'domestic friction' (Writer A), 'unnecessary conflict' (Writer C), and evenings turned into 'a battlefield' (Writer D)."
+          },
+          {
+            "number": 3,
+            "prompt": "Which writer shares Writer B's view regarding the effectiveness of homework in fostering independent study habits?",
+            "answer": "C",
+            "evidence": "can indeed help children establish valuable habits of independent study",
+            "explanation": "Both Writer B and Writer C agree that homework successfully builds autonomous learning habits in primary pupils. Writer B states that homework encourages pupils 'to develop vital time-management skills and autonomous study habits', while Writer C observes that homework 'can indeed help children establish valuable habits of independent study'. Writers A and D take the opposite view, claiming young pupils lack the maturity to learn independently."
+          },
+          {
+            "number": 4,
+            "prompt": "Which writer shares Writer C's view regarding young children's cognitive capacity for study after the school day?",
+            "answer": "A",
+            "evidence": "whose capacity to absorb formal instruction after a full day in the classroom is sharply limited",
+            "explanation": "Both Writer C and Writer A maintain that primary pupils lack the mental capacity or stamina for formal academic study at the end of the school day. Writer C notes that younger children 'lack the cognitive stamina required for prolonged academic focus after school hours', which directly reflects Writer A's assertion that children's 'capacity to absorb formal instruction after a full day in the classroom is sharply limited'. In contrast, Writers B and D do not view post-school mental fatigue as an obstacle, both maintaining that brief, focused exercises effectively consolidate or accelerate learning."
+          }
+        ]
+      }
+    },
+    "part6-zoos": {
+      "part": 6,
+      "source": "generated by google:gemini-3.6-flash from seed part6-g2 and passed by the validator",
+      "exercise": {
+        "title": "Do Zoos Still Have a Role in Conservation?",
+        "topic": "Zoo conservation role",
+        "texts": [
+          {
+            "letter": "A",
+            "author": "Zoologist A",
+            "content": "Modern zoos frequently position themselves as vital hubs for biodiversity conservation, a claim that holds up well regarding financial support. The revenue generated through admission fees enables these institutions to fund crucial habitat preservation projects in the wild that would otherwise lack resources. Furthermore, witnessing living animals up close instils a lasting sense of responsibility in visitors, encouraging active support for environmental protection. However, the picture is less convincing when examining captive breeding. Proponents often highlight reintroduction programmes, yet empirical evidence demonstrates that very few captive-bred species successfully adapt to natural habitats once released. The vast majority of breeding efforts fail to establish viable wild populations, suggesting that the conservation claims surrounding captive breeding are frequently exaggerated."
+          },
+          {
+            "letter": "B",
+            "author": "Environmental Economist B",
+            "content": "While modern zoos emphasize their contribution to preserving endangered species, their educational claims remain largely unconvincing. Most visitors view their attendance as mere leisure, deriving little long-term conservation commitment from the experience. However, the financial framework of major institutions provides vital funding streams that directly assist field preservation projects worldwide. Furthermore, captive breeding initiatives cannot be dismissed so easily. Despite high operational costs, controlled breeding has successfully rescued several critically endangered species from total extinction and re-established them in safe environments, proving itself a necessary emergency safeguard for global biodiversity."
+          },
+          {
+            "letter": "C",
+            "author": "Animal Welfare Researcher C",
+            "content": "The assertion that zoos serve an indispensable educational purpose is unsupported by research. Surveys consistently reveal that visitors engage with displays primarily for entertainment, gaining minimal insight into ecological crises. Financially, too, the model is flawed; the astronomical costs of facilities represent a misallocation of funds that should directly support natural habitats. Nevertheless, captive breeding programmes have demonstrated clear value. By maintaining carefully managed populations of threatened animals, zoos have provided an essential mechanism for preventing extinction, achieving remarkable success in restoring vulnerable species to protected reserves."
+          },
+          {
+            "letter": "D",
+            "author": "Ecologist D",
+            "content": "The role of zoos in contemporary conservation efforts remains a topic of intense debate. On one hand, direct encounters with live species foster a profound emotional connection among visitors, cultivating widespread public empathy that translates into sustained support for environmental initiatives. Furthermore, major facilities generate substantial funding that directly supports vital field projects in fragile ecosystems. On the other hand, the faith placed in captive breeding appears misplaced. Animals raised in artificial environments suffer from low survival rates in natural habitats, with most reintroduction attempts failing to establish self-sustaining populations in the wild."
+          }
+        ],
+        "items": [
+          {
+            "number": 1,
+            "prompt": "Which writer shares Writer B's view on the educational impact of zoos on visitors?",
+            "answer": "C",
+            "evidence": "The assertion that zoos serve an indispensable educational purpose is unsupported by research.",
+            "explanation": "Both Writer B and Writer C are skeptical about the educational benefits of zoos. Writer B notes that visitors view their visits as 'mere leisure' and gain 'little long-term conservation commitment'. Writer C similarly states that claims of educational value are 'unsupported by research' and that visitors attend 'primarily for entertainment'. In contrast, Writers A and D both argue that zoos foster positive educational outcomes and environmental stewardship."
+          },
+          {
+            "number": 2,
+            "prompt": "Which writer shares Writer A's view regarding the effectiveness of captive breeding programmes for species reintroduction?",
+            "answer": "D",
+            "evidence": "Animals raised in artificial environments suffer from low survival rates in natural habitats, with most reintroduction attempts failing to establish self-sustaining populations in the wild.",
+            "explanation": "Both Writer A and Writer D take a critical stance on captive breeding reintroduction. Writer A asserts that 'very few captive-bred species successfully adapt' and that breeding efforts 'fail to establish viable wild populations'. Writer D shares this view, noting low survival rates and failed reintroduction attempts in the wild. Conversely, Writers B and C view captive breeding as a successful and necessary tool for preventing extinction."
+          },
+          {
+            "number": 3,
+            "prompt": "Which writer expresses a different view from Writer A on the financial support zoos provide for wild habitat conservation?",
+            "answer": "C",
+            "evidence": "the astronomical costs of facilities represent a misallocation of funds that should directly support natural habitats.",
+            "explanation": "Writer A believes zoos make a valuable financial contribution, stating that admission fees fund 'crucial habitat preservation projects in the wild'. Writer C disagrees, arguing that spending money on maintaining zoo facilities is 'a misallocation of funds' that should instead go directly to natural habitats. Writers B and D agree with Writer A that zoos provide vital financial support for field conservation."
+          },
+          {
+            "number": 4,
+            "prompt": "Which writer shares Writer C's opinion on the role of captive breeding in saving threatened species?",
+            "answer": "B",
+            "evidence": "controlled breeding has successfully rescued several critically endangered species from total extinction and re-established them in safe environments",
+            "explanation": "Both Writer C and Writer B view captive breeding positively as a safeguard against extinction. Writer C emphasizes that captive breeding is an 'essential mechanism for preventing extinction' with 'remarkable success'. Writer B agrees, stating that controlled breeding has 'successfully rescued several critically endangered species'. Writers A and D, on the other hand, argue that captive breeding rarely leads to successful wild reintroduction."
+          }
+        ]
+      }
+    },
+    "part7-canal": {
+      "part": 7,
+      "source": "generated by google:gemini-3.6-flash from seed part7-g3 and passed by the validator",
+      "exercise": {
+        "title": "Bringing the Waterway Back to Life",
+        "topic": "urban canal restoration",
+        "text": "For nearly half a century after industrial barges ceased navigating the city central canal, the waterway remained a forgotten eyesore. Choked with litter and industrial debris, its murky channels were hidden behind rusting fences, completely cut off from the daily life of urban residents. What had once been the beating heart of local commerce had fallen into deep neglect, ignored by successive urban planning committees.\n{{1}}\nYet this ambitious vision immediately encountered heavy scepticism. Municipal authorities argued that city budgets were far too strained to support such an elaborate public park, while critics maintained that the heavily polluted water was beyond ecological repair.\n{{2}}\nWith funding secured, heavy machinery arrived at the site to begin the complex process of physical restoration. Silt and rubbish were carefully dredged from the canal bed, while crumbling stone embankments were systematically rebuilt by specialist stonemasons. Native aquatic plants were introduced along the margins to establish natural bio-filtration systems.\n{{3}}\nThis ecological turnaround transformed the canal within months. Herons, kingfishers, and several rare species of dragonfly quickly returned to the waterway, establishing thriving populations along the newly planted banks.\n{{4}}\nBeyond these obvious environmental gains, the restored corridor began to generate significant economic benefits for the surrounding district. Former industrial warehouses lining the towpath were gradually converted into vibrant independent cafes, art studios, and technology startups.\n{{5}}\nHowever, this influx of commercial interest brought unexpected social friction. Property values in the surrounding streets jumped dramatically, raising widespread concerns that long-term residents and traditional traders would be priced out of the neighbourhood.\n{{6}}\nBy addressing these tensions directly, the project achieved a delicate equilibrium between commercial vitality and community preservation. Today, the canal stands as an exemplary model of urban regeneration, proving that industrial heritage and ecological renewal can successfully coexist.",
+        "options": [
+          {
+            "letter": "A",
+            "paragraph": "A major breakthrough came when a national heritage lottery grant was awarded to the campaign, matching the funds raised through community events. This substantial financial backing transformed the project from an idealistic dream into an achievable reality."
+          },
+          {
+            "letter": "B",
+            "paragraph": "Private investors were quick to recognize the potential of these characterful structures, pouring capital into modernizing the historic brick buildings while preserving their original architectural features."
+          },
+          {
+            "letter": "C",
+            "paragraph": "That situation began to change when a coalition of local community members and environmental specialists drafted a comprehensive proposal to turn the waterway into a linear park. They envisioned a vibrant green corridor running through the urban core."
+          },
+          {
+            "letter": "D",
+            "paragraph": "The return of such wildlife captivated the local public, drawing walkers, cyclists, and families back to the waterfront in unprecedented numbers. The area rapidly re-established itself as a valued recreational space."
+          },
+          {
+            "letter": "E",
+            "paragraph": "In many post-industrial cities, neglected canals were simply filled in during the late twentieth century to construct urban freeways. Choosing restoration over demolition reflected a major shift in urban design philosophy."
+          },
+          {
+            "letter": "F",
+            "paragraph": "The introduction of these reed beds and floating plant islands worked remarkably fast, filtering toxic runoff and noticeably boosting oxygen levels in the water."
+          },
+          {
+            "letter": "G",
+            "paragraph": "To address these concerns, municipal leaders collaborated with the restoration trust to introduce strict affordable housing quotas and low-rent commercial leases for existing local businesses."
+          }
+        ],
+        "items": [
+          {
+            "number": 1,
+            "answer": "C",
+            "explanation": "In paragraph C, 'That situation' links back to the neglected state of the canal described in the opening paragraph. In the following paragraph, 'this ambitious vision' links back to paragraph C's proposal for a 'vibrant green corridor'."
+          },
+          {
+            "number": 2,
+            "answer": "A",
+            "explanation": "Paragraph A provides the financial solution ('national heritage lottery grant') to the budget concerns mentioned before the gap. The paragraph following the gap begins with 'With funding secured', which directly references the grant in paragraph A."
+          },
+          {
+            "number": 3,
+            "answer": "F",
+            "explanation": "In paragraph F, 'these reed beds' links back to the 'Native aquatic plants' mentioned before the gap. In the following paragraph, 'This ecological turnaround' refers back to the filtering and oxygenation processes described in paragraph F."
+          },
+          {
+            "number": 4,
+            "answer": "D",
+            "explanation": "In paragraph D, 'such wildlife' refers directly back to the herons, kingfishers, and dragonflies listed in the preceding paragraph. The text after the gap begins with 'Beyond these obvious environmental gains', linking the public/recreational enjoyment in D to broader district gains."
+          },
+          {
+            "number": 5,
+            "answer": "B",
+            "explanation": "In paragraph B, 'these characterful structures' refers back to the 'Former industrial warehouses' mentioned before the gap. In the text following the gap, 'this influx of commercial interest' refers directly to private investors pouring capital as described in paragraph B."
+          },
+          {
+            "number": 6,
+            "answer": "G",
+            "explanation": "In paragraph G, 'these concerns' refers back to the fears of residents being priced out mentioned in the preceding text. In the final paragraph, 'By addressing these tensions directly' summarizes the municipal actions detailed in paragraph G."
+          }
+        ],
+        "distractor_letter": "E"
+      }
+    },
+    "part7-island-energy": {
+      "part": 7,
+      "source": "generated by google:gemini-3.6-flash from seed part7-g2 and passed by the validator",
+      "exercise": {
+        "title": "Powering the Island of Tanera",
+        "topic": "Island renewable energy",
+        "text": "For decades, the remote island of Tanera, situated off the north-west coast, depended entirely on imported diesel fuel to meet its energy needs. Weekly shipments of oil made hazardous journeys across unpredictable seas, leading to frequent supply disruptions and exorbitant fuel bills. To conserve fuel, local generators were routinely shut down for eight hours every night, leaving the island's three hundred residents in pitch darkness and forcing local businesses to adapt to restricted operating hours. {{1}} This turning point arrived when a local community trust was established to explore sustainable alternatives. Rather than handing control over to commercial energy developers, the islanders decided to purchase and manage their own generation equipment, ensuring that any financial returns would remain within the local economy to fund vital services. Initial community meetings revealed differing views on which technology to prioritise. Wind was abundant year-round, but the island's steep inland valleys offered ideal conditions for small hydro-electric schemes, while solar panels could provide a valuable boost during long summer days. Ultimately, specialist engineers designed an integrated, multi-source system that incorporated all three options to maximise efficiency. {{2}} Funding such an ambitious hybrid grid, however, presented a formidable obstacle for a community of modest means. Commercial loans carried punitive interest rates, while national environmental grant schemes required matching funds that the local trust simply did not possess at the outset. To bridge this gap, residents launched an innovative fundraising strategy, securing small financial contributions from international well-wishers and issuing community bonds to local households. Combined with a modest regional development grant, the trust successfully raised the necessary capital within eighteen months, allowing procurement to begin in earnest. {{3}} Once these components were fully operational, the island experienced an immediate and dramatic transformation. For the first time in its history, continuous electricity was available twenty-four hours a day, eliminating the nightly blackouts and drastically improving quality of life for residents, while enabling local enterprises to expand. However, the new infrastructure soon encountered a major technical hurdle: energy generation was inherently unpredictable. Fierce winter gales produced far more power than the island could possibly consume, whereas extended periods of calm weather resulted in frustrating generation shortfalls. {{4}} This clever balancing mechanism ensured that surplus electricity produced during peak wind conditions was stored efficiently rather than wasted. Furthermore, when the primary storage banks reached full capacity, excess energy was automatically diverted to heat public buildings, including the primary school and the village hall. The economic benefits of this self-sustaining setup quickly became apparent. Energy bills for households plummeted by over forty percent, and the revenue earned by selling excess power back to the national grid was systematically reinvested in local infrastructure, including high-speed broadband and coastal defences. {{5}} Delegations from remote communities in Canada, Japan, and Scandinavia have since travelled to Tanera to study its microgrid architecture and unique governance model. The islanders now host regular workshops, offering practical guidance and technical advice to other isolated regions seeking energy independence. Despite these notable achievements, the community trust is not resting on its laurels. Ambitious plans are currently underway to replace all petrol vehicles with an electric fleet and pioneer green hydrogen storage, aiming for complete carbon neutrality across all sectors. {{6}} Today, Tanera stands as a compelling proof of concept for community-led environmental stewardship. What began as an urgent response to an intolerable situation has evolved into an internationally recognised model of resilience, demonstrating what small communities can achieve through collective vision and determination.",
+        "options": [
+          {
+            "letter": "A",
+            "paragraph": "Heavy machinery was brought ashore by barge, and over the following year, local volunteers worked alongside engineers to install the wind turbines, lay underground cables, and construct the hydro stations. Despite challenging weather conditions, the construction phase was completed on schedule and within budget."
+          },
+          {
+            "letter": "B",
+            "paragraph": "If successful, these future initiatives will eliminate the remaining fossil fuels used in transport and heating, turning Tanera into one of the world's first truly zero-emission inhabited islands. It is a goal that residents feel entirely confident of achieving given their past record."
+          },
+          {
+            "letter": "C",
+            "paragraph": "In the harsh winter of 1998, a series of severe storms prevented supply vessels from reaching the island for almost a month. The resulting fuel crisis left homes without heat and power during freezing conditions, forcing residents to confront the reality that their current energy model was unsustainable and required immediate action."
+          },
+          {
+            "letter": "D",
+            "paragraph": "Despite these technological upgrades, many residents initially resisted the transition, fearing that wind turbines would spoil the island's pristine landscape. Concerns were also raised about the potential noise impact on local wildlife, leading to lengthy public debates before final approval was granted."
+          },
+          {
+            "letter": "E",
+            "paragraph": "To solve this issue, engineers integrated a central battery storage system alongside an intelligent power management unit. This system monitored real-time consumption and automatically managed the flow of electricity, holding power in reserve for times when wind and solar output dropped."
+          },
+          {
+            "letter": "F",
+            "paragraph": "The proposed blueprint called for two medium-sized wind turbines on the ridge, three micro-hydro generators along the main river, and a solar array near the harbour. Together, these facilities were projected to generate more than enough electricity to meet the island's annual power requirements."
+          },
+          {
+            "letter": "G",
+            "paragraph": "Word of this remarkable achievement spread far beyond the island's shores, drawing widespread attention from environmental journalists and energy experts. The initiative was soon hailed as a pioneering blueprint for rural energy autonomy, placing the tiny island firmly on the international map."
+          }
+        ],
+        "items": [
+          {
+            "number": 1,
+            "answer": "C",
+            "explanation": "Option C provides the critical crisis (the severe storm in winter 1998 disrupting fuel supplies and requiring immediate action) that directly links to the phrase 'This turning point arrived when...' immediately following the gap."
+          },
+          {
+            "number": 2,
+            "answer": "F",
+            "explanation": "Option F describes 'The proposed blueprint' specifying the wind, hydro, and solar facilities, which follows the previous sentence about engineers designing an integrated system. In turn, the phrase 'these facilities' in Option F links forward to 'Funding such an ambitious hybrid grid' after the gap."
+          },
+          {
+            "number": 3,
+            "answer": "A",
+            "explanation": "Option A details the physical construction phase ('install the wind turbines, lay underground cables...'), which logically follows the capital procurement mentioned before the gap, and provides the direct reference for 'Once these components were fully operational' after the gap."
+          },
+          {
+            "number": 4,
+            "answer": "E",
+            "explanation": "Option E opens with 'To solve this issue', directly referencing the problem of unpredictable wind and solar generation described before the gap. Its description of a battery storage and power management system is then picked up by 'This clever balancing mechanism' following the gap."
+          },
+          {
+            "number": 5,
+            "answer": "G",
+            "explanation": "Option G refers back to 'this remarkable achievement' (the reduced bills and grid reinvestment described before the gap) and concludes by stating the island was placed 'firmly on the international map', which sets up the mention of international 'Delegations from remote communities' visiting Tanera after the gap."
+          },
+          {
+            "number": 6,
+            "answer": "B",
+            "explanation": "Option B starts with 'If successful, these future initiatives', referencing the plans for electric vehicles and green hydrogen storage mentioned before the gap, and connects smoothly to the concluding paragraph evaluating the island's overall success."
+          }
+        ],
+        "distractor_letter": "D"
+      }
+    },
+    "part7-urban-tram": {
+      "part": 7,
+      "source": "generated by google:gemini-3.6-flash from seed part7-g1 and passed by the validator",
+      "exercise": {
+        "title": "The Return of the Urban Tram",
+        "topic": "Urban Transport Policy",
+        "text": "During the middle of the twentieth century, hundreds of municipalities across Europe and North America systematically dismantled their extensive streetcar networks. The private automobile was widely celebrated as the ultimate symbol of personal freedom and economic progress, prompting city councils to rip up thousands of kilometres of steel track to make way for asphalt roadways. Decades later, however, urban planners are executing a dramatic U-turn, reinstating light rail transit as a vital centrepiece of contemporary transport policy in regions where streetcars had long been dismissed as obsolete relics of the past.\n{{1}}\nCity authorities initially tried to solve the problem by introducing extensive fleets of diesel buses, which were praised for being considerably cheaper to purchase and far more flexible to operate than fixed rail systems. However, while buses could easily alter their routes to suit changing suburban development, these vehicles quickly proved incapable of moving huge volumes of daily commuters efficiently along primary arterial corridors, frequently becoming trapped in the very gridlock they were originally deployed to alleviate.\n{{2}}\nThese modern features include sleek, ultra-low-floor carriages that permit rapid, level boarding for all passengers, regenerative braking systems that feed electrical energy back into the local grid, and advanced traffic signal priority that holds lights green as a tram approaches an intersection. Furthermore, modern tracks are increasingly embedded within green strips of lawn rather than concrete, effectively dampening urban noise while absorbing heavy rainfall runoff.\n{{3}}\nBeyond high passenger numbers, municipal leaders are also strongly attracted by the broader economic ripple effects that fixed transit lines consistently bring to urban neighbourhoods. The physical permanence of rail lines signals a long-term civic commitment to a specific corridor, encouraging substantial private investment in retail establishments, residential developments, and commercial offices along the route.\n{{4}}\nThe primary obstacle is the staggering upfront capital expenditure required to lay physical track, install overhead power lines, and reconfigure complex utility networks buried deep beneath the street pavement. In many metropolitan regions, municipal budgets are stretched to their absolute limits long before a single passenger ever steps onto a platform, leading to intense political debates over project viability.\n{{5}}\nTo mitigate such disruption, some forward-thinking municipalities now offer direct financial compensation schemes to affected traders or employ accelerated construction techniques using prefabricated track segments that can be installed overnight. When these major civil engineering projects are managed effectively, initial public dissatisfaction tends to evaporate once the system opens and the tangible air quality benefits become obvious to local residents.\n{{6}}\nUltimately, the global revival of the urban tram reflects a fundamental rethinking of how public space in cities should be allocated. By actively prioritising efficient, clean mass transit over the historic dominance of individual private motor vehicles, urban planners are taking a vital step toward creating cleaner, quieter, and vastly more livable environments for future generations.",
+        "options": [
+          {
+            "letter": "A",
+            "paragraph": "Such technological refinements do more than just improve journey times; they also create a smoother, more attractive passenger experience that actively encourages motorists to leave their cars at home. Consequently, ridership figures on newly opened tramways consistently exceed initial forecasting models."
+          },
+          {
+            "letter": "B",
+            "paragraph": "These environmental gains are particularly crucial as cities struggle to meet strict clean air targets. Replacing thousands of daily car trips with zero-emission rail travel yields immediate reductions in localized nitrogen dioxide pollution and overall carbon emissions."
+          },
+          {
+            "letter": "C",
+            "paragraph": "This phenomenon, often termed the 'rail factor', rarely occurs with bus services, which can be rerouted at short notice and therefore fail to inspire the same level of confidence among property developers. Yet despite these clear financial incentives, securing approval for a new network remains a formidable hurdle."
+          },
+          {
+            "letter": "D",
+            "paragraph": "This shift in thinking was not driven by pure nostalgia, but by stark physical necessity. As urban populations exploded during late-twentieth-century expansions, street layouts originally designed for horse-drawn carriages began choking under the relentless weight of private automobile traffic."
+          },
+          {
+            "letter": "E",
+            "paragraph": "Furthermore, ticket pricing structures must be kept low enough to remain competitive with the running costs of private vehicles. If transit fares are set too high, commuters will simply return to driving, frustrating municipal carbon reduction targets and reducing overall public transport revenue."
+          },
+          {
+            "letter": "F",
+            "paragraph": "To overcome these capacity limitations, municipal authorities began turning back to rails, but with a thoroughly modern design. Today’s light rail vehicles bear little physical resemblance to their creaking, noisy ancestors from the early twentieth century."
+          },
+          {
+            "letter": "G",
+            "paragraph": "In addition to these heavy financial burdens, local businesses often suffer severe disruption during the years of street excavation and traffic diversions. Shopkeepers frequently complain of plunging footfall while major construction works block access to their store fronts."
+          }
+        ],
+        "items": [
+          {
+            "number": 1,
+            "answer": "D",
+            "explanation": "'This shift in thinking' at the start of D refers back to 'executing a dramatic U-turn' in the introductory paragraph. In addition, 'the problem' in the text immediately after gap 1 points back to street layouts 'choking under the relentless weight of private automobile traffic' described at the end of D."
+          },
+          {
+            "number": 2,
+            "answer": "F",
+            "explanation": "'To overcome these capacity limitations' at the start of F refers back to buses being 'incapable of moving huge volumes of daily commuters' in the paragraph before gap 2. F ends by introducing light rail's modern design, which connects directly to 'These modern features' at the beginning of the following paragraph."
+          },
+          {
+            "number": 3,
+            "answer": "A",
+            "explanation": "'Such technological refinements' in A links back to the specific features (low floors, regenerative braking, signal priority, noise dampening) listed before gap 3. The phrase 'Beyond high passenger numbers' in the paragraph after gap 3 then picks up on the 'ridership figures' mentioned at the end of A."
+          },
+          {
+            "number": 4,
+            "answer": "C",
+            "explanation": "'This phenomenon' at the start of C refers to private investment following fixed rail lines described before gap 4. C concludes by introducing 'a formidable hurdle', which creates a clear lexical chain with 'The primary obstacle' in the paragraph following gap 4."
+          },
+          {
+            "number": 5,
+            "answer": "G",
+            "explanation": "'these heavy financial burdens' in G refers back to the 'staggering upfront capital expenditure' and stretched budgets in the paragraph prior to gap 5. The phrase 'To mitigate such disruption' in the text after gap 5 links directly to the business disruption described in G."
+          },
+          {
+            "number": 6,
+            "answer": "B",
+            "explanation": "'These environmental gains' at the start of B connects directly to 'tangible air quality benefits' at the end of the preceding paragraph. B elaborates on zero-emission rail travel and pollution reduction, providing a smooth transition into the concluding paragraph about sustainable urban space."
+          }
+        ],
+        "distractor_letter": "E"
+      }
+    },
+    "part8-career-changes": {
+      "part": 8,
+      "source": "generated by google:gemini-3.6-flash from seed part8-g1 and passed by the validator",
+      "exercise": {
+        "title": "Leaving the Fast Lane",
+        "topic": "Career changes",
+        "sections": [
+          {
+            "letter": "A",
+            "heading": "Elena",
+            "content": "For over a decade, I was an attorney at a prestigious corporate law firm. On paper, the position was enviable, offering a substantial salary and high status. However, the grueling eighty-hour work weeks gradually took a heavy toll on my personal life. I repeatedly missed key family milestones, and no amount of financial compensation could make up for those lost moments. The deciding factor came when I realised I was spending my energy protecting massive corporate interests rather than helping individuals. I ultimately left to manage a small community legal clinic. Although my earnings are a fraction of what they were, the profound sense of purpose I feel now is priceless."
+          },
+          {
+            "letter": "B",
+            "heading": "Marcus",
+            "content": "As a senior architect at an international firm, I anticipated a career filled with artistic creation. In reality, my days were consumed by tedious administrative duties, planning regulations, and endless client meetings. The creative aspect of design was constantly pushed aside in favour of cost-cutting measures. The turning point occurred when a sustainable housing project I had poured my soul into was abruptly cancelled to maximize profit margins. Realising my values no longer aligned with the firm's commercial drive, I tendered my resignation. I now run a small furniture workshop, where I craft wooden pieces by hand. I have reclaimed my creativity and autonomy."
+          },
+          {
+            "letter": "C",
+            "heading": "Chloe",
+            "content": "Working as a senior software engineer for a tech giant came with impressive perks, including free gourmet meals and generous bonuses. Yet beneath the appealing surface, I felt increasingly disillusioned. My role primarily involved refining algorithms designed to maximize user screen time, which felt ethically questionable. The tipping point arrived during a severe health scare brought on by prolonged stress and lack of physical activity. Lying in a hospital bed, I recognised that my lifestyle was unsustainable. I quit soon after and relocated to a rural area, where I now teach computer skills to under-served communities. The work is immensely fulfilling."
+          },
+          {
+            "letter": "D",
+            "heading": "Julian",
+            "content": "I spent eight years in high-stakes investment banking, driven by the intense atmosphere and financial rewards. However, the persistent pressure resulted in severe sleep deprivation and eventual physical exhaustion. The workplace culture was fiercely competitive, meaning genuine camaraderie among colleagues was virtually non-existent, leaving me feeling remarkably isolated. The decision to step away came after a routine medical check revealed alarmingly high blood pressure, prompting my doctor to issue a firm warning. I resigned the following month and invested my savings into establishing an organic vegetable farm. Trading the trading floor for manual labor outside has completely transformed my health."
+          },
+          {
+            "letter": "E",
+            "heading": "Priya",
+            "content": "My role as a fashion buyer for a major retailer appeared glamorous, involving frequent international travel and access to high-profile industry events. In truth, the relentless travel schedule was physically draining and made maintaining personal relationships nearly impossible. Furthermore, I grew increasingly uncomfortable with the industry's contribution to environmental degradation through fast fashion. Witnessing the immense waste produced by seasonal collections troubled my conscience deeply. I eventually reached a point where I could no longer justify my involvement. After quitting, I founded an enterprise dedicated to repairing and upcycling discarded garments, allowing me to combine my expertise with my ethical principles."
+          },
+          {
+            "letter": "F",
+            "heading": "Sam",
+            "content": "As a reporter for a national newspaper, I initially loved the thrill of breaking news stories. Over time, however, the newsroom shifted its focus toward sensationalism and generating online clicks, drastically reducing the quality of our journalism. Speed was consistently prioritized over thorough fact-checking, which deeply conflicted with my professional standards. The final straw came when I was instructed to publish a story based on unverified rumours simply to outpace rival outlets. I refused and submitted my resignation that afternoon. I now write investigative non-fiction books, which allows me the time needed to conduct rigorous research and maintain my integrity."
+          }
+        ],
+        "items": [
+          {
+            "number": 1,
+            "prompt": "a realization that financial incentives were an inadequate replacement for lost personal time",
+            "answer": "A",
+            "evidence": "no amount of financial compensation could make up for those lost moments.",
+            "explanation": "Elena notes that high earnings could not compensate for the family events she missed due to long working hours."
+          },
+          {
+            "number": 2,
+            "prompt": "a medical professional's advice influencing the decision to leave",
+            "answer": "D",
+            "evidence": "prompting my doctor to issue a firm warning.",
+            "explanation": "Julian explains that a severe health warning from his doctor during a check-up prompted him to hand in his resignation."
+          },
+          {
+            "number": 3,
+            "prompt": "moral concerns regarding the impact of their work on consumers' habits",
+            "answer": "C",
+            "evidence": "refining algorithms designed to maximize user screen time, which felt ethically questionable.",
+            "explanation": "Chloe felt uneasy about developing software explicitly engineered to keep people glued to screens for longer."
+          },
+          {
+            "number": 4,
+            "prompt": "frustration at administrative duties overshadowing the imaginative aspects of the role",
+            "answer": "B",
+            "evidence": "my days were consumed by tedious administrative duties, planning regulations, and endless client meetings. The creative aspect of design was constantly pushed aside",
+            "explanation": "Marcus complains that routine paperwork and meetings consistently took priority over original artistic work."
+          },
+          {
+            "number": 5,
+            "prompt": "the difficulty of sustaining a social life due to frequent work trips",
+            "answer": "E",
+            "evidence": "the relentless travel schedule was physically draining and made maintaining personal relationships nearly impossible.",
+            "explanation": "Priya states that her constant business trips ruined her ability to maintain personal relationships with friends and family."
+          },
+          {
+            "number": 6,
+            "prompt": "a lack of supportive relationships among coworkers in the workplace",
+            "answer": "D",
+            "evidence": "genuine camaraderie among colleagues was virtually non-existent",
+            "explanation": "Julian describes an intensely competitive environment where supportive friendships between workmates did not exist."
+          },
+          {
+            "number": 7,
+            "prompt": "a shift in priorities toward helping individuals rather than corporate entities",
+            "answer": "A",
+            "evidence": "I was spending my energy protecting massive corporate interests rather than helping individuals.",
+            "explanation": "Elena wanted to focus her legal skills on helping ordinary people instead of serving large corporate clients."
+          },
+          {
+            "number": 8,
+            "prompt": "an unexpected health crisis forcing a re-evaluation of lifestyle choices",
+            "answer": "C",
+            "evidence": "The tipping point arrived during a severe health scare brought on by prolonged stress and lack of physical activity.",
+            "explanation": "Chloe's sudden hospitalisation led her to realise that her stressful job and sedentary habits could not continue."
+          },
+          {
+            "number": 9,
+            "prompt": "an order to publish unverified information serving as the immediate catalyst to resign",
+            "answer": "F",
+            "evidence": "The final straw came when I was instructed to publish a story based on unverified rumours",
+            "explanation": "Sam quit immediately after being told by editors to print unconfirmed reports just to publish ahead of competitors."
+          },
+          {
+            "number": 10,
+            "prompt": "the cancellation of a cherished project because of financial considerations",
+            "answer": "B",
+            "evidence": "a sustainable housing project I had poured my soul into was abruptly cancelled to maximize profit margins.",
+            "explanation": "Marcus resigned after a major design project he cared about deeply was axed purely to cut costs and boost profit."
+          }
+        ]
+      }
+    },
+    "part8-failed-research": {
+      "part": 8,
+      "source": "generated by google:gemini-3.6-flash from seed part8-g3 and passed by the validator",
+      "exercise": {
+        "title": "When Research Goes Wrong",
+        "topic": "Scientific experiment failures",
+        "sections": [
+          {
+            "letter": "A",
+            "heading": "Dr Elena Rostova",
+            "content": "When our team set up the high-frequency acoustic levitation rig to suspend liquid droplets, everything initially appeared seamless. We had meticulously calculated the sound wave frequencies required to counteract gravity. However, we neglected to account for how slight temperature fluctuations in the laboratory would alter ambient air density. Within twenty minutes, the sound field shifted unpredictably, causing the suspended chemical droplets to destabilise and shatter violently against the delicate sensors below. The resulting chemical contamination destroyed months of custom electronics. While the project suffered a major setback, analysing the exact moment of failure led us to redesign our environmental controls, ultimately yielding a far more robust setup for future trials."
+          },
+          {
+            "letter": "B",
+            "heading": "Dr Marcus Vance",
+            "content": "Our oceanographic expedition aimed to deploy an autonomous sub-surface sensor pod to monitor deep currents over six months. To save weight, we opted for a newly developed composite casing rather than traditional titanium. During the initial submergence off the continental shelf, pressure readings were nominal. Yet, at a depth of four hundred metres, an undetected microscopic fracture in the synthetic seal gave way. Water flooded the battery compartment, triggering a rapid thermal reaction that completely severed the recovery tether. The device sank into an inaccessible trench. Although losing the prototype was financially painful, the telemetry retrieved prior to total failure provided priceless data regarding material stress under extreme hydrostatic pressure."
+          },
+          {
+            "letter": "C",
+            "heading": "Dr Clara Dupont",
+            "content": "We were testing a novel hydrophobic nanocoating designed to prevent dust accumulation on photovoltaic panels in arid climates. Initial lab simulations had shown remarkable efficiency gains. For the outdoor field trial, we applied the formula to a test array in a desert research facility. Unfortunately, we had underestimated the chemical reaction between the coating and intense ultraviolet radiation. Instead of repelling debris, the layer transformed into a sticky resin that actively trapped windblown sand, reducing power output to zero within forty-eight hours. Scraping off the residue ruined the underlying panels entirely. Nevertheless, this failure forced us to re-examine photo-oxidation processes, prompting a complete rethink of our material composition."
+          },
+          {
+            "letter": "D",
+            "heading": "Dr Liam O'Connor",
+            "content": "The goal was to optimise photosynthetic efficiency in indoor crops using precise wavelengths of LED lighting. We programmed an automated system to adjust light intensity based on real-time leaf absorption metrics. Unfortunately, a subtle coding logic error in the control software went unnoticed during pre-flight checks. Rather than dimming the lights when thermal thresholds were approached, the script interpreted the rising temperatures as a signal to boost illumination to maximum output. By the following morning, an entire crop of experimental tomatoes had been completely scorched. Despite the loss of months of plant cultivation, the diagnostic logs revealed unexpected insights into stress-induced plant fluorescence immediately prior to cellular breakdown."
+          },
+          {
+            "letter": "E",
+            "heading": "Dr Maya Lin",
+            "content": "We designed a robotic drill meant to extract undisturbed soil cores from frozen ground for climate history research. To ensure continuous operation without manual intervention, we integrated an automated torque-management algorithm. During field tests in sub-zero conditions, an unexpected patch of bedrock jammed the drill bit. Instead of triggering a safety shutoff, the system misidentified the resistance as dense clay and continuously increased engine power to compensate. The immense mechanical stress snapped the central drive shaft and melted internal gear components beyond repair. Although the field season ended prematurely, the telemetry collected during the incident allowed us to refine our failure-detection algorithms significantly."
+          },
+          {
+            "letter": "F",
+            "heading": "Dr Henrik Berg",
+            "content": "To evaluate a new flexible edge for wind turbine blades, our team constructed a scaled model for wind tunnel testing. The objective was to measure how micro-adjustments reduced turbulence at high airspeeds. Regrettably, we failed to secure a secondary sensor harness inside the tunnel wall. Midway through the high-velocity sweep, the loose cabling was sucked directly into the rapidly spinning rotor blades. The catastrophic collision disintegrated the custom-built model and damaged the tunnel's internal lining. It was a humiliating mistake caused by simple human error rather than scientific miscalculation. Even so, high-speed footage of the impact offered surprising data on structural energy dissipation."
+          }
+        ],
+        "items": [
+          {
+            "number": 1,
+            "prompt": "a failure to anticipate how environmental changes inside the testing space would affect the experiment",
+            "answer": "A",
+            "evidence": "we neglected to account for how slight temperature fluctuations in the laboratory would alter ambient air density.",
+            "explanation": "'Environmental changes inside the testing space' paraphrases 'temperature fluctuations in the laboratory', which affected air density and disrupted the levitation field."
+          },
+          {
+            "number": 2,
+            "prompt": "a decision to use an alternative material to reduce the overall mass of the equipment",
+            "answer": "B",
+            "evidence": "To save weight, we opted for a newly developed composite casing rather than traditional titanium.",
+            "explanation": "'Reduce the overall mass' paraphrases 'save weight', and 'alternative material' corresponds to choosing 'composite casing rather than traditional titanium'."
+          },
+          {
+            "number": 3,
+            "prompt": "a protective layer having the opposite effect by capturing the substances it was supposed to ward off",
+            "answer": "C",
+            "evidence": "Instead of repelling debris, the layer transformed into a sticky resin that actively trapped windblown sand",
+            "explanation": "'Capturing the substances it was supposed to ward off' paraphrases 'actively trapped windblown sand' instead of 'repelling debris'."
+          },
+          {
+            "number": 4,
+            "prompt": "an automated system responding to an impediment by unexpectedly boosting its operational force",
+            "answer": "E",
+            "evidence": "the system misidentified the resistance as dense clay and continuously increased engine power to compensate.",
+            "explanation": "'Responding to an impediment' matches encountering bedrock resistance, and 'boosting its operational force' paraphrases 'increased engine power'."
+          },
+          {
+            "number": 5,
+            "prompt": "an admission that the incident stemmed from oversight during assembly rather than conceptual flaws",
+            "answer": "F",
+            "evidence": "It was a humiliating mistake caused by simple human error rather than scientific miscalculation.",
+            "explanation": "'Oversight during assembly' corresponds to the 'human error' of failing to secure the harness, in contrast to a 'scientific miscalculation' (conceptual flaw)."
+          },
+          {
+            "number": 6,
+            "prompt": "a software flaw that prompted an apparatus to intensify output under conditions where it should have reduced it",
+            "answer": "D",
+            "evidence": "Rather than dimming the lights when thermal thresholds were approached, the script interpreted the rising temperatures as a signal to boost illumination to maximum output.",
+            "explanation": "'Software flaw' matches 'coding logic error', 'intensify output' paraphrases 'boost illumination to maximum output', and 'where it should have reduced it' links to 'Rather than dimming the lights'."
+          },
+          {
+            "number": 7,
+            "prompt": "the destruction of bespoke equipment caused by chemical contamination after an experiment destabilised",
+            "answer": "A",
+            "evidence": "The resulting chemical contamination destroyed months of custom electronics.",
+            "explanation": "'Bespoke equipment' paraphrases 'custom electronics', which were ruined by 'chemical contamination' when the suspended droplets destabilised and shattered."
+          },
+          {
+            "number": 8,
+            "prompt": "a structural failure that resulted in the physical apparatus being permanently unrecoverable",
+            "answer": "B",
+            "evidence": "The device sank into an inaccessible trench.",
+            "explanation": "'Permanently unrecoverable' paraphrases sinking into an 'inaccessible trench' after the tether was severed."
+          },
+          {
+            "number": 9,
+            "prompt": "harm caused to the experimental subject during an attempt to remove unwanted material",
+            "answer": "C",
+            "evidence": "Scraping off the residue ruined the underlying panels entirely.",
+            "explanation": "'Attempt to remove unwanted material' paraphrases 'Scraping off the residue', which caused harm by ruining the underlying photovoltaic panels."
+          },
+          {
+            "number": 10,
+            "prompt": "extensive mechanical damage resulting from a failure in the equipment's automatic emergency cut-off",
+            "answer": "E",
+            "evidence": "Instead of triggering a safety shutoff, the system misidentified the resistance as dense clay and continuously increased engine power to compensate.",
+            "explanation": "'Failure in the equipment's automatic emergency cut-off' matches 'Instead of triggering a safety shutoff', which led to snapped shafts and melted gears."
+          }
+        ]
+      }
+    },
+    "part8-musicians": {
+      "part": 8,
+      "source": "generated by google:gemini-3.6-flash from seed part8-g2 and passed by the validator",
+      "exercise": {
+        "title": "Turning Professional: The Moment It Clicked",
+        "topic": "Musicians turning professional",
+        "sections": [
+          {
+            "letter": "A",
+            "heading": "Helena",
+            "content": "Helena had spent years balancing music with a secure administrative job in a local council. The turning point arrived during an unexpected evening substitution for a renowned symphony orchestra. Standing backstage, holding her violin, she was gripped by a sudden realisation: the anxiety that usually plagued her before routine amateur performances was entirely absent. Instead, she felt an overwhelming sense of calm focus. Performing that night, surrounded by seasoned professionals, she realised that music demanded her undivided attention, not just her spare evenings. The enthusiasm of the conductor afterwards convinced her to hand in her resignation the following morning. Looking back, she views that nerve-wracking opportunity as the precise moment her true career began."
+          },
+          {
+            "letter": "B",
+            "heading": "Marcus",
+            "content": "Marcus was halfway through a business degree when a late-night jam session in a crowded basement club altered his path. He had always viewed his piano playing as a pleasurable distraction, but on that particular evening, an experienced bass player stopped mid-song to remark on Marcus's exceptional sense of rhythm. That simple compliment, delivered in an offhand manner by someone he deeply respected, made Marcus re-examine his priorities. He spent the rest of the night pacing the streets, weighing the stability of a corporate career against the uncertainty of the music industry. By dawn, he had resolved to abandon his university course and commit himself entirely to perfecting his craft."
+          },
+          {
+            "letter": "C",
+            "heading": "Chloe",
+            "content": "Chloe was touring small coastal towns as a solo guitarist when a minor setback unexpectedly changed her outlook. A sudden electrical fault during a mid-summer festival forced her to perform an entirely acoustic set without amplification or stage lighting. Far from being panicked, Chloe felt a profound connection with the intimate crowd, who gathered closer to hear every unamplified note. The warmth of their reaction made her realise that she possessed the resilience and adaptability needed to thrive in the unpredictable world of live music. Until then, she had hesitated to call herself a professional, but walking off stage that night, she knew she would never return to her office routine."
+          },
+          {
+            "letter": "D",
+            "heading": "Julian",
+            "content": "Julian’s decisive moment occurred while sitting in the audience rather than on stage. Attending a chamber ensemble concert during a damp November weekend, he was so struck by the cellist’s expressive intensity that he felt physically stirred. He had been teaching music at a secondary school for five years, assuming his own performing ambitions were a thing of the past. However, witnessing such transformative artistry sparked a deep sense of frustration with his own compromise. He realised that remaining in his comfortable teaching job would always leave him feeling unfulfilled. Within a month, Julian had reduced his teaching hours and booked his first solo audition in over a decade."
+          },
+          {
+            "letter": "E",
+            "heading": "Priya",
+            "content": "For Priya, a session percussionist, the realisation came during a gruelling studio recording session for an advertising commercial. Having spent twelve hours repeating the same brief rhythm, she noticed that while others were growing visibly exhausted and irritable, her own enthusiasm remained completely undiminished. She was still endlessly fascinated by subtle variations in tone and timing. It suddenly struck her that her level of obsession was not shared by casual hobbyists, but was the hallmark of a true dedicated professional. That evening, she made the conscious decision to stop treating studio work as temporary freelance income and instead build a full-time career around her unique instrumental skills."
+          },
+          {
+            "letter": "F",
+            "heading": "Tomas",
+            "content": "Tomas had been producing electronic tracks in his bedroom for years, treating music purely as a creative outlet while working in retail. The defining moment arrived when an established international DJ played one of Tomas’s tracks during a headline festival set. Watching a livestream of tens of thousands of people reacting joyfully to his composition, Tomas felt a profound shift in how he viewed his talent. The overwhelming validation showed him that his work had genuine commercial and artistic value beyond his small bedroom setup. He handed in his notice at the retail store the next day, determined to turn his passion into a full-time venture."
+          }
+        ],
+        "items": [
+          {
+            "number": 1,
+            "prompt": "an unexpected lack of nerves during a stressful performance",
+            "answer": "A",
+            "evidence": "the anxiety that usually plagued her before routine amateur performances was entirely absent",
+            "explanation": "Text A states that despite the high pressure of stepping in for a renowned orchestra, the anxiety that usually affected her was entirely absent, which paraphrases an unexpected lack of nerves."
+          },
+          {
+            "number": 2,
+            "prompt": "a decision inspired by watching another artist perform",
+            "answer": "D",
+            "evidence": "so struck by the cellist’s expressive intensity that he felt physically stirred",
+            "explanation": "Text D explains that watching a cellist play in concert triggered Julian's realisation that he needed to pursue performing again, matching being inspired by watching another artist."
+          },
+          {
+            "number": 3,
+            "prompt": "a casual piece of praise from a respected peer",
+            "answer": "B",
+            "evidence": "That simple compliment, delivered in an offhand manner by someone he deeply respected",
+            "explanation": "Text B describes an offhand compliment about rhythm given mid-song by an experienced musician Marcus admired, paraphrasing a casual piece of praise from a respected peer."
+          },
+          {
+            "number": 4,
+            "prompt": "a technical problem that tested their ability to adapt on stage",
+            "answer": "C",
+            "evidence": "A sudden electrical fault during a mid-summer festival forced her to perform an entirely acoustic set",
+            "explanation": "Text C describes an electrical failure that forced Chloe to perform without amplification, testing her adaptability under unexpected circumstances."
+          },
+          {
+            "number": 5,
+            "prompt": "the awareness that their stamina outlasted that of their colleagues",
+            "answer": "E",
+            "evidence": "while others were growing visibly exhausted and irritable, her own enthusiasm remained completely undiminished",
+            "explanation": "Text E notes that during a long session, other musicians became tired while Priya remained enthusiastic, paraphrasing having greater stamina than colleagues."
+          },
+          {
+            "number": 6,
+            "prompt": "seeing a huge crowd react to music they had created",
+            "answer": "F",
+            "evidence": "Watching a livestream of tens of thousands of people reacting joyfully to his composition",
+            "explanation": "Text F describes Tomas watching a livestream of tens of thousands of festival-goers enjoying his track, which paraphrases seeing a large audience react to his music."
+          },
+          {
+            "number": 7,
+            "prompt": "a period of restless contemplation before taking a life-changing step",
+            "answer": "B",
+            "evidence": "He spent the rest of the night pacing the streets, weighing the stability of a corporate career against the uncertainty of the music industry.",
+            "explanation": "Text B outlines how Marcus spent the night pacing the streets weighing his career options before deciding to leave university, matching a period of restless contemplation."
+          },
+          {
+            "number": 8,
+            "prompt": "positive feedback from an authoritative figure after a performance",
+            "answer": "A",
+            "evidence": "The enthusiasm of the conductor afterwards convinced her to hand in her resignation",
+            "explanation": "Text A mentions that the conductor praised Helena after the concert, which paraphrases receiving positive feedback from an authoritative figure."
+          },
+          {
+            "number": 9,
+            "prompt": "the realization that their work possessed genuine commercial potential",
+            "answer": "F",
+            "evidence": "validation showed him that his work had genuine commercial and artistic value",
+            "explanation": "Text F states that seeing the crowd reaction convinced Tomas that his bedroom-produced tracks had real artistic and commercial worth."
+          },
+          {
+            "number": 10,
+            "prompt": "a sense of connection with the audience during an unamplified set",
+            "answer": "C",
+            "evidence": "Chloe felt a profound connection with the intimate crowd, who gathered closer to hear every unamplified note.",
+            "explanation": "Text C details how playing without power allowed Chloe to feel a deep connection with listeners who gathered near to listen."
+          }
+        ]
+      }
+    }
+  }
+}

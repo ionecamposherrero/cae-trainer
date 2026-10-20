@@ -1,0 +1,1346 @@
+{
+  "description": "Hand-authored Use of English exercises (Parts 1-4) with deliberate near-miss answers, in three groups of four papers, one per part, so the suite can be run one group a day (--group) and the groups pooled afterwards (scripts/combine_marking_reports.py). A group need not cover every category or verdict; the three together do. One grade_attempt call per case produces both the adjudication verdicts and the error categories, which is why they share a file rather than sitting in two: splitting them would double the quota cost for the same run. Part 1 has no expected_adjudication: a letter answer is never adjudicated, so its case measures tagging alone. Reading (Parts 5-8) has no case: each part's one category is fixed, so there is nothing to measure.",
+  "labelling": "expected_adjudication is complete: accept / partial / reject is a judgement about the answer, and the rationale for each is recorded. expected_category labels every item that should lose marks, using the shared Use of English set in cae/domain/taxonomy.py (PART_CATEGORIES): the boundary between neighbouring categories is the one CATEGORY_GUIDE states. A null would be skipped by the metric rather than counted as a failure; use one only where no category is defensible.",
+  "verdict_mapping": "Verdicts are read back off the graded rows: full marks is accept, zero is reject, and anything between is partial (Part 4 only, since it is the only part awarding two marks per item).",
+  "cases": [
+    {
+      "id": "part1-urban-beekeeping",
+      "group": 1,
+      "part": 1,
+      "exercise": {
+        "title": "Bees on the rooftops",
+        "topic": "urban beekeeping",
+        "text": "Ten years ago, few city dwellers would have {{1}} keeping bees on their rooftops. Today, urban beekeeping has {{2}} off in cities from London to Tokyo, and waiting lists for training courses grow longer every spring. Enthusiasts are quick to {{3}} that city bees often thrive, feeding on a wider variety of flowers than their rural cousins, which may be {{4}} to vast fields of a single crop.\n\nNot everyone is convinced, {{5}}. Some ecologists warn that the sudden rise in hives could put wild bees at a disadvantage, since honeybees compete with them for the same limited supply of nectar. Newcomers, they argue, should think twice before jumping on the {{6}}, and planting more flowers would do far more good than adding another hive.\n\nFor their part, beekeepers reply that responsible practice makes all the difference. Most belong to local associations that keep a close {{7}} on the number of colonies in each area, and many now regard planting as an {{8}} part of the hobby.",
+        "items": [
+          {
+            "number": 1,
+            "options": [
+              "planned",
+              "considered",
+              "thought",
+              "hoped"
+            ],
+            "answer": "B",
+            "explanation": "'Consider' is followed by an -ing form; 'think' would need 'of', and 'plan' and 'hope' take a to-infinitive."
+          },
+          {
+            "number": 2,
+            "options": [
+              "set",
+              "gone",
+              "taken",
+              "come"
+            ],
+            "answer": "C",
+            "explanation": "'Take off' means to become popular quickly; 'set off' means to start a journey."
+          },
+          {
+            "number": 3,
+            "options": [
+              "admit",
+              "pretend",
+              "refuse",
+              "insist"
+            ],
+            "answer": "D",
+            "explanation": "'Insist that' asserts something firmly; 'admit' implies conceding something unwelcome."
+          },
+          {
+            "number": 4,
+            "options": [
+              "restricted",
+              "prevented",
+              "deprived",
+              "excluded"
+            ],
+            "answer": "A",
+            "explanation": "'Restricted' takes the 'to' in the text; 'deprived' needs 'of', and 'prevented' and 'excluded' need 'from'."
+          },
+          {
+            "number": 5,
+            "options": [
+              "although",
+              "however",
+              "despite",
+              "whereas"
+            ],
+            "answer": "B",
+            "explanation": "'However' can close a sentence to mark a contrast; 'although' must introduce a clause."
+          },
+          {
+            "number": 6,
+            "options": [
+              "train",
+              "coach",
+              "bandwagon",
+              "carriage"
+            ],
+            "answer": "C",
+            "explanation": "'Jump on the bandwagon' is the idiom for joining a popular trend."
+          },
+          {
+            "number": 7,
+            "options": [
+              "look",
+              "eye",
+              "sight",
+              "view"
+            ],
+            "answer": "B",
+            "explanation": "'Keep a close eye on' is the fixed expression; 'look' does not fit it."
+          },
+          {
+            "number": 8,
+            "options": [
+              "eventual",
+              "accidental",
+              "essential",
+              "actual"
+            ],
+            "answer": "C",
+            "explanation": "'An essential part' is a necessary one; 'eventual' means happening at the end."
+          }
+        ]
+      },
+      "responses": {
+        "1": "C",
+        "2": "A",
+        "3": "A",
+        "4": "C",
+        "5": "A",
+        "6": "A",
+        "7": "A",
+        "8": "A"
+      },
+      "expected_category": {
+        "1": "WORD_PATTERNS",
+        "2": "FIXED_PHRASES",
+        "3": "WORD_CHOICE",
+        "4": "WORD_PATTERNS",
+        "5": "LINKING",
+        "6": "FIXED_PHRASES",
+        "7": "FIXED_PHRASES",
+        "8": "WORD_CHOICE"
+      },
+      "rationale": {
+        "1": "'think' needs 'of' before an -ing form: what the verb requires after it.",
+        "2": "'set off' (to start a journey) for 'take off': the wrong verb in the phrasal verb.",
+        "3": "'admit' is grammatical but carries the wrong connotation.",
+        "4": "'deprived' requires 'of', not the 'to' the text gives.",
+        "5": "'although' introduces a clause; the sentence needs a contrast linker that can close it.",
+        "6": "'jump on the train' is not the idiom 'jump on the bandwagon'.",
+        "7": "'keep a close look on' breaks the fixed expression 'keep a close eye on'.",
+        "8": "'eventual' is a false friend of Spanish 'eventual' (occasional): the meaning is wrong."
+      }
+    },
+    {
+      "id": "part2-night-train",
+      "group": 1,
+      "part": 2,
+      "exercise": {
+        "title": "The return of the night train",
+        "topic": "rail travel",
+        "text": "The night train is enjoying a revival that few in the industry saw coming. {{1}} more than three decades, sleeper services across Europe were steadily withdrawn, unable to compete {{2}} budget airlines on either price or speed. Several operators concluded that the sleeper had had {{3}} day and quietly sold off the carriages.\n\nWhat nobody anticipated was how quickly attitudes to flying would change. Passengers who once {{4}} a two-hour flight for granted now weigh it against the emissions involved, and a growing number are choosing to travel overnight {{5}} than in the air. Booking figures on the Vienna to Brussels route have risen every year {{6}} its reopening.\n\nThe economics remain difficult. A sleeper carriage carries far fewer passengers {{7}} a seated one does, and the rolling stock is expensive and scarce. {{8}} these obstacles, three new routes are due to open next year, and the operators report that demand is running well ahead of supply.",
+        "items": [
+          {
+            "number": 1,
+            "answer": "For",
+            "accepted": [
+              "for"
+            ],
+            "explanation": "'For' introduces a period of time over which something continued."
+          },
+          {
+            "number": 2,
+            "answer": "with",
+            "accepted": [],
+            "explanation": "'Compete with' is the standard dependent preposition."
+          },
+          {
+            "number": 3,
+            "answer": "its",
+            "accepted": [],
+            "explanation": "The fixed expression 'have had its day', agreeing with the singular subject."
+          },
+          {
+            "number": 4,
+            "answer": "took",
+            "accepted": [],
+            "explanation": "'Take something for granted' means to accept it without thinking about it."
+          },
+          {
+            "number": 5,
+            "answer": "rather",
+            "accepted": [],
+            "explanation": "'Rather than' contrasts two alternatives."
+          },
+          {
+            "number": 6,
+            "answer": "since",
+            "accepted": [],
+            "explanation": "'Since' marks the start of a period continuing to the present."
+          },
+          {
+            "number": 7,
+            "answer": "than",
+            "accepted": [],
+            "explanation": "'Than' completes the comparative 'fewer ... than'."
+          },
+          {
+            "number": 8,
+            "answer": "Despite",
+            "accepted": [
+              "despite"
+            ],
+            "explanation": "'Despite' concedes the obstacles just described."
+          }
+        ]
+      },
+      "responses": {
+        "1": "Over",
+        "2": "against",
+        "3": "their",
+        "4": "gave",
+        "5": "instead",
+        "6": "for",
+        "7": "as",
+        "8": "Besides"
+      },
+      "expected_adjudication": {
+        "1": "accept",
+        "2": "accept",
+        "3": "reject",
+        "4": "reject",
+        "5": "reject",
+        "6": "reject",
+        "7": "reject",
+        "8": "reject"
+      },
+      "expected_category": {
+        "3": "GRAMMAR_WORDS",
+        "4": "FIXED_PHRASES",
+        "5": "LINKING",
+        "6": "GRAMMAR_WORDS",
+        "7": "SENTENCE_STRUCTURE",
+        "8": "LINKING"
+      },
+      "rationale": {
+        "1": "'Over more than three decades' is idiomatic and means the same.",
+        "2": "'Compete against' is as standard as 'compete with'.",
+        "3": "The subject 'the sleeper' is singular.",
+        "4": "'give ... for granted' calques Spanish 'dar por sentado': the fixed expression is 'take something for granted'.",
+        "5": "'instead than' is not English; the linker is 'instead of' or 'rather than'.",
+        "6": "'for' gives a length of time, not the point it started from: before a starting point ('its reopening') the preposition is 'since'.",
+        "7": "'fewer' is a comparative and takes 'than'; 'as' belongs to 'as ... as'.",
+        "8": "'Besides' adds; the sentence concedes, which needs 'Despite'."
+      }
+    },
+    {
+      "id": "part3-amateur-astronomy",
+      "group": 1,
+      "part": 3,
+      "exercise": {
+        "title": "The rise of the amateur astronomer",
+        "topic": "astronomy",
+        "text": "Amateur astronomy has undergone a remarkable {{1}} over the past two decades. Once the preserve of a handful of {{2}} enthusiasts with home-built equipment, it is now a hobby of genuine scientific {{3}}.\n\nThe change is largely {{4}} to the digital camera. A sensor costing a few hundred euros gathers more light in an hour than a photographic plate managed in a whole night, and software has made the processing of those images {{5}} straightforward.\n\nThe consequences have been striking. Professional observatories, whose telescope time is fiercely contested, increasingly rely on amateurs for the {{6}} monitoring of variable stars, and several comets found in recent years bear the names of people with no formal {{7}} in the subject at all. It is a rare and encouraging example of {{8}} between full-time researchers and the people who simply enjoy looking up.",
+        "items": [
+          {
+            "number": 1,
+            "stem": "TRANSFORM",
+            "answer": "transformation",
+            "accepted": [],
+            "explanation": "The noun form: -ation turns the verb into an abstract noun."
+          },
+          {
+            "number": 2,
+            "stem": "DEDICATE",
+            "answer": "dedicated",
+            "accepted": [],
+            "explanation": "A past participle used as an adjective before the noun."
+          },
+          {
+            "number": 3,
+            "stem": "SIGNIFY",
+            "answer": "significance",
+            "accepted": [],
+            "explanation": "An abstract noun after 'of genuine scientific'."
+          },
+          {
+            "number": 4,
+            "stem": "ATTRIBUTE",
+            "answer": "attributable",
+            "accepted": [],
+            "explanation": "The -able adjective, followed by the dependent preposition 'to'."
+          },
+          {
+            "number": 5,
+            "stem": "REMARK",
+            "answer": "remarkably",
+            "accepted": [],
+            "explanation": "An adverb modifying the adjective 'straightforward'."
+          },
+          {
+            "number": 6,
+            "stem": "CONTINUE",
+            "answer": "continuous",
+            "accepted": [
+              "continual"
+            ],
+            "explanation": "An adjective before the noun 'monitoring'."
+          },
+          {
+            "number": 7,
+            "stem": "TRAIN",
+            "answer": "training",
+            "accepted": [],
+            "explanation": "An uncountable noun after 'no formal'."
+          },
+          {
+            "number": 8,
+            "stem": "COLLABORATE",
+            "answer": "collaboration",
+            "accepted": [],
+            "explanation": "An abstract noun after 'an example of'."
+          }
+        ]
+      },
+      "responses": {
+        "1": "transformative",
+        "2": "dedicating",
+        "3": "significant",
+        "4": "attributed",
+        "5": "remarkable",
+        "6": "continuation",
+        "7": "trained",
+        "8": "collaborative"
+      },
+      "expected_adjudication": {
+        "1": "reject",
+        "2": "reject",
+        "3": "reject",
+        "4": "accept",
+        "5": "reject",
+        "6": "reject",
+        "7": "reject",
+        "8": "reject"
+      },
+      "expected_category": {
+        "1": "WORD_FORM",
+        "2": "WORD_FORM",
+        "3": "WORD_FORM",
+        "5": "WORD_FORM",
+        "6": "WORD_FORM",
+        "7": "WORD_FORM",
+        "8": "WORD_FORM"
+      },
+      "rationale": {
+        "1": "An adjective where the sentence needs a noun.",
+        "2": "'-ing' for '-ed' on an adjective: the enthusiasts are dedicated, they are not dedicating something.",
+        "3": "An adjective where the sentence needs a noun.",
+        "4": "'largely attributed to' is entirely idiomatic; the key is not exhaustive.",
+        "5": "An adjective cannot modify another adjective.",
+        "6": "A noun where the sentence needs an adjective before 'monitoring'.",
+        "7": "A past participle where an uncountable noun is needed.",
+        "8": "An adjective after 'an example of', where a noun is needed."
+      }
+    },
+    {
+      "id": "part4-transformations",
+      "group": 1,
+      "part": 4,
+      "exercise": {
+        "title": "Key word transformations",
+        "topic": "general",
+        "items": [
+          {
+            "number": 1,
+            "lead_in": "It was only when I saw the photograph that I realised how much the town had changed.",
+            "key_word": "UNTIL",
+            "sentence_start": "Not",
+            "sentence_end": "did I realise how much the town had changed.",
+            "answer": "until I saw the photograph",
+            "accepted": [],
+            "explanation": "Negative inversion after a fronted 'Not until'."
+          },
+          {
+            "number": 2,
+            "lead_in": "The results surprised everyone at the laboratory.",
+            "key_word": "TAKEN",
+            "sentence_start": "Everyone at the laboratory",
+            "sentence_end": "by the results.",
+            "answer": "was taken aback",
+            "accepted": [
+              "was rather taken aback"
+            ],
+            "explanation": "The passive idiom 'be taken aback by'."
+          },
+          {
+            "number": 3,
+            "lead_in": "I regret not applying for the position when I had the chance.",
+            "key_word": "WISH",
+            "sentence_start": "I",
+            "sentence_end": "for the position when I had the chance.",
+            "answer": "wish I had applied",
+            "accepted": [],
+            "explanation": "'Wish' plus the past perfect expresses regret about the past."
+          },
+          {
+            "number": 4,
+            "lead_in": "They are unlikely to finish the building work before September.",
+            "key_word": "CHANCE",
+            "sentence_start": "There is",
+            "sentence_end": "the building work before September.",
+            "answer": "little chance of them finishing",
+            "accepted": [
+              "little chance of their finishing",
+              "not much chance of them finishing"
+            ],
+            "explanation": "'Little chance of' plus a gerund renders 'unlikely'."
+          },
+          {
+            "number": 5,
+            "lead_in": "The manager said the delay was not his fault.",
+            "key_word": "RESPONSIBILITY",
+            "sentence_start": "The manager denied",
+            "sentence_end": "the delay.",
+            "answer": "any responsibility for",
+            "accepted": [
+              "all responsibility for"
+            ],
+            "explanation": "'Deny responsibility for' is the fixed collocation."
+          },
+          {
+            "number": 6,
+            "lead_in": "Someone should have told us the museum closes at four.",
+            "key_word": "INFORMED",
+            "sentence_start": "We",
+            "sentence_end": "that the museum closes at four.",
+            "answer": "should have been informed",
+            "accepted": [],
+            "explanation": "The perfect modal in the passive: should have been + past participle."
+          }
+        ]
+      },
+      "responses": {
+        "1": "until I saw that photograph",
+        "2": "was really taken aback",
+        "3": "wish I applied",
+        "4": "no chance of them finishing",
+        "5": "any responsibility of",
+        "6": "should be informed"
+      },
+      "expected_adjudication": {
+        "1": "accept",
+        "2": "accept",
+        "3": "reject",
+        "4": "partial",
+        "5": "partial",
+        "6": "reject"
+      },
+      "expected_category": {
+        "3": "VERB_FORMS",
+        "4": "WORD_CHOICE",
+        "5": "WORD_PATTERNS",
+        "6": "VERB_FORMS"
+      },
+      "rationale": {
+        "1": "'that photograph' for 'the photograph' changes nothing that is being tested.",
+        "2": "An added intensifier leaves the tested structure intact.",
+        "3": "'wish' plus a simple past does not express regret about a completed action.",
+        "4": "The structure is right but 'no chance' overstates 'unlikely': half marks.",
+        "5": "The structure is right and the key word is used; the preposition is wrong.",
+        "6": "The passive is right but the perfect is lost: this is about the past."
+      }
+    },
+    {
+      "id": "part1-g2-night-sky",
+      "group": 2,
+      "part": 1,
+      "exercise": {
+        "title": "Losing the stars",
+        "topic": "light pollution",
+        "text": "For most of human history, anyone could look up on a clear night and see thousands of stars. Today, eight out of ten people live under skies so bright that the Milky Way is no longer {{1}}, and astronomers have been {{2}} the alarm for decades.\n\nPart of the difficulty is that the damage is easy to {{3}}. Unlike smoke or noise, artificial light seems harmless, and most people {{4}} it as a sign of safety. Many simply put {{5}} with a glow that never quite fades. Ecologists, {{6}}, point to its effect on wildlife: migrating birds lose their way, and newly hatched turtles head inland instead of out to sea.\n\nSome towns have now taken matters into their own {{7}}, replacing street lamps with shielded fittings that direct light downwards, and several have successfully {{8}} for recognition as dark sky reserves.",
+        "items": [
+          {
+            "number": 1,
+            "options": [
+              "visual",
+              "visible",
+              "vivid",
+              "visionary"
+            ],
+            "answer": "B",
+            "explanation": "'Visible' means able to be seen; 'visual' means relating to sight."
+          },
+          {
+            "number": 2,
+            "options": [
+              "lifting",
+              "rising",
+              "raising",
+              "growing"
+            ],
+            "answer": "C",
+            "explanation": "'Raise the alarm' is the fixed expression for warning people of danger."
+          },
+          {
+            "number": 3,
+            "options": [
+              "oversee",
+              "overlook",
+              "overcome",
+              "overtake"
+            ],
+            "answer": "B",
+            "explanation": "'Overlook' means to fail to notice; 'oversee' means to supervise."
+          },
+          {
+            "number": 4,
+            "options": [
+              "think",
+              "regard",
+              "believe",
+              "suppose"
+            ],
+            "answer": "B",
+            "explanation": "'Regard something as' takes 'as' directly; 'think' would need 'of ... as'."
+          },
+          {
+            "number": 5,
+            "options": [
+              "up",
+              "on",
+              "off",
+              "out"
+            ],
+            "answer": "A",
+            "explanation": "'Put up with' means to tolerate something unpleasant."
+          },
+          {
+            "number": 6,
+            "options": [
+              "however",
+              "although",
+              "despite",
+              "unless"
+            ],
+            "answer": "A",
+            "explanation": "'However' can stand between commas to mark a contrast; the others cannot."
+          },
+          {
+            "number": 7,
+            "options": [
+              "arms",
+              "hands",
+              "fingers",
+              "palms"
+            ],
+            "answer": "B",
+            "explanation": "'Take matters into your own hands' is the idiom for acting yourself."
+          },
+          {
+            "number": 8,
+            "options": [
+              "requested",
+              "demanded",
+              "applied",
+              "required"
+            ],
+            "answer": "C",
+            "explanation": "'Apply for' takes the 'for' in the text; 'request' takes a direct object."
+          }
+        ]
+      },
+      "responses": {
+        "1": "A",
+        "2": "A",
+        "3": "A",
+        "4": "A",
+        "5": "D",
+        "6": "C",
+        "7": "A",
+        "8": "A"
+      },
+      "expected_category": {
+        "1": "WORD_CHOICE",
+        "2": "FIXED_PHRASES",
+        "3": "WORD_CHOICE",
+        "4": "WORD_PATTERNS",
+        "5": "FIXED_PHRASES",
+        "6": "LINKING",
+        "7": "FIXED_PHRASES",
+        "8": "WORD_PATTERNS"
+      },
+      "rationale": {
+        "1": "'visual' is a real adjective that fits the grammar but means 'relating to sight'.",
+        "2": "'lift the alarm' breaks the fixed expression 'raise the alarm'.",
+        "3": "'oversee' is a near neighbour in form with the wrong meaning.",
+        "4": "'think' needs 'of' before 'it as': what the verb requires after it.",
+        "5": "'put out with' is not the phrasal verb 'put up with'.",
+        "6": "'despite' needs an object and cannot stand alone as a contrast linker.",
+        "7": "'take matters into your own arms' is not the idiom.",
+        "8": "'request' takes a direct object, not 'for'."
+      }
+    },
+    {
+      "id": "part2-g2-language-apps",
+      "group": 2,
+      "part": 2,
+      "exercise": {
+        "title": "Learning by the minute",
+        "topic": "language learning",
+        "text": "Millions of people now study a language on their phones, often {{1}} only a few minutes a day. The apps have made learning more accessible {{2}} ever before, but teachers question how much users really absorb.\n\nThe main criticism is that the apps reward routine {{3}} than understanding. Someone {{4}} completes a lesson every day for a year may still struggle to order {{5}} coffee in the language they have been studying. {{6}} this, the companies behind the apps insist that regular practice is the basis of all progress.\n\nBoth sides agree that an app works best alongside other ways of learning. {{7}} of the experts we spoke to believed that tapping on a screen could replace a real conversation, however well the app {{8}} designed.",
+        "items": [
+          {
+            "number": 1,
+            "answer": "for",
+            "accepted": [],
+            "explanation": "'For' gives the length of time spent each day."
+          },
+          {
+            "number": 2,
+            "answer": "than",
+            "accepted": [],
+            "explanation": "'Than' completes the comparative 'more accessible ... than'."
+          },
+          {
+            "number": 3,
+            "answer": "rather",
+            "accepted": [],
+            "explanation": "'Rather than' contrasts what is rewarded with what is not."
+          },
+          {
+            "number": 4,
+            "answer": "who",
+            "accepted": [],
+            "explanation": "A relative pronoun for 'Someone', a person."
+          },
+          {
+            "number": 5,
+            "answer": "a",
+            "accepted": [],
+            "explanation": "The indefinite article before a single countable 'coffee'."
+          },
+          {
+            "number": 6,
+            "answer": "Despite",
+            "accepted": [
+              "Notwithstanding"
+            ],
+            "explanation": "'Despite this' concedes the criticism just made."
+          },
+          {
+            "number": 7,
+            "answer": "None",
+            "accepted": [],
+            "explanation": "'None of the experts' with the plural verb that follows."
+          },
+          {
+            "number": 8,
+            "answer": "is",
+            "accepted": [],
+            "explanation": "A singular verb agreeing with 'the app'."
+          }
+        ]
+      },
+      "responses": {
+        "1": "spending",
+        "2": "as",
+        "3": "other",
+        "4": "that",
+        "5": "an",
+        "6": "Although",
+        "7": "Few",
+        "8": "are"
+      },
+      "expected_adjudication": {
+        "1": "accept",
+        "2": "reject",
+        "3": "reject",
+        "4": "accept",
+        "5": "reject",
+        "6": "reject",
+        "7": "accept",
+        "8": "reject"
+      },
+      "expected_category": {
+        "2": "SENTENCE_STRUCTURE",
+        "3": "LINKING",
+        "5": "GRAMMAR_WORDS",
+        "6": "LINKING",
+        "8": "GRAMMAR_WORDS"
+      },
+      "rationale": {
+        "1": "'often spending only a few minutes a day' is as grammatical and keeps the meaning.",
+        "2": "'more accessible' is a comparative and takes 'than'; 'as' belongs to 'as ... as'.",
+        "3": "'other than' does not contrast two alternatives here; the linker is 'rather than'.",
+        "4": "'that' is standard for a person in a defining relative clause.",
+        "5": "'an' goes before a vowel sound; 'coffee' needs 'a'.",
+        "6": "'Although' introduces a clause and cannot take 'this' as its object.",
+        "7": "'Few of the experts' fits the grammar and makes sense: any word that does is accepted.",
+        "8": "'the app' is singular: 'are' breaks the agreement."
+      }
+    },
+    {
+      "id": "part3-g2-sleep-science",
+      "group": 2,
+      "part": 3,
+      "exercise": {
+        "title": "Why we sleep",
+        "topic": "sleep science",
+        "text": "Sleep has long been a source of {{1}} for scientists. Despite decades of research, its exact purpose remains something of a mystery, although its {{2}} for memory is now well established.\n\nStudies show that even mild sleep {{3}} can affect judgement as {{4}} as alcohol does. Yet many people treat a short night as a sign of {{5}} rather than a risk.\n\nPart of the problem is that our {{6}} of how much sleep we need is often {{7}}. Experts with {{8}} training recommend a regular routine as the simplest way to improve it.",
+        "items": [
+          {
+            "number": 1,
+            "stem": "FASCINATE",
+            "answer": "fascination",
+            "accepted": [],
+            "explanation": "A noun after 'a source of'."
+          },
+          {
+            "number": 2,
+            "stem": "IMPORT",
+            "answer": "importance",
+            "accepted": [],
+            "explanation": "The noun after the possessive 'its'."
+          },
+          {
+            "number": 3,
+            "stem": "DEPRIVE",
+            "answer": "deprivation",
+            "accepted": [],
+            "explanation": "The noun in the compound 'sleep deprivation'."
+          },
+          {
+            "number": 4,
+            "stem": "SEVERE",
+            "answer": "severely",
+            "accepted": [],
+            "explanation": "An adverb modifying the verb 'affect'."
+          },
+          {
+            "number": 5,
+            "stem": "DEDICATE",
+            "answer": "dedication",
+            "accepted": [],
+            "explanation": "A noun after 'a sign of'."
+          },
+          {
+            "number": 6,
+            "stem": "UNDERSTAND",
+            "answer": "understanding",
+            "accepted": [],
+            "explanation": "The noun after the possessive 'our'."
+          },
+          {
+            "number": 7,
+            "stem": "ACCURATE",
+            "answer": "inaccurate",
+            "accepted": [],
+            "explanation": "The negative adjective: 'in-' plus 'accurate'."
+          },
+          {
+            "number": 8,
+            "stem": "SPECIAL",
+            "answer": "specialist",
+            "accepted": [],
+            "explanation": "An adjective before the noun 'training'."
+          }
+        ]
+      },
+      "responses": {
+        "1": "fascinating",
+        "2": "importancy",
+        "3": "depriving",
+        "4": "severe",
+        "5": "dedicating",
+        "6": "understandment",
+        "7": "unaccurate",
+        "8": "specialised"
+      },
+      "expected_adjudication": {
+        "1": "reject",
+        "2": "reject",
+        "3": "reject",
+        "4": "reject",
+        "5": "reject",
+        "6": "reject",
+        "7": "reject",
+        "8": "accept"
+      },
+      "expected_category": {
+        "1": "WORD_FORM",
+        "2": "WORD_FORM",
+        "3": "WORD_FORM",
+        "4": "WORD_FORM",
+        "5": "WORD_FORM",
+        "6": "WORD_FORM",
+        "7": "WORD_FORM"
+      },
+      "rationale": {
+        "1": "An adjective where 'a source of' needs a noun.",
+        "2": "'-cy' does not attach to 'import': the noun is 'importance'.",
+        "3": "A gerund where the compound needs the noun 'deprivation'.",
+        "4": "An adjective cannot modify the verb 'affect'.",
+        "5": "A gerund where 'a sign of' needs a noun.",
+        "6": "'-ment' does not attach to 'understand': the form does not exist.",
+        "7": "'un-' is not the negative prefix of 'accurate'.",
+        "8": "'specialised training' is as standard as 'specialist training'; the key is not exhaustive."
+      }
+    },
+    {
+      "id": "part4-g2-far-from-the-key",
+      "group": 2,
+      "part": 4,
+      "exercise": {
+        "title": "Key word transformations",
+        "topic": "general",
+        "items": [
+          {
+            "number": 1,
+            "lead_in": "Nobody told me about the change of plan.",
+            "key_word": "INFORMED",
+            "sentence_start": "I",
+            "sentence_end": "about the change of plan.",
+            "answer": "was not informed",
+            "accepted": [],
+            "explanation": "The passive of 'inform' takes the place of 'nobody told me'."
+          },
+          {
+            "number": 2,
+            "lead_in": "It's a shame we didn't book the tickets earlier.",
+            "key_word": "ONLY",
+            "sentence_start": "If",
+            "sentence_end": "the tickets earlier.",
+            "answer": "only we had booked",
+            "accepted": [],
+            "explanation": "'If only' plus the past perfect expresses regret about the past."
+          },
+          {
+            "number": 3,
+            "lead_in": "'Don't touch the paintings,' the guide told us.",
+            "key_word": "WARNED",
+            "sentence_start": "The guide",
+            "sentence_end": "the paintings.",
+            "answer": "warned us not to touch",
+            "accepted": [],
+            "explanation": "'Warn someone not to' reports a negative instruction."
+          },
+          {
+            "number": 4,
+            "lead_in": "I had no idea how important the meeting was.",
+            "key_word": "LITTLE",
+            "sentence_start": "",
+            "sentence_end": "how important the meeting was.",
+            "answer": "Little did I know",
+            "accepted": [],
+            "explanation": "A fronted 'Little' takes inversion: 'did I know'."
+          },
+          {
+            "number": 5,
+            "lead_in": "The new manager is very different from the old one.",
+            "key_word": "COMMON",
+            "sentence_start": "The new manager",
+            "sentence_end": "the old one.",
+            "answer": "has little in common with",
+            "accepted": [
+              "has nothing in common with"
+            ],
+            "explanation": "'Have little in common with' is the fixed expression."
+          },
+          {
+            "number": 6,
+            "lead_in": "Both of my brothers live abroad.",
+            "key_word": "NEITHER",
+            "sentence_start": "",
+            "sentence_end": "in this country.",
+            "answer": "Neither of my brothers lives",
+            "accepted": [],
+            "explanation": "'Neither of' plus a plural noun takes a singular verb."
+          }
+        ]
+      },
+      "responses": {
+        "1": "wasn't informed by anyone",
+        "2": "only we'd reserved",
+        "3": "warned us from touching",
+        "4": "Little was known by me",
+        "5": "is not common to",
+        "6": "Neither the brothers live"
+      },
+      "expected_adjudication": {
+        "1": "accept",
+        "2": "accept",
+        "3": "partial",
+        "4": "reject",
+        "5": "reject",
+        "6": "reject"
+      },
+      "expected_category": {
+        "3": "WORD_PATTERNS",
+        "4": "SENTENCE_STRUCTURE",
+        "5": "FIXED_PHRASES",
+        "6": "GRAMMAR_WORDS"
+      },
+      "rationale": {
+        "1": "'I wasn't informed by anyone' is 'nobody told me' put in the passive word for word; only the wording differs from the key.",
+        "2": "'we'd' is 'we had', and 'reserved' means 'booked': correct, though far from the key's wording.",
+        "3": "'warned us' is right, but 'warn' takes 'against' plus -ing or 'not to', never 'from': one mark of two.",
+        "4": "The key word's own chunk is wrong: 'Little' takes inversion, not a passive.",
+        "5": "The key word's own chunk is wrong: the expression is 'have little in common with'.",
+        "6": "The key word's own chunk is wrong: 'Neither' needs 'of', and the verb must agree."
+      }
+    },
+    {
+      "id": "part1-g3-food-waste",
+      "group": 3,
+      "part": 1,
+      "exercise": {
+        "title": "What we throw away",
+        "topic": "food waste",
+        "text": "Every year, roughly a third of the food produced worldwide is thrown away, and households are {{1}} for a surprisingly large share of it. In wealthy countries, much of this waste can be {{2}} to a simple lack of planning: shoppers buy more than they need and forget what is already in the fridge.\n\nCampaigners have tried to {{3}} awareness of the problem through cookery classes and apps that suggest recipes for leftovers. Supermarkets, {{4}}, have been criticised for offers that encourage people to buy in bulk.\n\nSome progress has been made. Several chains now {{5}} away unsold food to charities rather than throwing it out, and confusing labels are being {{6}} out. Still, experts {{7}} that changing habits will take time, and that there is no {{8}} solution.",
+        "items": [
+          {
+            "number": 1,
+            "options": [
+              "responsible",
+              "guilty",
+              "causing",
+              "faulty"
+            ],
+            "answer": "A",
+            "explanation": "'Responsible for' takes the 'for' in the text; 'guilty' would need 'of'."
+          },
+          {
+            "number": 2,
+            "options": [
+              "blamed",
+              "attributed",
+              "accused",
+              "charged"
+            ],
+            "answer": "B",
+            "explanation": "'Attribute something to' takes the 'to' in the text; 'blame' needs 'on', and 'accuse' and 'charge' take a person as their object."
+          },
+          {
+            "number": 3,
+            "options": [
+              "lift",
+              "rise",
+              "arise",
+              "raise"
+            ],
+            "answer": "D",
+            "explanation": "'Raise awareness' is the fixed collocation."
+          },
+          {
+            "number": 4,
+            "options": [
+              "whereas",
+              "meanwhile",
+              "while",
+              "unless"
+            ],
+            "answer": "B",
+            "explanation": "'Meanwhile' can stand between commas to add a parallel point."
+          },
+          {
+            "number": 5,
+            "options": [
+              "take",
+              "put",
+              "give",
+              "throw"
+            ],
+            "answer": "C",
+            "explanation": "'Give away' means to hand something over for free."
+          },
+          {
+            "number": 6,
+            "options": [
+              "ruled",
+              "phased",
+              "faded",
+              "carried"
+            ],
+            "answer": "B",
+            "explanation": "'Phase out' means to withdraw something gradually."
+          },
+          {
+            "number": 7,
+            "options": [
+              "alert",
+              "threaten",
+              "scare",
+              "warn"
+            ],
+            "answer": "D",
+            "explanation": "'Warn that' gives notice of a problem; 'alert' needs a person and 'to'."
+          },
+          {
+            "number": 8,
+            "options": [
+              "lonely",
+              "alone",
+              "only",
+              "single"
+            ],
+            "answer": "D",
+            "explanation": "'No single solution' means no one answer on its own."
+          }
+        ]
+      },
+      "responses": {
+        "1": "B",
+        "2": "A",
+        "3": "A",
+        "4": "A",
+        "5": "B",
+        "6": "C",
+        "7": "B",
+        "8": "A"
+      },
+      "expected_category": {
+        "1": "WORD_PATTERNS",
+        "2": "WORD_PATTERNS",
+        "3": "FIXED_PHRASES",
+        "4": "LINKING",
+        "5": "FIXED_PHRASES",
+        "6": "FIXED_PHRASES",
+        "7": "WORD_CHOICE",
+        "8": "WORD_CHOICE"
+      },
+      "rationale": {
+        "1": "'guilty' requires 'of', not the 'for' the text gives.",
+        "2": "'blame' fits the meaning but takes 'on' (blame something on), not the 'to' the text gives.",
+        "3": "'lift awareness' breaks the collocation 'raise awareness'.",
+        "4": "'whereas' joins two clauses and cannot stand between commas.",
+        "5": "'put away' means to store, not to hand over: the wrong phrasal verb.",
+        "6": "'faded out' is not the phrasal verb for withdrawing something on purpose.",
+        "7": "'threaten that' fits the grammar but means something else entirely.",
+        "8": "'lonely' is a real adjective that fits the grammar but describes people."
+      }
+    },
+    {
+      "id": "part2-g3-remote-island",
+      "group": 3,
+      "part": 2,
+      "exercise": {
+        "title": "Island life",
+        "topic": "remote communities",
+        "text": "Life on a remote Scottish island is not for everyone. Fewer than thirty people live on Foula, and the ferry is often cancelled {{1}} weeks at a time when the weather turns bad. {{2}} it not for a small group of determined families, the island would almost certainly have been abandoned long ago.\n\nResidents say they {{3}} grown used to the isolation. Most of them grow their own vegetables and depend {{4}} each other for almost everything else. When something breaks, there is no point waiting for help {{5}} arrive from the mainland: people simply make {{6}} with what they have.\n\nThe island has recently begun to attract younger newcomers, {{7}} of whom work online. Whether they will stay once the novelty wears {{8}} remains to be seen.",
+        "items": [
+          {
+            "number": 1,
+            "answer": "for",
+            "accepted": [],
+            "explanation": "'For' gives the length of each cancellation."
+          },
+          {
+            "number": 2,
+            "answer": "Were",
+            "accepted": [],
+            "explanation": "An inverted conditional: 'Were it not for' means 'if it were not for'."
+          },
+          {
+            "number": 3,
+            "answer": "have",
+            "accepted": [
+              "had"
+            ],
+            "explanation": "The present perfect: 'have grown used to'."
+          },
+          {
+            "number": 4,
+            "answer": "on",
+            "accepted": [
+              "upon"
+            ],
+            "explanation": "'Depend on' is the dependent preposition."
+          },
+          {
+            "number": 5,
+            "answer": "to",
+            "accepted": [],
+            "explanation": "'Wait for someone to do something'."
+          },
+          {
+            "number": 6,
+            "answer": "do",
+            "accepted": [],
+            "explanation": "'Make do with' means to manage with what is available."
+          },
+          {
+            "number": 7,
+            "answer": "many",
+            "accepted": [
+              "most",
+              "some",
+              "several",
+              "all"
+            ],
+            "explanation": "A quantifier before 'of whom'."
+          },
+          {
+            "number": 8,
+            "answer": "off",
+            "accepted": [],
+            "explanation": "'Wear off' means to fade gradually."
+          }
+        ]
+      },
+      "responses": {
+        "1": "during",
+        "2": "If",
+        "3": "are",
+        "4": "of",
+        "5": "for",
+        "6": "it",
+        "7": "few",
+        "8": "out"
+      },
+      "expected_adjudication": {
+        "1": "reject",
+        "2": "reject",
+        "3": "reject",
+        "4": "reject",
+        "5": "reject",
+        "6": "reject",
+        "7": "accept",
+        "8": "reject"
+      },
+      "expected_category": {
+        "1": "GRAMMAR_WORDS",
+        "2": "SENTENCE_STRUCTURE",
+        "3": "VERB_FORMS",
+        "4": "WORD_PATTERNS",
+        "5": "WORD_PATTERNS",
+        "6": "FIXED_PHRASES",
+        "8": "FIXED_PHRASES"
+      },
+      "rationale": {
+        "1": "'during weeks at a time' does not give a duration: the preposition is 'for'.",
+        "2": "'If it not for' has neither the inversion nor a verb.",
+        "3": "'are grown used to' is not a verb form: the perfect needs 'have'.",
+        "4": "'depend' takes 'on'.",
+        "5": "'wait for help to arrive': the pattern needs 'to', not a second 'for'.",
+        "6": "'make it with' means to succeed; the phrase for managing is 'make do with'.",
+        "7": "'few of whom work online' fits the grammar and makes sense.",
+        "8": "'wear out' means to become unusable; novelty 'wears off'."
+      }
+    },
+    {
+      "id": "part3-g3-gig-economy",
+      "group": 3,
+      "part": 3,
+      "exercise": {
+        "title": "Working for an app",
+        "topic": "work",
+        "text": "Delivery riders and taxi drivers who find work through apps are part of what is known as the gig economy. For some, the {{1}} is the main attraction: they can choose when to work and for how long. For others, the lack of a regular income is a source of constant {{2}}.\n\nCritics argue that the companies involved treat their {{3}} as independent contractors in order to avoid paying holiday or sick pay. The companies reply that the arrangement is {{4}} to riders, most of whom value their {{5}} above all else.\n\nSeveral courts have now ruled on the question, with {{6}} results. Pay is a politically {{7}} issue, and some governments are drafting laws to {{8}} workers' rights.",
+        "items": [
+          {
+            "number": 1,
+            "stem": "FLEXIBLE",
+            "answer": "flexibility",
+            "accepted": [],
+            "explanation": "The noun after 'the'."
+          },
+          {
+            "number": 2,
+            "stem": "ANXIOUS",
+            "answer": "anxiety",
+            "accepted": [],
+            "explanation": "A noun after 'a source of constant'."
+          },
+          {
+            "number": 3,
+            "stem": "WORK",
+            "answer": "workers",
+            "accepted": [],
+            "explanation": "A plural noun agreeing with 'independent contractors'."
+          },
+          {
+            "number": 4,
+            "stem": "FAVOUR",
+            "answer": "favourable",
+            "accepted": [],
+            "explanation": "The adjective in 'favourable to'."
+          },
+          {
+            "number": 5,
+            "stem": "DEPEND",
+            "answer": "independence",
+            "accepted": [],
+            "explanation": "The negative noun: 'in-' plus '-ence'."
+          },
+          {
+            "number": 6,
+            "stem": "CONTRADICT",
+            "answer": "contradictory",
+            "accepted": [],
+            "explanation": "The adjective before 'results'."
+          },
+          {
+            "number": 7,
+            "stem": "SENSE",
+            "answer": "sensitive",
+            "accepted": [],
+            "explanation": "The adjective meaning 'needing careful handling'."
+          },
+          {
+            "number": 8,
+            "stem": "STRONG",
+            "answer": "strengthen",
+            "accepted": [],
+            "explanation": "The verb formed with '-en' after 'to'."
+          }
+        ]
+      },
+      "responses": {
+        "1": "flexibilty",
+        "2": "anxiously",
+        "3": "worker",
+        "4": "favorable",
+        "5": "independent",
+        "6": "contradiction",
+        "7": "sensible",
+        "8": "strongen"
+      },
+      "expected_adjudication": {
+        "1": "reject",
+        "2": "reject",
+        "3": "reject",
+        "4": "accept",
+        "5": "reject",
+        "6": "reject",
+        "7": "reject",
+        "8": "reject"
+      },
+      "expected_category": {
+        "1": "WORD_FORM",
+        "2": "WORD_FORM",
+        "3": "GRAMMAR_WORDS",
+        "5": "WORD_FORM",
+        "6": "WORD_FORM",
+        "7": "WORD_CHOICE",
+        "8": "WORD_FORM"
+      },
+      "rationale": {
+        "1": "A misspelling of the key (the 'i' is missing); misspelt answers are not accepted.",
+        "2": "An adverb where 'a source of constant' needs a noun.",
+        "3": "The right word, but 'their ... contractors' needs the plural: agreement, not word formation.",
+        "4": "The American spelling of the key; either spelling is accepted when used consistently.",
+        "5": "An adjective where 'their' needs a noun.",
+        "6": "A noun where 'with ... results' needs an adjective.",
+        "7": "'sensible' is a real adjective that fits the grammar but means 'reasonable': a false friend.",
+        "8": "'-en' does not attach to 'strong' unchanged: the verb is 'strengthen'."
+      }
+    },
+    {
+      "id": "part4-g3-close-to-the-key",
+      "group": 3,
+      "part": 4,
+      "exercise": {
+        "title": "Key word transformations",
+        "topic": "general",
+        "items": [
+          {
+            "number": 1,
+            "lead_in": "Jane is a much better cook than her brother.",
+            "key_word": "AS",
+            "sentence_start": "Jane's brother",
+            "sentence_end": "Jane.",
+            "answer": "cannot cook as well as",
+            "accepted": [
+              "can't cook as well as",
+              "does not cook as well as"
+            ],
+            "explanation": "'Not as well as' reverses the comparison 'better than'."
+          },
+          {
+            "number": 2,
+            "lead_in": "We couldn't go out because of the storm.",
+            "key_word": "PREVENTED",
+            "sentence_start": "The storm",
+            "sentence_end": "going out.",
+            "answer": "prevented us from",
+            "accepted": [],
+            "explanation": "'Prevent someone from' plus -ing makes the storm the subject."
+          },
+          {
+            "number": 3,
+            "lead_in": "Could you tell me where the station is?",
+            "key_word": "KNOW",
+            "sentence_start": "Do you",
+            "sentence_end": "the station is?",
+            "answer": "happen to know where",
+            "accepted": [],
+            "explanation": "'Do you happen to know' is a polite indirect question."
+          },
+          {
+            "number": 4,
+            "lead_in": "I'm sure he forgot about the meeting.",
+            "key_word": "MUST",
+            "sentence_start": "He",
+            "sentence_end": "about the meeting.",
+            "answer": "must have forgotten",
+            "accepted": [],
+            "explanation": "'Must have' plus the past participle: certainty about the past."
+          },
+          {
+            "number": 5,
+            "lead_in": "Although it was cold, we swam in the sea.",
+            "key_word": "DESPITE",
+            "sentence_start": "",
+            "sentence_end": ", we swam in the sea.",
+            "answer": "Despite it being cold",
+            "accepted": [
+              "Despite the cold weather"
+            ],
+            "explanation": "'Despite' takes a noun or an -ing form, not a clause."
+          },
+          {
+            "number": 6,
+            "lead_in": "My sister is the most intelligent person in our family.",
+            "key_word": "ANYONE",
+            "sentence_start": "My sister is",
+            "sentence_end": "else in our family.",
+            "answer": "more intelligent than anyone",
+            "accepted": [],
+            "explanation": "A comparative with 'than anyone else' replaces the superlative."
+          }
+        ]
+      },
+      "responses": {
+        "1": "doesn't cook as well as",
+        "2": "prevented all of us from",
+        "3": "happen to know where is",
+        "4": "must have forgot",
+        "5": "Despite it was cold",
+        "6": "more intelligent as anyone"
+      },
+      "expected_adjudication": {
+        "1": "accept",
+        "2": "accept",
+        "3": "partial",
+        "4": "partial",
+        "5": "reject",
+        "6": "reject"
+      },
+      "expected_category": {
+        "3": "SENTENCE_STRUCTURE",
+        "4": "VERB_FORMS",
+        "5": "LINKING",
+        "6": "SENTENCE_STRUCTURE"
+      },
+      "rationale": {
+        "1": "'doesn't' is 'does not', which the key lists.",
+        "2": "'all of us' for 'us' adds nothing that changes the meaning.",
+        "3": "'happen to know where' is right; 'is' is repeated in the wrong place: one mark of two.",
+        "4": "'must have' is right; the participle is 'forgotten': one mark of two.",
+        "5": "The key word's own chunk is wrong: 'Despite' cannot take the clause 'it was cold'.",
+        "6": "The key word's own chunk is wrong: a comparative takes 'than', not 'as'."
+      }
+    }
+  ]
+}

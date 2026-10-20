@@ -1,0 +1,150 @@
+{
+  "description": "Three groups of fixed seeds, one seed per Reading & Use of English part in each. Run one group a day with --group: a whole group is about one pass of the free quota per model.",
+  "why_fixed": "plan_task picks a random topic and testing focus when none is given. That is right for a learner and wrong for an evaluation: comparing two models on two different briefs measures the briefs. Pinning both is what makes a model sweep a comparison rather than a coincidence. Every focus is copied verbatim from PART_SPECS.",
+  "seeds": [
+    {
+      "part": 1,
+      "group": 1,
+      "topic": "the disappearance of the high-street bookshop",
+      "focus": ["vocabulary: precise word choice between near-synonyms", "collocation and fixed phrases"]
+    },
+    {
+      "part": 2,
+      "group": 1,
+      "topic": "why cities are removing their ring roads",
+      "focus": ["grammatical and function words: auxiliaries, articles, pronouns", "linkers and referencing devices"]
+    },
+    {
+      "part": 3,
+      "group": 1,
+      "topic": "the science of sourdough",
+      "focus": ["affixation: prefixes and suffixes", "changes of word class (noun/verb/adjective/adverb)"]
+    },
+    {
+      "part": 4,
+      "group": 1,
+      "topic": "everyday negotiation",
+      "focus": ["passive, causative and reporting structures", "conditionals, inversion and emphatic structures"]
+    },
+    {
+      "part": 5,
+      "group": 1,
+      "topic": "an oceanographer on why the deep sea is still unmapped",
+      "focus": ["detail, opinion, attitude and tone", "the meaning of a word or phrase in context"]
+    },
+    {
+      "part": 6,
+      "group": 1,
+      "topic": "whether ancient monuments should be reconstructed",
+      "focus": ["comparing and contrasting opinions across writers", "identifying agreement and disagreement"]
+    },
+    {
+      "part": 7,
+      "group": 1,
+      "topic": "the return of the urban tram",
+      "focus": ["text structure and cohesion", "reference words and lexical chains across paragraph boundaries"]
+    },
+    {
+      "part": 8,
+      "group": 1,
+      "topic": "six people describe the job they gave up",
+      "focus": ["scanning for specific information", "recognising paraphrase of the prompt in the text"]
+    },
+    {
+      "part": 1,
+      "group": 2,
+      "topic": "how artificial light at night affects wildlife",
+      "focus": ["phrasal verbs and dependent prepositions", "idiomatic expressions"]
+    },
+    {
+      "part": 2,
+      "group": 2,
+      "topic": "the revival of handwritten letters",
+      "focus": ["prepositions in fixed and dependent structures", "parts of comparative, conditional and inversion structures"]
+    },
+    {
+      "part": 3,
+      "group": 2,
+      "topic": "the psychology of queuing",
+      "focus": ["negative and opposite forms", "internal spelling changes and compound forms"]
+    },
+    {
+      "part": 4,
+      "group": 2,
+      "topic": "working from home",
+      "focus": ["phrasal verbs and fixed expressions", "comparatives, modals of speculation and deduction"]
+    },
+    {
+      "part": 5,
+      "group": 2,
+      "topic": "a glaciologist on what ice cores reveal about past climates",
+      "focus": ["purpose, main idea and implication", "text organisation and reference"]
+    },
+    {
+      "part": 6,
+      "group": 2,
+      "topic": "whether zoos still have a role in conservation",
+      "focus": ["identifying agreement and disagreement", "distinguishing attitude from content"]
+    },
+    {
+      "part": 7,
+      "group": 2,
+      "topic": "how a small island community became energy self-sufficient",
+      "focus": ["reference words and lexical chains across paragraph boundaries", "logical and chronological development"]
+    },
+    {
+      "part": 8,
+      "group": 2,
+      "topic": "musicians recall the moment they decided to turn professional",
+      "focus": ["recognising paraphrase of the prompt in the text", "distinguishing similar information across sections"]
+    },
+    {
+      "part": 1,
+      "group": 3,
+      "topic": "the history of the humble pencil",
+      "focus": ["vocabulary: precise word choice between near-synonyms", "phrasal verbs and dependent prepositions"]
+    },
+    {
+      "part": 2,
+      "group": 3,
+      "topic": "why we find it so hard to do nothing",
+      "focus": ["grammatical and function words: auxiliaries, articles, pronouns", "parts of comparative, conditional and inversion structures"]
+    },
+    {
+      "part": 3,
+      "group": 3,
+      "topic": "the economics of second-hand clothing",
+      "focus": ["changes of word class (noun/verb/adjective/adverb)", "internal spelling changes and compound forms"]
+    },
+    {
+      "part": 4,
+      "group": 3,
+      "topic": "travel and holidays",
+      "focus": ["conditionals, inversion and emphatic structures", "comparatives, modals of speculation and deduction"]
+    },
+    {
+      "part": 5,
+      "group": 3,
+      "topic": "a novelist on why the opening chapter is always rewritten last",
+      "focus": ["detail, opinion, attitude and tone", "purpose, main idea and implication"]
+    },
+    {
+      "part": 6,
+      "group": 3,
+      "topic": "whether homework benefits primary school children",
+      "focus": ["comparing and contrasting opinions across writers", "distinguishing attitude from content"]
+    },
+    {
+      "part": 7,
+      "group": 3,
+      "topic": "restoring a neglected city canal",
+      "focus": ["text structure and cohesion", "logical and chronological development"]
+    },
+    {
+      "part": 8,
+      "group": 3,
+      "topic": "researchers describe an experiment that went wrong",
+      "focus": ["scanning for specific information", "distinguishing similar information across sections"]
+    }
+  ]
+}

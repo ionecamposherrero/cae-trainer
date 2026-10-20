@@ -1,0 +1,23 @@
+{
+  "description": "Three groups of fixed seeds for the Writing task graph, one seed per genre in each: the Part 1 essay and the four Part 2 genres. A group is five tasks, so between five and fifteen calls depending on how many repairs they need.",
+  "why_fixed": "plan_task picks a random topic when none is given. Comparing two models on two different topics measures the topics, so both the genre and the topic are pinned. None of the topics is in TASK_TOPICS, which the prompt is shown with, or in writing_scripts.json.",
+  "seeds": [
+    {"group": 1, "part": 1, "genre": "essay", "topic": "whether cities should ban cars from their historic centres"},
+    {"group": 1, "part": 2, "genre": "letter_email", "topic": "a community garden that has lost its funding"},
+    {"group": 1, "part": 2, "genre": "proposal", "topic": "a mentoring scheme between older and younger employees"},
+    {"group": 1, "part": 2, "genre": "report", "topic": "how students use the college canteen"},
+    {"group": 1, "part": 2, "genre": "review", "topic": "a podcast about science for non-specialists"},
+
+    {"group": 2, "part": 1, "genre": "essay", "topic": "whether governments should tax sugary food"},
+    {"group": 2, "part": 2, "genre": "letter_email", "topic": "noise from a new nightlife district"},
+    {"group": 2, "part": 2, "genre": "proposal", "topic": "a repair cafe in the local library"},
+    {"group": 2, "part": 2, "genre": "report", "topic": "a language exchange programme run last term"},
+    {"group": 2, "part": 2, "genre": "review", "topic": "a restaurant that serves only local produce"},
+
+    {"group": 3, "part": 1, "genre": "essay", "topic": "the four-day working week"},
+    {"group": 3, "part": 2, "genre": "letter_email", "topic": "a cycle lane that has made a road more dangerous"},
+    {"group": 3, "part": 2, "genre": "proposal", "topic": "a film club for international students"},
+    {"group": 3, "part": 2, "genre": "report", "topic": "the use of smartphones in secondary-school lessons"},
+    {"group": 3, "part": 2, "genre": "review", "topic": "a museum that has gone fully interactive"}
+  ]
+}
