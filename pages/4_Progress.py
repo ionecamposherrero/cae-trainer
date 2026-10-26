@@ -33,7 +33,7 @@ from cae.ui.shell import (  # noqa: E402
     sidebar_account,
 )
 
-page_setup("Progress", icon="📈")
+page_setup("Progress", icon=":material/insights:")
 user = require_login()
 sidebar_account(user)
 
@@ -41,6 +41,7 @@ page_header(
     "Progress",
     "Everything you have been marked on, and what it says about where the marks "
     "are going.",
+    eyebrow="Your record",
 )
 
 snapshot = progress(user["id"])
@@ -69,61 +70,62 @@ st.caption(SCALE_CAVEAT)
 
 
 st.divider()
-header = st.columns([4, 1], vertical_alignment="bottom")
-with header[0]:
-    st.markdown("### Your coach's review")
-with header[1]:
-    refresh = st.button("Rewrite", width="stretch")
+with st.container(key="cae_panel_coach"):
+    header = st.columns([4, 1], vertical_alignment="bottom")
+    with header[0]:
+        st.markdown("### Your coach's review")
+    with header[1]:
+        refresh = st.button("Rewrite", width="stretch", icon=":material/refresh:")
 
-if api_key_banner():
-    with st.spinner("Reading your record."):
-        report = coaching_report(user["id"], user["username"], refresh=refresh)
+    if api_key_banner():
+        with st.spinner("Reading your record."):
+            report = coaching_report(user["id"], user["username"], refresh=refresh)
 
-    narrative = report.get("narrative") or {}
-    if report.get("status") == "not_enough_data":
-        st.info(
-            "Complete a couple more exercises and your coach will have enough to "
-            "work with.",
-            icon=":material/hourglass:",
+        narrative = report.get("narrative") or {}
+        if report.get("status") == "not_enough_data":
+            st.info(
+                "Complete a couple more exercises and your coach will have enough to "
+                "work with.",
+                icon=":material/hourglass:",
+            )
+        elif not narrative:
+            st.warning("The review could not be written this time. Try **Rewrite**.")
+        else:
+            st.markdown(f"#### {narrative.get('headline', '')}")
+            st.markdown(narrative.get("summary", ""))
+
+            left, right = st.columns(2, gap="large")
+            with left:
+                st.markdown("**What is working**")
+                for item in narrative.get("strengths", []):
+                    st.markdown(f"- {item}")
+            with right:
+                st.markdown("**What keeps costing you marks**")
+                for item in narrative.get("common_errors", []):
+                    st.markdown(f"- {item}")
+
+            st.markdown("**Direction of travel**")
+            st.markdown(narrative.get("trend", ""))
+
+            st.markdown("**Your three priorities**")
+            priorities = st.columns(max(1, len(narrative.get("focus_areas", []) or [1])))
+            for col, area in zip(priorities, narrative.get("focus_areas", [])):
+                with col:
+                    with st.container(border=True):
+                        st.markdown(f"**{area.get('title', '')}**")
+                        st.caption(area.get("why", ""))
+                        st.markdown(f"→ {area.get('action', '')}")
+
+            if narrative.get("next_session"):
+                st.success(f"**Next session:** {narrative['next_session']}")
+            if report.get("cached"):
+                st.caption("This review is unchanged since your last piece of marked work.")
+
+        st.page_link(
+            "pages/5_Talk_with_your_coach.py",
+            label="Ask your coach about this",
+            icon=":material/forum:",
         )
-    elif not narrative:
-        st.warning("The review could not be written this time. Try **Rewrite**.")
-    else:
-        st.markdown(f"#### {narrative.get('headline', '')}")
-        st.markdown(narrative.get("summary", ""))
-
-        left, right = st.columns(2, gap="large")
-        with left:
-            st.markdown("**What is working**")
-            for item in narrative.get("strengths", []):
-                st.markdown(f"- {item}")
-        with right:
-            st.markdown("**What keeps costing you marks**")
-            for item in narrative.get("common_errors", []):
-                st.markdown(f"- {item}")
-
-        st.markdown("**Direction of travel**")
-        st.markdown(narrative.get("trend", ""))
-
-        st.markdown("**Your three priorities**")
-        priorities = st.columns(max(1, len(narrative.get("focus_areas", []) or [1])))
-        for col, area in zip(priorities, narrative.get("focus_areas", [])):
-            with col:
-                with st.container(border=True):
-                    st.markdown(f"**{area.get('title', '')}**")
-                    st.caption(area.get("why", ""))
-                    st.markdown(f"→ {area.get('action', '')}")
-
-        if narrative.get("next_session"):
-            st.success(f"**Next session:** {narrative['next_session']}")
-        if report.get("cached"):
-            st.caption("This review is unchanged since your last piece of marked work.")
-
-    st.page_link(
-        "pages/5_Talk_with_your_coach.py",
-        label="Ask your coach about this",
-        icon=":material/forum:",
-    )
 
 
 st.divider()

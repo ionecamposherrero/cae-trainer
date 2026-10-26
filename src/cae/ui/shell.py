@@ -11,19 +11,9 @@ from cae.config import get_settings
 from cae.db.session import init_db
 from cae.llm import LLMUnavailableError, ModelUnreachableError, QuotaExhaustedError
 from cae.observability import configure_tracing
+from cae.ui import style
 
 APP_TITLE = "C1 Advanced Trainer"
-
-_ENTRY_LABEL_CSS = """
-<style>
-[data-testid="stSidebarNavItems"] li:first-child [data-testid="stSidebarNavLink"] span {
-    display: none;
-}
-[data-testid="stSidebarNavItems"] li:first-child [data-testid="stSidebarNavLink"]::after {
-    content: "Home";
-}
-</style>
-"""
 
 
 @st.cache_resource
@@ -34,10 +24,12 @@ def bootstrap() -> bool:
     return True
 
 
-def page_setup(title: str, icon: str = "🎓", layout: str = "wide") -> None:
+def page_setup(
+    title: str, icon: str = ":material/school:", layout: str = "wide"
+) -> None:
     st.set_page_config(page_title=f"{title} · {APP_TITLE}", page_icon=icon, layout=layout)
     bootstrap()
-    st.markdown(_ENTRY_LABEL_CSS, unsafe_allow_html=True)
+    style.inject()
 
 
 def current_user() -> dict[str, Any] | None:
@@ -48,9 +40,14 @@ def require_login() -> dict[str, Any]:
     """Return the signed-in user, or stop the page with a prompt to sign in."""
     user = current_user()
     if user is None:
-        st.title(APP_TITLE)
-        st.warning("Please sign in on the Home page to continue.", icon=":material/lock:")
-        st.page_link("app.py", label="Go to Home", icon=":material/home:")
+        _, centre, _ = st.columns([1, 2, 1])
+        with centre:
+            style.eyebrow("Members only")
+            st.title(APP_TITLE)
+            st.warning(
+                "Please sign in on the Home page to continue.", icon=":material/lock:"
+            )
+            st.page_link("app.py", label="Go to Home", icon=":material/home:")
         st.stop()
     return user
 
@@ -68,8 +65,8 @@ DATA_NOTICE = (
 
 def sidebar_account(user: dict[str, Any]) -> None:
     with st.sidebar:
-        st.markdown(f"**Signed in as** {user['username']}")
-        if st.button("Sign out", width="stretch"):
+        style.user_badge(user["username"])
+        if st.button("Sign out", width="stretch", icon=":material/logout:"):
             sign_out()
             st.rerun()
         st.caption(DATA_NOTICE)
@@ -121,10 +118,12 @@ def llm_error(exc: LLMUnavailableError) -> None:
     st.error(str(exc), icon=icon)
 
 
-def page_header(title: str, subtitle: str = "") -> None:
+def page_header(title: str, subtitle: str = "", eyebrow: str = "") -> None:
+    if eyebrow:
+        style.eyebrow(eyebrow)
     st.title(title)
     if subtitle:
-        st.caption(subtitle)
+        style.lead(subtitle)
 
 
 def clear_widget_state(prefix: str) -> None:

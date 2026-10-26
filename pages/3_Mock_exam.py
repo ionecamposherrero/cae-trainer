@@ -57,6 +57,7 @@ from cae.ui.feedback import (  # noqa: E402
     render_reading_results,
     render_writing_result,
 )
+from cae.ui import style  # noqa: E402
 from cae.ui.renderers import (  # noqa: E402
     render_exercise,
     render_word_count,
@@ -72,7 +73,7 @@ from cae.ui.shell import (  # noqa: E402
     sidebar_account,
 )
 
-page_setup("Mock exam", icon="⏱️")
+page_setup("Mock exam", icon=":material/timer:")
 user = require_login()
 sidebar_account(user)
 
@@ -186,6 +187,7 @@ def render_setup() -> None:
     page_header(
         "Mock exam",
         "Sit a paper against the clock, exactly as long as the real one.",
+        eyebrow="Exam conditions",
     )
     has_key = api_key_banner()
 
@@ -194,17 +196,15 @@ def render_setup() -> None:
         options=list(PAPER_CHOICES),
         format_func=lambda label: f"{label} — {paper_minutes(PAPER_CHOICES[label])} minutes",
         key="mock_paper_choice",
+        horizontal=True,
     )
     papers = PAPER_CHOICES[choice]
 
-    st.divider()
     st.markdown("#### What you are about to sit")
-    if "reading" in papers:
-        describe_reading()
-    if "writing" in papers:
-        if "reading" in papers:
-            st.markdown("")
-        describe_writing()
+    describers = {"reading": describe_reading, "writing": describe_writing}
+    for column, paper in zip(st.columns(len(papers), gap="medium"), papers):
+        with column, st.container(key=f"cae_panel_{paper}"):
+            describers[paper]()
     if len(papers) > 1:
         st.caption(
             f"The two papers are timed separately: {READING_TIME_MINUTES} minutes, then "
@@ -220,7 +220,12 @@ def render_setup() -> None:
         icon=":material/hourglass:",
     )
 
-    if not st.button("Start the exam", type="primary", disabled=not has_key):
+    if not st.button(
+        "Start the exam",
+        type="primary",
+        disabled=not has_key,
+        icon=":material/play_arrow:",
+    ):
         return
 
     state = {
@@ -331,7 +336,12 @@ def render_reading(state: dict) -> None:
     total = len(READING_PART_NUMBERS)
     entry = state["exercises"][part]
 
-    page_header(f"Mock exam · {part_label(part)}", f"Part {state['index'] + 1} of {total}")
+    page_header("Reading and Use of English", eyebrow="Mock exam")
+    style.steps(
+        [f"Part {number}" for number in READING_PART_NUMBERS],
+        current=state["index"],
+        done={READING_PART_NUMBERS.index(number) for number in state["answers"]},
+    )
     countdown(state["deadline"], READING_TIME_MINUTES, "Reading and Use of English")
 
     prefix = f"mock{state['exam_id']}_p{part}"
@@ -423,8 +433,11 @@ def render_writing(state: dict) -> None:
     index = state["writing_index"]
     task = tasks[index]
 
-    page_header(
-        f"Mock exam · Writing Part {task['part']}", f"Task {index + 1} of {len(tasks)}"
+    page_header("Writing", eyebrow="Mock exam")
+    style.steps(
+        [f"Task {position}" for position in range(1, len(tasks) + 1)],
+        current=index,
+        done={position for position, entry in enumerate(tasks) if entry["script"]},
     )
     countdown(state["deadline"], WRITING_TIME_MINUTES, "Writing")
 
@@ -482,7 +495,7 @@ def hand_in(state: dict) -> None:
 
 
 def render_results(state: dict) -> None:
-    page_header("Mock exam results")
+    page_header("Mock exam results", eyebrow="Mock exam")
     notes = {
         "reading": (
             "Time ran out on Reading and Use of English. Only the parts you had "

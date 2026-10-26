@@ -1,0 +1,44 @@
+[client]
+toolbarMode = "minimal"
+
+[theme]
+font = "Inter:https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap, sans-serif"
+headingFont = "'Plus Jakarta Sans':https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&display=swap, Inter, sans-serif"
+baseRadius = "large"
+buttonRadius = "full"
+showWidgetBorder = true
+showSidebarBorder = true
+
+[theme.light]
+primaryColor = "#4f46e5"
+backgroundColor = "#f7f8fc"
+secondaryBackgroundColor = "#eef0f7"
+textColor = "#0f172a"
+linkColor = "#4f46e5"
+borderColor = "#e3e6ef"
+dataframeHeaderBackgroundColor = "#eef0f7"
+
+[theme.light.sidebar]
+primaryColor = "#4f46e5"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#eef0fb"
+textColor = "#1e293b"
+linkColor = "#4f46e5"
+borderColor = "#e3e6ef"
+
+[theme.dark]
+primaryColor = "#6366f1"
+backgroundColor = "#0b0f1a"
+secondaryBackgroundColor = "#151b2b"
+textColor = "#e5e7eb"
+linkColor = "#a5b4fc"
+borderColor = "#232a3d"
+dataframeHeaderBackgroundColor = "#151b2b"
+
+[theme.dark.sidebar]
+primaryColor = "#818cf8"
+backgroundColor = "#0f1422"
+secondaryBackgroundColor = "#1a2135"
+textColor = "#e5e7eb"
+linkColor = "#a5b4fc"
+borderColor = "#1d2436"

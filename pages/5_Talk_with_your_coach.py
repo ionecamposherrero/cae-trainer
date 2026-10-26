@@ -30,7 +30,9 @@ SUGGESTIONS = (
     "When do I use inversion after a negative adverbial?",
 )
 
-page_setup("Talk with your coach", icon="💬")
+AVATARS = {"user": ":material/person:", "assistant": ":material/school:"}
+
+page_setup("Talk with your coach", icon=":material/forum:")
 user = require_login()
 sidebar_account(user)
 
@@ -38,6 +40,7 @@ page_header(
     "Talk with your coach",
     "Ask about your results, about a question you got wrong, or about English "
     "itself. Your coach can see everything you have been marked on.",
+    eyebrow="Your coach",
 )
 
 snapshot = progress(user["id"])
@@ -59,7 +62,12 @@ with status[0]:
             f"{snapshot.writing_submissions} writing task(s)."
         )
 with status[1]:
-    if st.button("Clear chat", width="stretch", disabled=not thread):
+    if st.button(
+        "Clear chat",
+        width="stretch",
+        disabled=not thread,
+        icon=":material/delete_sweep:",
+    ):
         st.session_state[THREAD_KEY] = []
         st.rerun()
 
@@ -67,7 +75,7 @@ st.divider()
 
 
 def render_turn(turn: dict) -> None:
-    with st.chat_message(turn["role"]):
+    with st.chat_message(turn["role"], avatar=AVATARS[turn["role"]]):
         st.markdown(turn["text"])
 
 
@@ -80,7 +88,12 @@ if not thread:
     columns = st.columns(len(SUGGESTIONS))
     for column, suggestion in zip(columns, SUGGESTIONS):
         with column:
-            if st.button(suggestion, width="stretch", key=f"suggest_{suggestion[:20]}"):
+            if st.button(
+                suggestion,
+                width="stretch",
+                key=f"suggest_{suggestion[:20]}",
+                icon=":material/chat_bubble:",
+            ):
                 picked = suggestion
     if picked:
         st.session_state["coach_chat_pending"] = picked
@@ -95,7 +108,7 @@ if question:
         render_turn(thread[-1])
 
         history = [(t["role"], t["text"]) for t in thread[:-1]]
-        with st.chat_message("assistant"):
+        with st.chat_message("assistant", avatar=AVATARS["assistant"]):
             with st.spinner("Reading your record."):
                 try:
                     result = coach_reply(

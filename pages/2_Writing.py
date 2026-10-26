@@ -21,6 +21,7 @@ from cae.domain.parts import (  # noqa: E402
 from cae.graphs.writing_task import WritingTaskFailed  # noqa: E402
 from cae.llm import LLMUnavailableError  # noqa: E402
 from cae.services import next_writing_task, submit_writing  # noqa: E402
+from cae.ui import style  # noqa: E402
 from cae.ui.feedback import render_writing_result  # noqa: E402
 from cae.ui.renderers import render_word_count, render_writing_task  # noqa: E402
 from cae.ui.shell import (  # noqa: E402
@@ -32,7 +33,7 @@ from cae.ui.shell import (  # noqa: E402
     sidebar_account,
 )
 
-page_setup("Writing", icon="✍️")
+page_setup("Writing", icon=":material/edit_note:")
 user = require_login()
 sidebar_account(user)
 
@@ -46,33 +47,48 @@ page_header(
     f"Two tasks, {MIN_WORDS}-{MAX_WORDS} words each, {WRITING_TIME_MINUTES} minutes "
     "in the real exam. Marked 0-5 on Content, Communicative Achievement, "
     "Organisation and Language, exactly as Cambridge does.",
+    eyebrow="Paper 2",
 )
 
 has_key = api_key_banner()
 
 
-controls = st.columns([1, 2, 1], vertical_alignment="bottom")
-with controls[0]:
-    part = st.radio(
-        "Which task?",
-        options=[1, 2],
-        format_func=lambda p: "Part 1 — essay" if p == 1 else "Part 2 — choose a genre",
-        key="writing_part",
-    )
-with controls[1]:
-    if part == 2:
-        genre = st.selectbox(
-            "Genre",
-            options=WRITING_PART2_GENRES,
-            format_func=lambda g: WRITING_GENRES[g].name,
-            key="writing_genre",
+with st.container(key="cae_panel_task_choice"):
+    controls = st.columns([1, 2, 1], vertical_alignment="bottom")
+    with controls[0]:
+        part = st.radio(
+            "Which task?",
+            options=[1, 2],
+            format_func=lambda p: (
+                "Part 1 — essay" if p == 1 else "Part 2 — choose a genre"
+            ),
+            key="writing_part",
         )
-    else:
-        genre = "essay"
-        st.caption("Part 1 is always a compulsory essay.")
-with controls[2]:
-    new_task = st.button(
-        "New task", type="primary", width="stretch", disabled=not has_key
+    with controls[1]:
+        if part == 2:
+            genre = st.selectbox(
+                "Genre",
+                options=WRITING_PART2_GENRES,
+                format_func=lambda g: WRITING_GENRES[g].name,
+                key="writing_genre",
+            )
+        else:
+            genre = "essay"
+            st.caption("Part 1 is always a compulsory essay.")
+    with controls[2]:
+        new_task = st.button(
+            "New task",
+            type="primary",
+            width="stretch",
+            disabled=not has_key,
+            icon=":material/add:",
+        )
+    style.chips(
+        [
+            f"{MIN_WORDS}-{MAX_WORDS} words",
+            "Content · Communicative Achievement · Organisation · Language",
+            "0-5 on each subscale, 20 marks a task",
+        ]
     )
 
 if new_task:
@@ -131,6 +147,7 @@ if result is None:
             "Submit for marking",
             type="primary",
             disabled=not in_range or not has_key,
+            icon=":material/grading:",
         ):
             with st.spinner(
                 "Four examiners are marking your script, one per subscale."
@@ -155,7 +172,12 @@ else:
     st.divider()
     actions = st.columns([1, 1, 3])
     with actions[0]:
-        if st.button("Another task", type="primary", width="stretch"):
+        if st.button(
+            "Another task",
+            type="primary",
+            width="stretch",
+            icon=":material/arrow_forward:",
+        ):
             st.session_state.pop(STATE, None)
             st.session_state.pop(RESULT, None)
             st.session_state[SCRIPT_KEY] = ""

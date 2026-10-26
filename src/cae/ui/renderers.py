@@ -6,6 +6,7 @@ from the widgets' return values.
 
 from __future__ import annotations
 
+import html
 import re
 from typing import Any, Callable
 
@@ -13,27 +14,33 @@ import streamlit as st
 
 from cae.domain.parts import WRITING_WORD_RANGE, get_part_spec
 from cae.graphs.writing_evaluator import count_words
+from cae.ui import style
 
 _GAP_RE = re.compile(r"\{\{(\d+)\}\}")
 
 
 def _gap_label(number: int, stem: str = "") -> str:
-    inner = f"{number}" if not stem else f"{number} · {stem.upper()}"
-    return f" **&nbsp;({inner})&nbsp;** "
+    inner = f"{number}" if not stem else f"{number} <b>{html.escape(stem.upper())}</b>"
+    return f'<span class="cae-gap">{inner}</span>'
+
+
+def _paper(prefix: str):
+    """A container drawn as a sheet of the question paper."""
+    return st.container(key=f"cae_paper_{prefix}")
 
 
 def render_passage(text: str, stems: dict[int, str] | None = None) -> None:
-    """Show a passage with its gaps marked as (1), (2), ..."""
+    """Show a passage with its gaps marked as numbered chips."""
     stems = stems or {}
 
     def replace(match: re.Match[str]) -> str:
         number = int(match.group(1))
         return _gap_label(number, stems.get(number, ""))
 
-    body = _GAP_RE.sub(replace, text)
+    body = _GAP_RE.sub(replace, html.escape(text, quote=False))
     for paragraph in body.split("\n"):
         if paragraph.strip():
-            st.markdown(paragraph.strip())
+            st.markdown(paragraph.strip(), unsafe_allow_html=True)
 
 
 def _letter_options(options: list[str], letters: tuple[str, ...]) -> Callable[[str], str]:
@@ -53,7 +60,7 @@ def render_part_1(exercise: dict[str, Any], prefix: str) -> dict[int, str]:
     spec = get_part_spec(1)
     answers: dict[int, str] = {}
     text_col, answer_col = st.columns([3, 2], gap="large")
-    with text_col:
+    with text_col, _paper(prefix):
         render_passage(exercise["text"])
     with answer_col:
         for item in exercise["items"]:
@@ -74,7 +81,7 @@ def render_part_1(exercise: dict[str, Any], prefix: str) -> dict[int, str]:
 def render_part_2(exercise: dict[str, Any], prefix: str) -> dict[int, str]:
     answers: dict[int, str] = {}
     text_col, answer_col = st.columns([3, 2], gap="large")
-    with text_col:
+    with text_col, _paper(prefix):
         render_passage(exercise["text"])
     with answer_col:
         st.caption("Use exactly ONE word in each gap.")
@@ -88,7 +95,7 @@ def render_part_3(exercise: dict[str, Any], prefix: str) -> dict[int, str]:
     stems = {item["number"]: item["stem"] for item in exercise["items"]}
     answers: dict[int, str] = {}
     text_col, answer_col = st.columns([3, 2], gap="large")
-    with text_col:
+    with text_col, _paper(prefix):
         render_passage(exercise["text"], stems=stems)
     with answer_col:
         st.caption("Form a word from the word in capitals.")
@@ -104,21 +111,24 @@ def render_part_4(exercise: dict[str, Any], prefix: str) -> dict[int, str]:
     answers: dict[int, str] = {}
     for item in exercise["items"]:
         number = item["number"]
-        st.markdown(f"**{number}.**  {item['lead_in']}")
-        st.markdown(f"### `{item['key_word'].upper()}`")
-        left, middle, right = st.columns([2, 3, 2], vertical_alignment="center")
-        with left:
-            st.markdown(f"{item['sentence_start']}")
-        with middle:
-            answers[number] = st.text_input(
-                "Answer",
-                key=f"{prefix}_q{number}",
-                label_visibility="collapsed",
-                placeholder="three to six words",
+        with _paper(f"{prefix}_q{number}"):
+            st.markdown(f"**{number}.**  {item['lead_in']}")
+            st.markdown(
+                f'<span class="cae-keyword">{html.escape(item["key_word"].upper())}</span>',
+                unsafe_allow_html=True,
             )
-        with right:
-            st.markdown(f"{item['sentence_end']}")
-        st.divider()
+            left, middle, right = st.columns([2, 3, 2], vertical_alignment="center")
+            with left:
+                st.markdown(f"{item['sentence_start']}")
+            with middle:
+                answers[number] = st.text_input(
+                    "Answer",
+                    key=f"{prefix}_q{number}",
+                    label_visibility="collapsed",
+                    placeholder="three to six words",
+                )
+            with right:
+                st.markdown(f"{item['sentence_end']}")
     return answers
 
 
@@ -126,7 +136,7 @@ def render_part_5(exercise: dict[str, Any], prefix: str) -> dict[int, str]:
     spec = get_part_spec(5)
     answers: dict[int, str] = {}
     text_col, answer_col = st.columns([3, 2], gap="large")
-    with text_col:
+    with text_col, _paper(prefix):
         for paragraph in exercise["text"].split("\n"):
             if paragraph.strip():
                 st.markdown(paragraph.strip())
@@ -152,10 +162,11 @@ def render_part_5(exercise: dict[str, Any], prefix: str) -> dict[int, str]:
 def render_part_6(exercise: dict[str, Any], prefix: str) -> dict[int, str]:
     letters = tuple(t["letter"] for t in exercise["texts"])
     answers: dict[int, str] = {}
-    tabs = st.tabs([f"Text {t['letter']} — {t['author']}" for t in exercise["texts"]])
-    for tab, text in zip(tabs, exercise["texts"]):
-        with tab:
-            st.markdown(text["content"])
+    with _paper(prefix):
+        tabs = st.tabs([f"Text {t['letter']} — {t['author']}" for t in exercise["texts"]])
+        for tab, text in zip(tabs, exercise["texts"]):
+            with tab:
+                st.markdown(text["content"])
     st.divider()
     for item in exercise["items"]:
         number = item["number"]
@@ -176,7 +187,7 @@ def render_part_7(exercise: dict[str, Any], prefix: str) -> dict[int, str]:
     letters = tuple(o["letter"] for o in exercise["options"])
     answers: dict[int, str] = {}
     text_col, answer_col = st.columns([3, 2], gap="large")
-    with text_col:
+    with text_col, _paper(prefix):
         render_passage(exercise["text"])
     with answer_col:
         st.markdown("#### Missing paragraphs")
@@ -199,7 +210,7 @@ def render_part_8(exercise: dict[str, Any], prefix: str) -> dict[int, str]:
     letters = tuple(s["letter"] for s in exercise["sections"])
     answers: dict[int, str] = {}
     text_col, answer_col = st.columns([3, 2], gap="large")
-    with text_col:
+    with text_col, _paper(prefix):
         for section in exercise["sections"]:
             st.markdown(f"#### {section['letter']}  ·  {section['heading']}")
             st.markdown(section["content"])
@@ -232,6 +243,7 @@ RENDERERS: dict[int, Callable[[dict[str, Any], str], dict[int, str]]] = {
 def render_exercise(part: int, exercise: dict[str, Any], prefix: str) -> dict[int, str]:
     """Render one exercise and return the candidate's answers."""
     spec = get_part_spec(part)
+    style.eyebrow(f"Part {part} · {spec.name}")
     st.markdown(f"### {exercise.get('title', spec.name)}")
     st.info(spec.instructions, icon=":material/info:")
     return RENDERERS[part](exercise, prefix)
@@ -269,10 +281,10 @@ def render_writing_task(task: dict[str, Any]) -> None:
     from cae.domain.parts import get_genre
 
     genre = get_genre(task.get("genre", "essay"))
+    style.eyebrow(f"Writing Part {task.get('part', 1)} · {genre.name}")
     st.markdown(f"### {task.get('title', genre.name)}")
-    st.caption(f"Writing Part {task.get('part', 1)} · {genre.name}")
 
-    with st.container(border=True):
+    with _paper("writing_task"):
         st.markdown(task.get("scenario", ""))
         notes = task.get("notes") or []
         if notes:

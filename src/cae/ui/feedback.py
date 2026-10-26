@@ -206,9 +206,9 @@ def render_reading_results(
         return
 
     material_col, feedback_col = st.columns([3, 2], gap="large")
-    with material_col:
+    with material_col, st.container(key=f"cae_paper_review_{part}"):
         if part in (5, 6, 7, 8):
-            with st.container(height=620):
+            with st.container(height=620, border=False):
                 render_exercise_material(part, exercise, rows)
         else:
             render_exercise_material(part, exercise, rows)
@@ -275,7 +275,7 @@ def highlight_script(script: str, annotations: list[dict[str, Any]]) -> str:
         position = end
     out.append(html.escape(script[position:]))
     body = "".join(out).replace("\n", "<br>")
-    return f'<div style="line-height:1.8">{body}</div>'
+    return f'<div class="cae-script">{body}</div>'
 
 
 def render_annotated_script(script: str, annotations: list[dict[str, Any]]) -> None:
@@ -285,8 +285,8 @@ def render_annotated_script(script: str, annotations: list[dict[str, Any]]) -> N
         st.caption("Hover a highlight to see the correction. Colour shows severity.")
         st.markdown(highlight_script(script, located), unsafe_allow_html=True)
     else:
-        st.markdown(f'<div style="line-height:1.8">{html.escape(script)}</div>',
-                    unsafe_allow_html=True)
+        body = html.escape(script).replace("\n", "<br>")
+        st.markdown(f'<div class="cae-script">{body}</div>', unsafe_allow_html=True)
 
     unlocated = [a for a in annotations if not a.get("found")]
     if annotations:
